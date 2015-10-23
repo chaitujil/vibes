@@ -21,6 +21,12 @@ app.run(function ($ionicPlatform) {
 app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
 
+        .state('login', {
+            url: '/login',
+            templateUrl: 'partials/login.html',
+            controller: 'LoginCtrl'
+        })
+
         // setup an abstract state for the tabs directive
         .state('tab', {
             url: '/tab',
@@ -60,7 +66,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         });
 
-    // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/channels');
+    $urlRouterProvider.otherwise('/login');
 
 });
