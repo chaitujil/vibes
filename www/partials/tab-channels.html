@@ -1,5 +1,11 @@
 <ion-view view-title="Channels">
-    <ion-content class="padding">
-        I am channels tab
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="channel in channels" type="item-text-wrap" href="#/tab/channels/{{channel.id}}">
+                <img ng-src="{{channel.face}}">
+                <h2>{{channel.name}}</h2>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>

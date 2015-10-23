@@ -1,3 +1,3 @@
-controllers.controller('ChannelsCtrl', function($scope) {
-
+controllers.controller('ChannelsCtrl', function($scope, Channels) {
+    $scope.channels = Channels.all();
 });
