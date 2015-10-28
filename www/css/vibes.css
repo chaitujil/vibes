@@ -21,6 +21,9 @@
     font-style: normal;
     font-family: sans-serif;
 }
+.song-cover {
+    width: 500px;
+}
 .audio-bar {
     width: 500px !important;
 }

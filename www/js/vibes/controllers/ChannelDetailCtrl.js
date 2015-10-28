@@ -49,7 +49,7 @@ controllers.controller('ChannelDetailCtrl', function ($scope, $stateParams, ngXm
             HttpService.getCurrentSongInfo().then(function(response){
                 $scope.currentSongInfo = ngXml2json.parser(response);
                 $scope.songCover = $scope.currentSongInfo.cover;
-                $timeout(tick, $scope.currentSongInfo.tracks[0].track.callmeback);
+                $timeout(tick, ($scope.currentSongInfo.tracks[0].track.callmeback + 2000));
             });
         })();
     }
