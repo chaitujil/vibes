@@ -69,3 +69,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/login');
 
 });
+
+app.config(['$httpProvider', function($httpProvider) {
+    //initialize get if not there
+    $httpProvider.defaults.cache = false;
+    if (!$httpProvider.defaults.headers.get) {
+        $httpProvider.defaults.headers.get = {};
+    }
+}]);
