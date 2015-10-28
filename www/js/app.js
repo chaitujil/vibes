@@ -1,6 +1,6 @@
 // Ionic vibes App
 
-var app = angular.module('vibes', ['ionic', 'vibes.controllers', 'vibes.services']);
+var app = angular.module('vibes', ['ionic', 'vibes.controllers', 'vibes.services', 'angularXml2json']);
 
 app.run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {

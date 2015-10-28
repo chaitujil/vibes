@@ -1,0 +1,26 @@
+@font-face {
+    font-family:"Ionicons";
+    src:url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1");
+    src:url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1#iefix") format("embedded-opentype"), url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.ttf?v=2.0.1") format("truetype"), url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.woff?v=2.0.1") format("woff"), url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.svg?v=2.0.1#Ionicons") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+.button {
+    font-family: "Ionicons";
+    font-size:48px;
+}
+.play:before {
+    content:'\f488'
+}
+.pause:before {
+    content:'\f478'
+}
+.song-info {
+    font-weight: bold;
+    font-size: 28pt;
+    font-style: normal;
+    font-family: sans-serif;
+}
+.audio-bar {
+    width: 500px !important;
+}
