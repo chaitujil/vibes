@@ -1,4 +1,4 @@
-controllers.controller('ChannelDetailCtrl', function ($scope, $stateParams, ngXml2json, ChannelsService, HttpService) {
+controllers.controller('ChannelDetailCtrl', function ($scope, $stateParams, $timeout, ngXml2json, ChannelsService, HttpService) {
 
     angular.element(document).ready(function () {
         var stream = {
@@ -38,21 +38,34 @@ controllers.controller('ChannelDetailCtrl', function ($scope, $stateParams, ngXm
 
         HttpService.getCurrentSongInfo().then(function (response) {
             $scope.currentSongInfo = ngXml2json.parser(response);
-            $scope.songCover = $scope.currentSongInfo.cover;
+            var curSongCover = $scope.currentSongInfo.tracks.track.cover;
+
+            if (typeof curSongCover !== 'undefined' && curSongCover !== null) {
+                $scope.songCover = curSongCover;
+            } else {
+                $scope.songCover = 'http://www.musicpiya.com/wp-content/uploads/2015/02/Free-Music-Wallpapers-HD-for-PC-18.jpg';
+            }
         });
     }
 
     init();
 
-    function dataCtrl($scope, $timeout, HttpService) {
+    function currentSongCtrl() {
         (function tick() {
             HttpService.getCurrentSongInfo().then(function(response){
                 $scope.currentSongInfo = ngXml2json.parser(response);
-                $scope.songCover = $scope.currentSongInfo.cover;
-                $timeout(tick, ($scope.currentSongInfo.tracks[0].track.callmeback + 2000));
+                var curSongCover = $scope.currentSongInfo.tracks.track.cover;
+
+                if (typeof curSongCover !== 'undefined' && curSongCover !== null) {
+                    $scope.songCover = curSongCover;
+                } else {
+                    $scope.songCover = 'http://www.musicpiya.com/wp-content/uploads/2015/02/Free-Music-Wallpapers-HD-for-PC-18.jpg';
+                }
+                $timeout(tick, ($scope.currentSongInfo.tracks.track.callmeback + 2000));
             });
         })();
     }
 
+    currentSongCtrl();
 
 });

@@ -6,7 +6,7 @@
     font-style:normal;
 }
 .button {
-    font-family: "Ionicons";
+    font-family: "Ionicons", serif;
     font-size:48px;
 }
 .play:before {
@@ -22,8 +22,16 @@
     font-family: sans-serif;
 }
 .song-cover {
-    width: 500px;
+    width: 100% !important;
+    height: 80% !important;
 }
 .audio-bar {
-    width: 500px !important;
+    width: 100% !important;
+    height: 20% !important;
+}
+.bg-img {
+    background-image: url(http://www.musicpiya.com/wp-content/uploads/2015/02/Free-Music-Wallpapers-HD-for-PC-18.jpg);
+}
+.channel-list-item {
+    background-color: green !important;
 }

@@ -66,7 +66,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         });
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/tab/channels');
 
 });
 
