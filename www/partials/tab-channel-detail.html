@@ -1,14 +1,16 @@
-<ion-view view-title="{{channel.name}}">
+<ion-view ng-style="{'background-image': 'url({{channel.face}})', 'background-size':'cover'}" view-title="{{channel.name}}">
     <ion-content class="padding">
-        <div align="center" class="bg-img">
-            <img class="song-cover" ng-src="{{songCover}}" alt="Description"/>
-
+        <div align="center">
             <div id="jquery_jplayer_1" class="jp-jplayer"></div>
             <div id="jp_container_1" class="jp-audio-stream audio-bar" role="application" aria-label="media player">
                 <div class="jp-type-single">
                     <div class="jp-gui jp-interface">
-                        {{currentSongInfo.tracks.track.title}}
-                        {{currentSongInfo.tracks.track.artists}}
+                        <marquee class="song-info" behavior="scroll" direction="left">
+                            {{currentSongInfo.tracks.track.title}}
+                        </marquee>
+                        <marquee class="song-info" behavior="scroll" direction="right">
+                            {{currentSongInfo.tracks.track.artists}}
+                        </marquee>
                         <div class="jp-controls">
                             <button class="jp-play" role="button" tabindex="0">play</button>
                         </div>

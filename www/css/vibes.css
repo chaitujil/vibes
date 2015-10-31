@@ -17,21 +17,16 @@
 }
 .song-info {
     font-weight: bold;
-    font-size: 28pt;
+    font-size: 14pt;
     font-style: normal;
-    font-family: sans-serif;
-}
-.song-cover {
-    width: 100% !important;
-    height: 80% !important;
+    font-family: Verdana,serif;
+    color: lightgreen;
 }
 .audio-bar {
     width: 100% !important;
-    height: 20% !important;
+    height: auto !important;
 }
-.bg-img {
-    background-image: url(http://www.musicpiya.com/wp-content/uploads/2015/02/Free-Music-Wallpapers-HD-for-PC-18.jpg);
-}
-.channel-list-item {
-    background-color: green !important;
+.buttons-n-scroll {
+    position: absolute;
+    display: block;
 }

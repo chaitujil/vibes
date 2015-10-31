@@ -6,23 +6,23 @@ services.factory('ChannelsService', function() {
     var channels = [{
         id: 0,
         name: 'AR Rehman',
-        face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
+        face: 'http://www.arrahman.com/images/background-images/arrahman_bodybg.jpg'
     }, {
         id: 1,
         name: 'Melody',
-        face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
+        face: 'http://coolpcwallpapers.com/wp-content/uploads/2015/07/Music-Melody-Of-Butterfly-Wing-Wallpapers-1920x1080-Wallpaper-1920x1080.jpg'
     }, {
         id: 2,
         name: 'Romantic',
-        face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
+        face: 'http://www.ultrahighdefinitionwallpapers.com/wp-content/uploads/2015/07/romantic-white-and-red-hearts-uhd-wallpapers.jpg'
     }, {
         id: 3,
         name: 'Party',
-        face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
+        face: 'http://studentmediahub.com/wp-content/uploads/2015/09/6908980-party-time.jpg'
     }, {
         id: 4,
         name: 'Devotion',
-        face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
+        face: 'http://ingenetravels.com/travels/wp-content/uploads/2015/09/taj-mahal-india.jpg'
     }];
 
     return {

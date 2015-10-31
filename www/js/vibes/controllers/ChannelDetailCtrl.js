@@ -38,34 +38,35 @@ controllers.controller('ChannelDetailCtrl', function ($scope, $stateParams, $tim
 
         HttpService.getCurrentSongInfo().then(function (response) {
             $scope.currentSongInfo = ngXml2json.parser(response);
-            var curSongCover = $scope.currentSongInfo.tracks.track.cover;
-
-            if (typeof curSongCover !== 'undefined' && curSongCover !== null) {
-                $scope.songCover = curSongCover;
-            } else {
-                $scope.songCover = 'http://www.musicpiya.com/wp-content/uploads/2015/02/Free-Music-Wallpapers-HD-for-PC-18.jpg';
-            }
+            setSongCover($scope.currentSongInfo);
         });
     }
 
     init();
 
+
+    $scope.channelDetailStyle = "{'background-image': 'url(http://www.arrahman.com/images/background-images/arrahman_bodybg.jpg)'}";
+
     function currentSongCtrl() {
         (function tick() {
             HttpService.getCurrentSongInfo().then(function(response){
                 $scope.currentSongInfo = ngXml2json.parser(response);
-                var curSongCover = $scope.currentSongInfo.tracks.track.cover;
-
-                if (typeof curSongCover !== 'undefined' && curSongCover !== null) {
-                    $scope.songCover = curSongCover;
-                } else {
-                    $scope.songCover = 'http://www.musicpiya.com/wp-content/uploads/2015/02/Free-Music-Wallpapers-HD-for-PC-18.jpg';
-                }
+                setSongCover($scope.currentSongInfo);
                 $timeout(tick, ($scope.currentSongInfo.tracks.track.callmeback + 2000));
             });
         })();
     }
 
     currentSongCtrl();
+
+    function setSongCover(currentSongInfo) {
+        var curSongCover = currentSongInfo.tracks.track.cover;
+
+        if (typeof curSongCover !== 'undefined' && curSongCover !== null && curSongCover.length > 1) {
+            $scope.songCover = curSongCover;
+        } else {
+            $scope.songCover = 'http://www.youwall.com/wallpapers/201204/classic-music-wallpaper.jpg';
+        }
+    }
 
 });
