@@ -19,7 +19,7 @@
     font-weight: bold;
     font-size: 14pt;
     font-style: normal;
-    font-family: Verdana,serif;
+    font-family: sans-serif;
     color: lightgreen;
 }
 .audio-bar {
@@ -29,4 +29,9 @@
 .buttons-n-scroll {
     position: absolute;
     display: block;
+}
+.song-cover {
+    width: 150px;
+    height: 150px;
+    position: relative;
 }

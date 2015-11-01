@@ -1,4 +1,8 @@
-<ion-view ng-style="{'background-image': 'url({{channel.face}})', 'background-size':'cover'}" view-title="{{channel.name}}">
+<ion-view ng-style="{'background': 'url({{channel.face}}) no-repeat center center fixed',
+'background-size':'cover',
+'-webkit-background-size': 'cover',
+'-moz-background-size': 'cover',
+'-o-background-size': 'cover'}" view-title="{{channel.name}}">
     <ion-content class="padding">
         <div align="center">
             <div id="jquery_jplayer_1" class="jp-jplayer"></div>
@@ -17,6 +21,8 @@
                     </div>
                 </div>
             </div>
+
+            <img class="song-cover" align="right" src="{{songCover}}">
         </div>
     </ion-content>
 </ion-view>

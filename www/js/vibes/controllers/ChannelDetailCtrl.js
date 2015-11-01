@@ -44,9 +44,6 @@ controllers.controller('ChannelDetailCtrl', function ($scope, $stateParams, $tim
 
     init();
 
-
-    $scope.channelDetailStyle = "{'background-image': 'url(http://www.arrahman.com/images/background-images/arrahman_bodybg.jpg)'}";
-
     function currentSongCtrl() {
         (function tick() {
             HttpService.getCurrentSongInfo().then(function(response){
