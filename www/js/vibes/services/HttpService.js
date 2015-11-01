@@ -1,13 +1,12 @@
 services.service('HttpService', function ($http, $q) {
 
-    var getCurrentSongUrl = 'http://api.radionomy.com/currentsong.cfm' +
-        '?radiouid=f4af4953-6985-4ec8-8cbe-e68324c5e61f' +
-        '&apikey=b9bc802d-3af8-445b-bf51-40b4e690cc0d' +
-        '&callmeback=yes' +
-        '&type=xml' +
-        '&cover=yes';
-
-    this.getCurrentSongInfo = function () {
+    this.getCurrentSongInfo = function (radioUuid, apiKey) {
+        var getCurrentSongUrl = 'http://api.radionomy.com/currentsong.cfm' +
+            '?radiouid=' + radioUuid +
+            '&apikey=' + apiKey +
+            '&callmeback=yes' +
+            '&type=xml' +
+            '&cover=yes';
         return httpGet(getCurrentSongUrl);
     };
 

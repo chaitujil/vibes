@@ -3,7 +3,7 @@ controllers.controller('ChannelDetailCtrl', function ($scope, $stateParams, $tim
     angular.element(document).ready(function () {
         var stream = {
                 title: $scope.channel.name,
-                mp3: "http://listen.radionomy.com/vadapav"
+                mp3: $scope.channel.url
             },
             ready = false;
 
@@ -36,7 +36,7 @@ controllers.controller('ChannelDetailCtrl', function ($scope, $stateParams, $tim
     function init() {
         $scope.channel = ChannelsService.get($stateParams.channelId);
 
-        HttpService.getCurrentSongInfo().then(function (response) {
+        HttpService.getCurrentSongInfo($scope.channel.radioUuid, $scope.channel.apiKey).then(function (response) {
             $scope.currentSongInfo = ngXml2json.parser(response);
             setSongCover($scope.currentSongInfo);
         });
@@ -46,7 +46,7 @@ controllers.controller('ChannelDetailCtrl', function ($scope, $stateParams, $tim
 
     function currentSongCtrl() {
         (function tick() {
-            HttpService.getCurrentSongInfo().then(function(response){
+            HttpService.getCurrentSongInfo($scope.channel.radioUuid, $scope.channel.apiKey).then(function(response){
                 $scope.currentSongInfo = ngXml2json.parser(response);
                 setSongCover($scope.currentSongInfo);
                 $timeout(tick, ($scope.currentSongInfo.tracks.track.callmeback + 2000));
