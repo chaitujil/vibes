@@ -31,15 +31,9 @@ controllers.controller('ChannelDetailCtrl', function ($scope, $stateParams, $tim
         });
     });
 
-    $scope.currentSongInfo = [];
-
     function init() {
         $scope.channel = ChannelsService.get($stateParams.channelId);
-
-        HttpService.getCurrentSongInfo($scope.channel.radioUuid, $scope.channel.apiKey).then(function (response) {
-            $scope.currentSongInfo = ngXml2json.parser(response);
-            setSongCover($scope.currentSongInfo);
-        });
+        currentSongCtrl();
     }
 
     init();
@@ -47,23 +41,23 @@ controllers.controller('ChannelDetailCtrl', function ($scope, $stateParams, $tim
     function currentSongCtrl() {
         (function tick() {
             HttpService.getCurrentSongInfo($scope.channel.radioUuid, $scope.channel.apiKey).then(function(response){
-                $scope.currentSongInfo = ngXml2json.parser(response);
-                setSongCover($scope.currentSongInfo);
-                $timeout(tick, ($scope.currentSongInfo.tracks.track.callmeback + 2000));
+                var currentSongInfo = ngXml2json.parser(response);
+                $scope.songTitle = currentSongInfo.tracks.track.title;
+                $scope.songArtists = currentSongInfo.tracks.track.artists;
+                if (typeof currentSongInfo.tracks.track.cover !== 'undefined'
+                    && currentSongInfo.tracks.track.cover !== null
+                    && currentSongInfo.tracks.track.cover.length > 1) {
+                    $scope.songCover = currentSongInfo.tracks.track.cover;
+                } else {
+                    $scope.songCover = 'http://www.musicheavens.com/wp-content/gallery/music-photo/beautiful-guitar-guitar-music-1920x1080.jpg';
+                }
+
+                // Calling back tick
+                $timeout(tick, (currentSongInfo.tracks.track.callmeback));
             });
         })();
     }
 
     currentSongCtrl();
-
-    function setSongCover(currentSongInfo) {
-        var curSongCover = currentSongInfo.tracks.track.cover;
-
-        if (typeof curSongCover !== 'undefined' && curSongCover !== null && curSongCover.length > 1) {
-            $scope.songCover = curSongCover;
-        } else {
-            $scope.songCover = 'http://www.youwall.com/wallpapers/201204/classic-music-wallpaper.jpg';
-        }
-    }
 
 });
