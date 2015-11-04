@@ -32,6 +32,9 @@
     height: 200px;
     position: relative;
     z-index: 10;
+    width: 33%;
+    float: left;
+    zoom: 25%;
 }
 
 .rewind-btn {
@@ -39,6 +42,9 @@
     height: 140px;
     position: relative;
     z-index: 10;
+    width: 33%;
+    float: left;
+    zoom: 25%;
 }
 
 .forward-btn {
@@ -46,6 +52,9 @@
     height: 200px;
     position: relative;
     z-index: 10;
+    width: 33%;
+    float: left;
+    zoom: 25%;
 }
 
 .audio-bar {
