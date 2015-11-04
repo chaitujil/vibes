@@ -68,7 +68,7 @@
 }
 
 .song-cover {
-    width: 175px;
-    height: 175px;
+    width: 100%;
+    height: 400px;
     position: relative;
 }
