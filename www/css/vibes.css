@@ -72,3 +72,13 @@
     height: 400px;
     position: relative;
 }
+
+.bar.bar-stable {
+    background-color: rgba(255,255,255,.3) !important;
+}
+.tabs {
+    background-color: rgba(255,255,255,.3) !important;
+}
+.scroll-content {
+    overflow: visible !important;
+}

@@ -5,6 +5,13 @@
 '-o-background-size': 'cover'}" view-title="{{channel.name}}">
     <ion-content class="padding">
         <div align="center">
+            <img class="song-cover" align="right" src="{{songCover}}">
+
+            <div class="row">
+                <div class="rewind-btn"></div>
+                <div class="play-btn"></div>
+                <div class="forward-btn"></div>
+            </div>
             <div id="jquery_jplayer_1" class="jp-jplayer"></div>
             <div id="jp_container_1" class="jp-audio-stream audio-bar" role="application" aria-label="media player">
                 <div class="jp-type-single">
@@ -20,14 +27,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <img class="song-cover" align="right" src="{{songCover}}">
-
-            <div class="row">
-                <div class="rewind-btn"></div>
-                <div class="play-btn"></div>
-                <div class="forward-btn"></div>
             </div>
         </div>
     </ion-content>
