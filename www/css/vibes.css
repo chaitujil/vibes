@@ -71,6 +71,7 @@
     width: 100%;
     height: 400px;
     position: relative;
+    border-radius: 20px;
 }
 
 .bar.bar-stable {
@@ -81,4 +82,46 @@
 }
 .scroll-content {
     overflow: visible !important;
+}
+.padding {
+    margin: 25px !important;
+}
+.pane {
+    background-color: orange;
+}
+.item-complex .item-content, .item-radio .item-content {
+    background-color: #B36C6C;
+}
+.item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
+    padding-left: 125px;
+    min-height: 100px;
+    font-size: 20pt;
+}
+.item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child, .item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image, .item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
+    color: #7856ff;
+}
+.bar.bar-stable .title {
+    color: #7856ff;
+}
+.bar-stable .button.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #7856ff;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #7856ff;
+    font-weight: 500;
+    font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+    line-height: 1.2;
 }

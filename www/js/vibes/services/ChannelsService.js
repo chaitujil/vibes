@@ -34,7 +34,7 @@ services.factory('ChannelsService', function() {
     }, {
         id: 4,
         name: 'Devotion',
-        face: 'http://ingenetravels.com/travels/wp-content/uploads/2015/09/taj-mahal-india.jpg',
+        face: 'http://touramazingindia.weebly.com/uploads/1/7/1/0/1710523/4727132.jpg?396x416',
         url: 'http://listen.radionomy.com/vadapav',
         radioUuid: 'f4af4953-6985-4ec8-8cbe-e68324c5e61f',
         apiKey: 'b9bc802d-3af8-445b-bf51-40b4e690cc0d'
