@@ -7,27 +7,19 @@
         <div align="center">
             <img class="song-cover" align="right" src="{{songCover}}">
 
+            <button class="play-btn" ng-click="play()" ng-show="playing!==true"></button>
+            <button class="pause-btn" ng-click="pause()" ng-show="playing!==false"></button>
+
             <div class="row">
-                <div class="rewind-btn"></div>
-                <div class="play-btn"></div>
-                <div class="forward-btn"></div>
-            </div>
-            <div id="jquery_jplayer_1" class="jp-jplayer"></div>
-            <div id="jp_container_1" class="jp-audio-stream audio-bar" role="application" aria-label="media player">
-                <div class="jp-type-single">
-                    <div class="jp-gui jp-interface">
-                        <marquee class="song-info" behavior="scroll" direction="left">
-                            {{songTitle}}
-                        </marquee>
-                        <marquee class="song-info" behavior="scroll" direction="right">
-                            {{songArtists}}
-                        </marquee>
-                        <div class="jp-controls">
-                            <button class="jp-play" role="button" tabindex="0">play</button>
-                        </div>
-                    </div>
+                <div class="song-info">
+                    <h4>Title: {{songTitle}}</h4>
+                    <h4>Artists: {{songArtists}}</h4>
                 </div>
             </div>
+
+            <audio id="audio">
+                <source src="http://listen.radionomy.com/vadapav" type="audio/mp3"/>
+            </audio>
         </div>
     </ion-content>
 </ion-view>

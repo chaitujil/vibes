@@ -56,11 +56,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
-        .state('tab.profile', {
-            url: '/profile',
+        .state('tab.settings', {
+            url: '/settings',
             views: {
-                'tab-profile': {
-                    templateUrl: 'partials/tab-profile.html',
+                'tab-settings': {
+                    templateUrl: 'partials/tab-settings.html',
                     controller: 'ProfileCtrl'
                 }
             }
