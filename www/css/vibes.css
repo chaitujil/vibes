@@ -28,23 +28,23 @@
 }
 
 .play-btn {
-    background: url('http://www.clipartbest.com/cliparts/Mdi/7gq/Mdi7gq5c9.png') center center no-repeat;
-    height: 200px;
+    background: url('http://www.clipartbest.com/cliparts/dir/65K/dir65Kei9.png') center center no-repeat;
+    height: 300px;
     position: relative;
     z-index: 10;
-    width: 33%;
+    width: 100%;
     float: left;
-    zoom: 25%;
+    zoom: 20%;
 }
 
 .pause-btn {
-    background: url('http://a.dryicons.com/images/icon_sets/classy_icons_set/png/128x128/rewind.png') center center no-repeat;
-    height: 200px;
+    background: url('http://www.clker.com/cliparts/2/r/L/G/x/e/pause-button-dark-red-md.png') center center no-repeat;
+    height: 300px;
     position: relative;
-    z-index: 10;
-    width: 33%;
+    z-index: 5;
+    width: 100%;
     float: left;
-    zoom: 25%;
+    zoom: 20%;
 }
 
 .rewind-btn {
@@ -118,20 +118,23 @@
     border-radius: 10px;
 }
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
-    color: #7856ff;
+    color: darkblue;
 }
 .bar.bar-stable .title {
-    color: #7856ff;
+    color: darkblue;
 }
 .bar-stable .button.button-clear {
     border-color: transparent;
     background: none;
     box-shadow: none;
-    color: #7856ff;
+    color: darkblue;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: lightgreen;
+    color: orange;
     font-weight: 500;
     font-family: monospace, sans-serif;
     line-height: 1.2;
+}
+.center-content {
+  padding: 2px;
 }

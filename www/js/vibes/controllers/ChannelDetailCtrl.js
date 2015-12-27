@@ -25,7 +25,7 @@ controllers.controller('ChannelDetailCtrl', function ($rootScope, $scope, $state
 
     function currentSongCtrl() {
         (function tick() {
-            HttpService.getCurrentSongInfo($scope.channel.radioUuid, $scope.channel.apiKey).then(function(response){
+            HttpService.getCurrentSongInfo($scope.channel.radioUuid, $scope.channel.apiKey).then(function (response) {
                 var currentSongInfo = ngXml2json.parser(response);
                 $scope.songTitle = currentSongInfo.tracks.track.title;
                 $scope.songArtists = currentSongInfo.tracks.track.artists;
