@@ -2,7 +2,9 @@
     'use strict';
 
     angular.module('vibes')
-        .service('ChannelsCtrl', channelsCtrl);
+        .controller('ChannelsCtrl', channelsCtrl);
+
+    channelsCtrl.$inject = ['$scope', 'ChannelsService'];
 
     function channelsCtrl($scope, ChannelsService) {
         $scope.channels = ChannelsService.all();

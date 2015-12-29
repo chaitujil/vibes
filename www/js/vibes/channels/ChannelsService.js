@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('vibes')
-    .service('ChannelsService', channelsService);
+    .factory('ChannelsService', channelsService);
 
   function channelsService() {
     var channels = [{

@@ -2,7 +2,9 @@
     'use strict';
 
     angular.module('vibes')
-        .controller('LoginService', loginService);
+        .factory('LoginService', loginService);
+
+    loginService.$inject = ['$q'];
 
     function loginService($q) {
         return {

@@ -4,6 +4,8 @@
     angular.module('vibes')
         .controller('LoginCtrl', loginCtrl);
 
+    loginCtrl.$inject = ['$scope', 'LoginService', '$ionicPopup', '$state'];
+
     function loginCtrl($scope, LoginService, $ionicPopup, $state) {
         $scope.data = {};
 

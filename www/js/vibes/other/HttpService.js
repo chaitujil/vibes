@@ -2,7 +2,9 @@
     'use strict';
 
     angular.module('vibes')
-        .controller('HttpService', httpService);
+        .factory('HttpService', httpService);
+
+    httpService.$inject = ['$http', '$q'];
 
     function httpService ($http, $q) {
         return {
