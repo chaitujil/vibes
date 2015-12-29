@@ -1,79 +1,78 @@
 // Ionic vibes App
+(function() {
+    'use strict';
 
-var app = angular.module('vibes', ['ionic', 'vibes.controllers', 'vibes.services', 'angularXml2json']);
+    angular.module('vibes', ['ionic', 'angularXml2json'])
+        .run(runIonic)
+        .config(configStateProvider)
+        .config(['$httpProvider', configHttpProvider]);
 
-app.run(function ($ionicPlatform) {
-    $ionicPlatform.ready(function () {
-        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-        // for form inputs)
-        if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-            cordova.plugins.Keyboard.disableScroll(true);
+    function runIonic ($ionicPlatform) {
+        $ionicPlatform.ready(function () {
+            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+            // for form inputs)
+            if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                cordova.plugins.Keyboard.disableScroll(true);
 
-        }
-        if (window.StatusBar) {
-            // org.apache.cordova.statusbar required
-            StatusBar.styleLightContent();
-        }
-    });
-});
-
-app.config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
-
-        .state('login', {
-            url: '/login',
-            templateUrl: 'partials/login.html',
-            controller: 'LoginCtrl'
-        })
-
-        // setup an abstract state for the tabs directive
-        .state('tab', {
-            url: '/tab',
-            abstract: true,
-            templateUrl: 'partials/tabs.html'
-        })
-
-        // Each tab has its own nav history stack:
-
-        .state('tab.channels', {
-            url: '/channels',
-            views: {
-                'tab-channels': {
-                    templateUrl: 'partials/tab-channels.html',
-                    controller: 'ChannelsCtrl'
-                }
             }
-        })
-
-        .state('tab.channel-detail', {
-            url: '/channels/:channelId',
-            views: {
-                'tab-channels': {
-                    templateUrl: 'partials/tab-channel-detail.html',
-                    controller: 'ChannelDetailCtrl'
-                }
-            }
-        })
-
-        .state('tab.settings', {
-            url: '/settings',
-            views: {
-                'tab-settings': {
-                    templateUrl: 'partials/tab-settings.html',
-                    controller: 'ProfileCtrl'
-                }
+            if (window.StatusBar) {
+                // org.apache.cordova.statusbar required
+                StatusBar.styleLightContent();
             }
         });
-
-    $urlRouterProvider.otherwise('/tab/channels');
-
-});
-
-app.config(['$httpProvider', function($httpProvider) {
-    //initialize get if not there
-    $httpProvider.defaults.cache = false;
-    if (!$httpProvider.defaults.headers.get) {
-        $httpProvider.defaults.headers.get = {};
     }
-}]);
+
+    function configStateProvider ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('login', {
+                url: '/login',
+                templateUrl: 'partials/login.html',
+                controller: 'LoginCtrl'
+            })
+            // setup an abstract state for the tabs directive
+            .state('tab', {
+                url: '/tab',
+                abstract: true,
+                templateUrl: 'partials/tabs.html'
+            })
+            // Each tab has its own nav history stack:
+            .state('tab.channels', {
+                url: '/channels',
+                views: {
+                    'tab-channels': {
+                        templateUrl: 'partials/tab-channels.html',
+                        controller: 'ChannelsCtrl'
+                    }
+                }
+            })
+            .state('tab.channel-detail', {
+                url: '/channels/:channelId',
+                views: {
+                    'tab-channels': {
+                        templateUrl: 'partials/tab-channel-detail.html',
+                        controller: 'ChannelDetailCtrl'
+                    }
+                }
+            })
+            .state('tab.settings', {
+                url: '/settings',
+                views: {
+                    'tab-settings': {
+                        templateUrl: 'partials/tab-settings.html',
+                        controller: 'SettingsCtrl'
+                    }
+                }
+            });
+
+        $urlRouterProvider.otherwise('/tab/channels');
+    }
+
+    function configHttpProvider($httpProvider) {
+        //initialize get if not there
+        $httpProvider.defaults.cache = false;
+        if (!$httpProvider.defaults.headers.get) {
+            $httpProvider.defaults.headers.get = {};
+        }
+    }
+})();

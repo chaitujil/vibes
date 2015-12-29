@@ -1,1 +1,0 @@
-var controllers = angular.module('vibes.controllers', []);
