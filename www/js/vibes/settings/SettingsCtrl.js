@@ -2,8 +2,9 @@
     'use strict';
 
     angular.module('vibes')
-        .controller('SettingCtrl', settingCtrl);
+        .controller('SettingsCtrl', settingsCtrl);
 
-    function settingCtrl() {
+    function settingsCtrl() {
+        var vm = this;
     }
 })();

@@ -4,44 +4,50 @@
     angular.module('vibes')
         .controller('ChannelDetailCtrl', channelDetailCtrl);
 
-    channelDetailCtrl.$inject = ['$rootScope', '$scope', '$stateParams', '$timeout', 'HttpService',
+    channelDetailCtrl.$inject = ['$rootScope', '$stateParams', '$timeout', 'HttpService',
         'ngXml2json', 'ChannelsService'];
 
-    function channelDetailCtrl($rootScope, $scope, $stateParams, $timeout, HttpService, ngXml2json, ChannelsService) {
-
+    function channelDetailCtrl($rootScope, $stateParams, $timeout, HttpService, ngXml2json, ChannelsService) {
+        var vm = this;
         var audio;
+        vm.play = play;
+        vm.pause = pause;
+        vm.channel = null;
+        vm.songTitle = null;
+        vm.songArtists = null;
+        vm.songCover = null;
 
         init();
+
         function init() {
             $rootScope.playing = false;
-            $scope.channel = ChannelsService.get($stateParams.channelId);
+            vm.channel = ChannelsService.get($stateParams.channelId);
             refreshSongInfo();
-
             audio = document.getElementById('audio');
         }
 
-        $scope.play = function () {
+        function play() {
             audio.play();
             $rootScope.playing = true;
-        };
+        }
 
-        $scope.pause = function () {
+        function pause() {
             audio.pause();
             $rootScope.playing = false;
-        };
+        }
 
         function refreshSongInfo() {
-            HttpService.getCurrentSongInfo($scope.channel.radioUuid, $scope.channel.apiKey)
+            HttpService.getCurrentSongInfo(vm.channel.radioUuid, vm.channel.apiKey)
                 .then(function (response) {
                     var currentSongInfo = ngXml2json.parser(response);
-                    $scope.songTitle = currentSongInfo.tracks.track.title;
-                    $scope.songArtists = currentSongInfo.tracks.track.artists;
+                    vm.songTitle = currentSongInfo.tracks.track.title;
+                    vm.songArtists = currentSongInfo.tracks.track.artists;
                     if (typeof currentSongInfo.tracks.track.cover !== 'undefined'
                         && currentSongInfo.tracks.track.cover !== null
                         && currentSongInfo.tracks.track.cover.length > 1) {
-                        $scope.songCover = currentSongInfo.tracks.track.cover;
+                        vm.songCover = currentSongInfo.tracks.track.cover;
                     } else {
-                        $scope.songCover = 'http://www.musicheavens.com/wp-content/gallery/music-photo/beautiful-guitar-guitar-music-1920x1080.jpg';
+                        vm.songCover = 'http://www.musicheavens.com/wp-content/gallery/music-photo/beautiful-guitar-guitar-music-1920x1080.jpg';
                     }
 
                     // Calling back tick
@@ -50,6 +56,5 @@
                     $log.error("Error while retrieving song info");
                 });
         }
-
     }
 })();

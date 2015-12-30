@@ -1,19 +1,19 @@
-<ion-view ng-style="{'background': 'url({{channel.face}}) no-repeat center center fixed',
+<ion-view ng-style="{'background': 'url({{channelDetailCtrl.channel.face}}) no-repeat center center fixed',
 'background-size':'cover',
 '-webkit-background-size': 'cover',
 '-moz-background-size': 'cover',
-'-o-background-size': 'cover'}" view-title="{{channel.name}}">
+'-o-background-size': 'cover'}" view-title="{{channelDetailCtrl.channel.name}}">
     <ion-content class="center-content">
         <div align="center">
-            <img class="song-cover" align="right" src="{{songCover}}">
+            <img class="song-cover" align="right" src="{{channelDetailCtrl.songCover}}">
 
-            <button class="play-btn" ng-click="play()" ng-show="playing!==true"></button>
-            <button class="pause-btn" ng-click="pause()" ng-show="playing!==false"></button>
+            <button class="play-btn" ng-click="channelDetailCtrl.play()" ng-show="playing!==true"></button>
+            <button class="pause-btn" ng-click="channelDetailCtrl.pause()" ng-show="playing!==false"></button>
 
             <div class="row">
                 <div class="song-info">
-                    <h4 align="left">Title: {{songTitle}}</h4>
-                    <h4 align="left">Artists: {{songArtists}}</h4>
+                    <h4 align="left">Title: {{channelDetailCtrl.songTitle}}</h4>
+                    <h4 align="left">Artists: {{channelDetailCtrl.songArtists}}</h4>
                 </div>
             </div>
 

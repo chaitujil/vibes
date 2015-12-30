@@ -28,7 +28,7 @@
             .state('login', {
                 url: '/login',
                 templateUrl: 'partials/login.html',
-                controller: 'LoginCtrl'
+                controller: 'LoginCtrl as loginCtrl'
             })
             // setup an abstract state for the tabs directive
             .state('tab', {
@@ -42,7 +42,7 @@
                 views: {
                     'tab-channels': {
                         templateUrl: 'partials/tab-channels.html',
-                        controller: 'ChannelsCtrl'
+                        controller: 'ChannelsCtrl as channelsCtrl'
                     }
                 }
             })
@@ -51,7 +51,7 @@
                 views: {
                     'tab-channels': {
                         templateUrl: 'partials/tab-channel-detail.html',
-                        controller: 'ChannelDetailCtrl'
+                        controller: 'ChannelDetailCtrl as channelDetailCtrl'
                     }
                 }
             })
@@ -60,7 +60,7 @@
                 views: {
                     'tab-settings': {
                         templateUrl: 'partials/tab-settings.html',
-                        controller: 'SettingsCtrl'
+                        controller: 'SettingsCtrl as settingsCtrl'
                     }
                 }
             });

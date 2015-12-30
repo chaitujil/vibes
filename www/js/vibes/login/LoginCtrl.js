@@ -4,13 +4,16 @@
     angular.module('vibes')
         .controller('LoginCtrl', loginCtrl);
 
-    loginCtrl.$inject = ['$scope', 'LoginService', '$ionicPopup', '$state'];
+    loginCtrl.$inject = ['LoginService', '$ionicPopup', '$state'];
 
-    function loginCtrl($scope, LoginService, $ionicPopup, $state) {
-        $scope.data = {};
+    function loginCtrl(LoginService, $ionicPopup, $state) {
+        var vm = this;
+        
+        vm.data = {};
+        vm.login = login;
 
-        $scope.login = function() {
-            LoginService.loginUser($scope.data.username, $scope.data.password).success(function (data) {
+        function login () {
+            LoginService.loginUser(vm.data.username, vm.data.password).success(function (data) {
                 $state.go('tab.channels');
             }).error(function(data) {
                 var alertPopup = $ionicPopup.alert({
