@@ -5,14 +5,15 @@
         .controller('ChannelDetailCtrl', channelDetailCtrl);
 
     channelDetailCtrl.$inject = ['$rootScope', '$stateParams', '$timeout', 'HttpService',
-        'ngXml2json', 'ChannelsService'];
+        'ngXml2json', 'ChannelsService', '$sce'];
 
-    function channelDetailCtrl($rootScope, $stateParams, $timeout, HttpService, ngXml2json, ChannelsService) {
+    function channelDetailCtrl($rootScope, $stateParams, $timeout, HttpService, ngXml2json, ChannelsService, $sce) {
         var vm = this;
         var audio;
         vm.play = play;
         vm.pause = pause;
         vm.channel = null;
+        vm.channelUrl = null;
         vm.songTitle = null;
         vm.songArtists = null;
         vm.songCover = null;
@@ -22,6 +23,7 @@
         function init() {
             $rootScope.playing = false;
             vm.channel = ChannelsService.get($stateParams.channelId);
+            vm.channelUrl = $sce.trustAsResourceUrl(vm.channel.url);
             refreshSongInfo();
             audio = document.getElementById('audio');
         }
