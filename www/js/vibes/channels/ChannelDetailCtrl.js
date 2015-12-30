@@ -7,17 +7,15 @@
     channelDetailCtrl.$inject = ['$rootScope', '$scope', '$stateParams', '$timeout', 'HttpService',
         'ngXml2json', 'ChannelsService'];
 
-    function channelDetailCtrl ($rootScope, $scope, $stateParams, $timeout, HttpService, ngXml2json, ChannelsService) {
+    function channelDetailCtrl($rootScope, $scope, $stateParams, $timeout, HttpService, ngXml2json, ChannelsService) {
 
         var audio;
 
         init();
-        currentSongCtrl();
-
         function init() {
             $rootScope.playing = false;
             $scope.channel = ChannelsService.get($stateParams.channelId);
-            currentSongCtrl();
+            refreshSongInfo();
 
             audio = document.getElementById('audio');
         }
@@ -32,9 +30,9 @@
             $rootScope.playing = false;
         };
 
-        function currentSongCtrl() {
-            (function tick() {
-                HttpService.getCurrentSongInfo($scope.channel.radioUuid, $scope.channel.apiKey).then(function (response) {
+        function refreshSongInfo() {
+            HttpService.getCurrentSongInfo($scope.channel.radioUuid, $scope.channel.apiKey)
+                .then(function (response) {
                     var currentSongInfo = ngXml2json.parser(response);
                     $scope.songTitle = currentSongInfo.tracks.track.title;
                     $scope.songArtists = currentSongInfo.tracks.track.artists;
@@ -47,9 +45,10 @@
                     }
 
                     // Calling back tick
-                    $timeout(tick, (currentSongInfo.tracks.track.callmeback));
+                    $timeout(refreshSongInfo, (currentSongInfo.tracks.track.callmeback));
+                }, function (error) {
+                    $log.error("Error while retrieving song info");
                 });
-            })();
         }
 
     }
