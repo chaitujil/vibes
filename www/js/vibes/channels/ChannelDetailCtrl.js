@@ -4,10 +4,10 @@
     angular.module('vibes')
         .controller('ChannelDetailCtrl', channelDetailCtrl);
 
-    channelDetailCtrl.$inject = ['$rootScope', '$scope', '$stateParams', '$timeout',
+    channelDetailCtrl.$inject = ['$rootScope', '$scope', '$stateParams', '$timeout', 'HttpService',
         'ngXml2json', 'ChannelsService'];
 
-    function channelDetailCtrl ($rootScope, $scope, $stateParams, $timeout, ngXml2json, ChannelsService) {
+    function channelDetailCtrl ($rootScope, $scope, $stateParams, $timeout, HttpService, ngXml2json, ChannelsService) {
 
         var audio;
 
@@ -33,7 +33,6 @@
         };
 
         function currentSongCtrl() {
-            /*
             (function tick() {
                 HttpService.getCurrentSongInfo($scope.channel.radioUuid, $scope.channel.apiKey).then(function (response) {
                     var currentSongInfo = ngXml2json.parser(response);
@@ -51,7 +50,6 @@
                     $timeout(tick, (currentSongInfo.tracks.track.callmeback));
                 });
             })();
-            */
         }
 
     }

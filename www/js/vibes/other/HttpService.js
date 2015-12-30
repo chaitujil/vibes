@@ -41,4 +41,4 @@
             return d.promise;
         }
     }
-});
+})();
