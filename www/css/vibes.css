@@ -2,7 +2,6 @@
     height: 200px;
     width: 100%;
 }
-
 @font-face {
     font-family: "Ionicons";
     src: url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1");
@@ -10,10 +9,19 @@
     font-weight: normal;
     font-style: normal;
 }
-
 .button {
     font-family: "Ionicons", serif;
     font-size: 48px;
+}
+.icon-large {
+    font-size: x-large;
+    color: #71c0b3;
+}
+.play:before {
+    content: '\f488'
+}
+.pause:before {
+    content: '\f478'
 }
 .normal-song-info {
     font-weight: bold;
@@ -23,6 +31,8 @@
     color: yellow;
     line-height: 1.2;
     margin-top: 10px;
+    #font-family: sans-serif;
+    #color: #71c0b3;
 }
 .blue-song-info {
     font-weight: bold;
@@ -34,16 +44,21 @@
     margin-top: 10px;
 }
 .song-cover {
-    width: 100%;
+    width: 50%;
     height: 400px;
     position: relative;
-    border-radius: 10px;
+    #border-radius: 10px;
+    border-radius: 20px;
 }
 .bar.bar-stable {
-    background-color: rgba(255,255,255,.3) !important;
+    #background-color: rgba(255,255,255,.3) !important;
+    background-color: #71c0b3;
+    #background-color: #ffd000;
 }
 .tabs {
-    background-color: rgba(255,255,255,.3) !important;
+    #background-color: rgba(255,255,255,.3) !important;
+    #background-color: #71c0b3;
+    background-color: #f2c500;
 }
 .scroll-content {
     overflow: visible !important;
@@ -51,8 +66,11 @@
 .padding {
     margin: 25px !important;
 }
+.pane {
+    background-color: #ffffff;
+}
 .item-complex .item-content, .item-radio .item-content {
-    background-color: #B36C6C;
+    background-color: #ffffff;
 }
 .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
     padding-left: 125px;
@@ -70,16 +88,19 @@
     border-radius: 10px;
 }
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
-    color: darkblue;
+    #color: darkblue;
+    color: #ffffff;
 }
 .bar.bar-stable .title {
-    color: darkblue;
+    #color: darkblue;
+    color: #ffffff;
 }
 .bar-stable .button.button-clear {
     border-color: transparent;
     background: none;
     box-shadow: none;
-    color: darkblue;
+    #color: darkblue;
+    color: #ffffff;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: orange;

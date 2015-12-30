@@ -11,6 +11,12 @@
                 <div ng-class="{'normal-song-info': channelDetailCtrl.isNormal(),'blue-song-info': !channelDetailCtrl.isNormal()}">
                     <p align="left">Title: {{channelDetailCtrl.songTitle}}</p>
                     <p align="left">Artists: {{channelDetailCtrl.songArtists}}</p>
+                    <h4 align="left">Artists: {{channelDetailCtrl.songArtists}}</h4>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                <!i class="icon ion-play icon-large"></i>
+                <a class="button button-icon icon icon-large" ng-class="item.checked ? 'ion-pause' : 'ion-play'" ng-click="toggleIcon($event, 'ion-play')"> </a>
                 </div>
             </div>
 
