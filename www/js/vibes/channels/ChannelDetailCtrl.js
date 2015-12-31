@@ -5,9 +5,10 @@
         .controller('ChannelDetailCtrl', channelDetailCtrl);
 
     channelDetailCtrl.$inject = ['$rootScope', '$stateParams', '$timeout', 'HttpService',
-        'ngXml2json', 'ChannelsService', '$sce'];
+        'ngXml2json', 'ChannelsService', '$sce', '$log'];
 
-    function channelDetailCtrl($rootScope, $stateParams, $timeout, HttpService, ngXml2json, ChannelsService, $sce) {
+    function channelDetailCtrl($rootScope, $stateParams, $timeout, HttpService,
+                               ngXml2json, ChannelsService, $sce, $log) {
         var vm = this;
         vm.play = play;
         vm.pause = pause;
@@ -54,24 +55,59 @@
         }
 
         function refreshSongInfo() {
-            HttpService.getCurrentSongInfo(vm.channel.radioUuid, vm.channel.apiKey)
-                .then(function (response) {
-                    var currentSongInfo = ngXml2json.parser(response);
-                    vm.songTitle = currentSongInfo.tracks.track.title;
-                    vm.songArtists = currentSongInfo.tracks.track.artists;
-                    if (typeof currentSongInfo.tracks.track.cover !== 'undefined'
-                        && currentSongInfo.tracks.track.cover !== null
-                        && currentSongInfo.tracks.track.cover.length > 1) {
-                        vm.songCover = currentSongInfo.tracks.track.cover;
-                    } else {
-                        vm.songCover = 'http://www.musicheavens.com/wp-content/gallery/music-photo/beautiful-guitar-guitar-music-1920x1080.jpg';
-                    }
+            if (typeof vm.channel.sprovider !== 'undefined') {
+                switch (vm.channel.sprovider) {
+                    case 'gowtham':
+                        refreshGowthamSongInfo();
+                        refreshGowthamSongCover();
+                        break;
+                    case 'radionomy':
+                        refreshRadionomySongInfo();
+                        break;
+                }
+            }
+        }
 
-                    // Calling back tick
-                    $timeout(refreshSongInfo, (currentSongInfo.tracks.track.callmeback));
-                }, function (error) {
-                    $log.error("Error while retrieving song info" + error);
-                });
+        function refreshGowthamSongInfo() {
+            HttpService.getGowthamCurrentSongInfo(vm.channel.name).then(function (response) {
+                vm.songTitle = response.track;
+                vm.songArtists = response.artist;
+                // Calling back refreshGowthamSongInfo every 5 sec
+                $timeout(refreshGowthamSongInfo, 5000);
+            }, function (error) {
+                vm.songTitle = '--';
+                vm.songArtists = '--';
+                $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
+            });
+        }
+
+        function refreshGowthamSongCover() {
+            HttpService.getGowthamCurrentSongInfo(vm.channel.name).then(function (response) {
+                vm.songCover = response;
+                // Calling back refreshGowthamSongInfo every 5 sec
+                $timeout(refreshGowthamSongCover, 5000);
+            }, function (error) {
+                vm.songCover = 'http://www.musicheavens.com/wp-content/gallery/music-photo/beautiful-guitar-guitar-music-1920x1080.jpg';
+                $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
+            });
+        }
+
+        function refreshRadionomySongInfo() {
+            HttpService.getRadionomyCurrentSongInfo(vm.channel.radioUuid, vm.channel.apiKey).then(function (response) {
+                var currentSongInfo = ngXml2json.parser(response);
+                vm.songTitle = currentSongInfo.tracks.track.title;
+                vm.songArtists = currentSongInfo.tracks.track.artists;
+                if (typeof currentSongInfo.tracks.track.cover !== 'undefined' && currentSongInfo.tracks.track.cover !== null && currentSongInfo.tracks.track.cover.length > 1) {
+                    vm.songCover = currentSongInfo.tracks.track.cover;
+                } else {
+                    vm.songCover = 'http://www.musicheavens.com/wp-content/gallery/music-photo/beautiful-guitar-guitar-music-1920x1080.jpg';
+                }
+
+                // Calling back refreshRadionomySongInfo
+                $timeout(refreshRadionomySongInfo, (currentSongInfo.tracks.track.callmeback));
+            }, function (error) {
+                $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
+            });
         }
     }
 })();

@@ -6,12 +6,13 @@
 
     httpService.$inject = ['$http', '$q'];
 
-    function httpService ($http, $q) {
+    function httpService($http, $q) {
         return {
-            getCurrentSongInfo: getCurrentSongInfo
+            'getGowthamCurrentSongInfo': getGowthamCurrentSongInfo,
+            'getRadionomyCurrentSongInfo': getRadionomyCurrentSongInfo
         };
 
-        function getCurrentSongInfo (radioUuid, apiKey) {
+        function getRadionomyCurrentSongInfo(radioUuid, apiKey) {
             var getCurrentSongUrl = 'http://api.radionomy.com/currentsong.cfm' +
                 '?radiouid=' + radioUuid +
                 '&apikey=' + apiKey +
@@ -19,6 +20,16 @@
                 '&type=xml' +
                 '&cover=yes';
             return httpGet(getCurrentSongUrl);
+        }
+
+        function getGowthamCurrentSongInfo(stationName) {
+            var getCurrentSongInfoUrl = 'http://104.131.151.101/' + stationName + '/songinfo.txt';
+            return httpGet(getCurrentSongInfoUrl);
+        }
+
+        function getGowthamCurrentSongCover(stationName) {
+            var getCurrentSongCoverUrl = 'http://104.131.151.101/' + stationName + '/image.jpg';
+            return httpGet(getCurrentSongCoverUrl);
         }
 
         function httpGet(url, reqParam) {
