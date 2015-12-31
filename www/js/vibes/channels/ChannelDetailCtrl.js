@@ -9,7 +9,6 @@
 
     function channelDetailCtrl($rootScope, $stateParams, $timeout, HttpService, ngXml2json, ChannelsService, $sce) {
         var vm = this;
-        var audio;
         vm.play = play;
         vm.pause = pause;
         vm.channel = null;
@@ -21,20 +20,36 @@
         init();
 
         function init() {
-            $rootScope.playing = false;
             vm.channel = ChannelsService.get($stateParams.channelId);
             vm.channelUrl = $sce.trustAsResourceUrl(vm.channel.url);
+
+            if ($rootScope.playing !== true) {
+                refreshChannel();
+            } else if ((typeof $rootScope.curChannel !== 'undefined') &&
+                ($rootScope.curChannel.id !== vm.channel.id)) {
+                refreshChannel();
+            }
+
             refreshSongInfo();
-            audio = document.getElementById('audio');
+        }
+
+        function refreshChannel() {
+            $rootScope.playing = false;
+            if (typeof $rootScope.audio !== 'undefined') {
+                $rootScope.audio.pause();
+            }
+            $rootScope.curChannel = vm.channel;
+            play();
         }
 
         function play() {
-            audio.play();
+            $rootScope.audio = new Audio(vm.channelUrl);
+            $rootScope.audio.play();
             $rootScope.playing = true;
         }
 
         function pause() {
-            audio.pause();
+            $rootScope.audio.pause();
             $rootScope.playing = false;
         }
 
@@ -55,7 +70,7 @@
                     // Calling back tick
                     $timeout(refreshSongInfo, (currentSongInfo.tracks.track.callmeback));
                 }, function (error) {
-                    $log.error("Error while retrieving song info");
+                    $log.error("Error while retrieving song info" + error);
                 });
         }
     }
