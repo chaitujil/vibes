@@ -27,11 +27,6 @@
             return httpGet(getCurrentSongInfoUrl);
         }
 
-        function getGowthamCurrentSongCover(stationName) {
-            var getCurrentSongCoverUrl = 'http://104.131.151.101/' + stationName + '/image.jpg';
-            return httpGet(getCurrentSongCoverUrl);
-        }
-
         function httpGet(url, reqParam) {
             var d = $q.defer();
 

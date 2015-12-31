@@ -59,7 +59,6 @@
                 switch (vm.channel.sprovider) {
                     case 'gowtham':
                         refreshGowthamSongInfo();
-                        refreshGowthamSongCover();
                         break;
                     case 'radionomy':
                         refreshRadionomySongInfo();
@@ -72,22 +71,12 @@
             HttpService.getGowthamCurrentSongInfo(vm.channel.name).then(function (response) {
                 vm.songTitle = response.track;
                 vm.songArtists = response.artist;
+                vm.songCover = 'http://104.131.151.101/' + vm.channel.name + '/image.jpg';
                 // Calling back refreshGowthamSongInfo every 5 sec
                 $timeout(refreshGowthamSongInfo, 5000);
             }, function (error) {
                 vm.songTitle = '--';
                 vm.songArtists = '--';
-                $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
-            });
-        }
-
-        function refreshGowthamSongCover() {
-            HttpService.getGowthamCurrentSongInfo(vm.channel.name).then(function (response) {
-                vm.songCover = response;
-                // Calling back refreshGowthamSongInfo every 5 sec
-                $timeout(refreshGowthamSongCover, 5000);
-            }, function (error) {
-                vm.songCover = 'http://www.musicheavens.com/wp-content/gallery/music-photo/beautiful-guitar-guitar-music-1920x1080.jpg';
                 $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
             });
         }
