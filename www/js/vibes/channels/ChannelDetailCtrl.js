@@ -17,6 +17,7 @@
         vm.songTitle = null;
         vm.songArtists = null;
         vm.songCover = null;
+        vm.isNormal = isNormal;
 
         init();
 
@@ -97,6 +98,10 @@
             }, function (error) {
                 $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
             });
+        }
+
+        function isNormal() {
+            return true;
         }
     }
 })();

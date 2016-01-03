@@ -33,7 +33,7 @@
       id: 3,
       name: 'idlichutney',
       sprovider: 'radionomy',
-      face: 'http://coolpcwallpapers.com/wp-content/uploads/2015/07/Music-Melody-Of-Butterfly-Wing-Wallpapers-1920x1080-Wallpaper-1920x1080.jpg',
+      face: 'http://examinedexistence.com/wp-content/uploads/2013/03/music-notes.jpg',
       url: 'http://listen.radionomy.com/idlichutney',
       radioUuid: '0035c069-41a0-48cb-bca8-bcb0ada884e8',
       apiKey: 'b9bc802d-3af8-445b-bf51-40b4e690cc0d'

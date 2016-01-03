@@ -1,13 +1,6 @@
-<ion-view view-title="Channels">
+<ion-view view-title="Channels" class="normal-channels-page">
     <ion-content>
         <ion-list>
-            <!--ion-item class="item-remove-animate item-avatar item-icon-right"
-                      ng-repeat="channel in channelsCtrl.channels"
-                      type="item-text-wrap" href="#/tab/channels/{{channel.id}}">
-                <img ng-src="{{channel.face}}">
-                <h2>{{channel.name}}</h2>
-                <i class="icon ion-chevron-right icon-accessory"></i>
-            </ion-item-->
             <div ng-repeat="channel in channelsCtrl.channels" ng-if="$index % 2 == 0" class="row">
                 <a class="col-50" href="#/tab/channels/{{channelsCtrl.channels[$index].id}}">
                     <span class="channel-wrapper">

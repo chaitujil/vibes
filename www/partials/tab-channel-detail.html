@@ -8,9 +8,9 @@
             <img class="song-cover" align="right" src="{{channelDetailCtrl.songCover}}">
 
             <div class="row">
-                <div class="song-info">
-                    <h4 align="left">Title: {{channelDetailCtrl.songTitle}}</h4>
-                    <h4 align="left">Artists: {{channelDetailCtrl.songArtists}}</h4>
+                <div ng-class="{'normal-song-info': channelDetailCtrl.isNormal(),'blue-song-info': !channelDetailCtrl.isNormal()}">
+                    <p align="left">Title: {{channelDetailCtrl.songTitle}}</p>
+                    <p align="left">Artists: {{channelDetailCtrl.songArtists}}</p>
                 </div>
             </div>
 
