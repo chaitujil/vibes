@@ -1,11 +1,11 @@
-<ion-view ng-style="{'background': 'url({{channelDetailCtrl.channel.face}}) no-repeat center center fixed',
+<ion-view ng-style="{
 'background-size':'cover',
 '-webkit-background-size': 'cover',
 '-moz-background-size': 'cover',
-'-o-background-size': 'cover'}" view-title="{{channelDetailCtrl.channel.name}}">
+'-o-background-size': 'cover'}" view-title="{{channelDetailCtrl.channel.name}}" class="normal-channels-page">
     <ion-content class="center-content">
         <div align="center">
-            <img class="song-cover" align="right" src="{{channelDetailCtrl.songCover}}">
+            <img class="song-cover" align="center" src="{{channelDetailCtrl.songCover}}">
 
             <div class="row">
                 <div ng-class="{'normal-song-info': channelDetailCtrl.isNormal(),'blue-song-info': !channelDetailCtrl.isNormal()}">
