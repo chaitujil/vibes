@@ -11,40 +11,12 @@
     font-size: 48px;
 }
 
-.play:before {
-    content: '\f488'
-}
-
-.pause:before {
-    content: '\f478'
-}
-
 .song-info {
     font-weight: bold;
     font-size: 8pt;
     font-style: normal;
     font-family: sans-serif;
     color: lightgreen;
-}
-
-.play-btn {
-    background: url('http://www.clipartbest.com/cliparts/dir/65K/dir65Kei9.png') center center no-repeat;
-    height: 300px;
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    float: left;
-    zoom: 20%;
-}
-
-.pause-btn {
-    background: url('http://www.clker.com/cliparts/2/r/L/G/x/e/pause-button-dark-red-md.png') center center no-repeat;
-    height: 300px;
-    position: relative;
-    z-index: 5;
-    width: 100%;
-    float: left;
-    zoom: 20%;
 }
 
 .rewind-btn {
@@ -137,4 +109,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .center-content {
   padding: 2px;
+}
+
+/* Music Controls */
+.music-controls .icon{
+    display: inline-block;
+    height: 300px;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    zoom: 20%;
+}
+
+.music-controls .play-btn {
+    background: url('http://www.clipartbest.com/cliparts/dir/65K/dir65Kei9.png') center center no-repeat;
+}
+
+.music-controls .pause-btn {
+    background: url('http://www.clker.com/cliparts/2/r/L/G/x/e/pause-button-dark-red-md.png') center center no-repeat;
 }

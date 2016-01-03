@@ -7,9 +7,6 @@
         <div align="center">
             <img class="song-cover" align="right" src="{{channelDetailCtrl.songCover}}">
 
-            <button class="play-btn" ng-click="channelDetailCtrl.play()" ng-show="playing!==true"></button>
-            <button class="pause-btn" ng-click="channelDetailCtrl.pause()" ng-show="playing!==false"></button>
-
             <div class="row">
                 <div class="song-info">
                     <h4 align="left">Title: {{channelDetailCtrl.songTitle}}</h4>
@@ -17,9 +14,10 @@
                 </div>
             </div>
 
-            <!--audio id="audio">
-                <source src={{channelDetailCtrl.channelUrl}} type="audio/mp3"/>
-            </audio-->
+            <div class="music-controls">
+                <i class="icon play-btn" ng-click="channelDetailCtrl.play()" ng-show="playing!==true"></i>
+                <i class="icon pause-btn" ng-click="channelDetailCtrl.pause()" ng-show="playing!==false"></i>
+            </div>
         </div>
     </ion-content>
 </ion-view>

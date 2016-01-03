@@ -50,6 +50,7 @@
                 url: '/channels/:channelId',
                 views: {
                     'tab-channels': {
+                        cache: false,
                         templateUrl: 'partials/tab-channel-detail.html',
                         controller: 'ChannelDetailCtrl as channelDetailCtrl'
                     }
