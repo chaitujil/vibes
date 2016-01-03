@@ -71,7 +71,7 @@
             HttpService.getGowthamCurrentSongInfo(vm.channel.name).then(function (response) {
                 vm.songTitle = response.track;
                 vm.songArtists = response.artist;
-                vm.songCover = 'http://104.131.151.101/' + vm.channel.name + '/image.jpg';
+                vm.songCover = 'http://104.131.151.101/' + vm.channel.name + '/image.jpg?' + new Date().getTime();
                 // Calling back refreshGowthamSongInfo every 5 sec
                 $timeout(refreshGowthamSongInfo, 5000);
             }, function (error) {
