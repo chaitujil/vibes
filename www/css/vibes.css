@@ -1,3 +1,8 @@
+.channel-face {
+    height: 200px;
+    width: 100%;
+}
+
 @font-face {
     font-family: "Ionicons";
     src: url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1");
