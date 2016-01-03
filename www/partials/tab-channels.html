@@ -10,9 +10,19 @@
             </ion-item-->
             <div ng-repeat="channel in channelsCtrl.channels" ng-if="$index % 2 == 0" class="row">
                 <a class="col-50" href="#/tab/channels/{{channelsCtrl.channels[$index].id}}">
+                    <span class="channel-wrapper">
+                        <span class="channel-name">
+                            {{channelsCtrl.channels[$index].name}}
+                        </span>
+                    </span>
                     <img class="channel-face" ng-src="{{channelsCtrl.channels[$index].face}}">
                 </a>
                 <a class="col-50" href="#/tab/channels/{{channelsCtrl.channels[$index + 1].id}}">
+                    <span class="channel-wrapper">
+                        <span class="channel-name">
+                            {{channelsCtrl.channels[$index + 1].name}}
+                        </span>
+                    </span>
                     <img class="channel-face" ng-src="{{channelsCtrl.channels[$index + 1].face}}">
                 </a>
             </div>

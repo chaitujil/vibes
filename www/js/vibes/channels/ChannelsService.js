@@ -17,7 +17,7 @@
       id: 1,
       name: 'station2',
       sprovider: 'gowtham',
-      face: 'http://www.musicpiya.com/wp-content/uploads/2015/02/Free-Music-Wallpapers-HD-for-PC-60.jpg',
+      face: 'http://www.thecoolhunter.net/images/stories/2007pics/storiesnew2007pics/marchpics/1music.jpg',
       url: 'http://104.131.151.101:8000/station2',
       radioUuid: '',
       apiKey: ''

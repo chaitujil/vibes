@@ -108,7 +108,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: orange;
-    font-weight: 500;
+    font-weight: bold;
     font-family: monospace, sans-serif;
     line-height: 1.2;
 }
@@ -132,4 +132,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .music-controls .pause-btn {
     background: url('http://www.clker.com/cliparts/2/r/L/G/x/e/pause-button-dark-red-md.png') center center no-repeat;
+}
+.channel-wrapper {
+    background-color: grey;
+    opacity: 0.3;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+}
+.channel-name {
+    color: white;
+    font-family: monospace;
+    font-weight: 500;
+    font-size: 10pt;
+    margin: 10px 0 0 20px;
+    position:fixed;
 }
