@@ -45,7 +45,11 @@
         }
 
         function play() {
-            $rootScope.audio = new Audio(vm.channelUrl);
+            if (typeof $rootScope.audio !== 'undefined') {
+                $rootScope.audio.src = vm.channelUrl;
+            } else {
+                $rootScope.audio = new Audio(vm.channelUrl);
+            }
             $rootScope.audio.play();
             $rootScope.playing = true;
         }
