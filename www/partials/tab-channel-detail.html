@@ -1,28 +1,25 @@
-<ion-view ng-style="{'background': 'url({{channelDetailCtrl.channel.face}}) no-repeat center center fixed',
+<ion-view ng-style="{
 'background-size':'cover',
 '-webkit-background-size': 'cover',
 '-moz-background-size': 'cover',
-'-o-background-size': 'cover'}" view-title="{{channelDetailCtrl.channel.name}}">
+'-o-background-size': 'cover'}" view-title="{{channelDetailCtrl.channel.name}}" class="normal-channels-page">
     <ion-content class="center-content">
         <div align="center">
-            <img class="song-cover" align="right" src="{{channelDetailCtrl.songCover}}">
+            <img class="song-cover" align="center" src="{{channelDetailCtrl.songCover}}">
 
             <div class="row">
+              <div class="col" text-center>
                 <div ng-class="{'normal-song-info': channelDetailCtrl.isNormal(),'blue-song-info': !channelDetailCtrl.isNormal()}">
                     <p align="left">Title: {{channelDetailCtrl.songTitle}}</p>
                     <p align="left">Artists: {{channelDetailCtrl.songArtists}}</p>
-                    <h4 align="left">Artists: {{channelDetailCtrl.songArtists}}</h4>
+                </div>
+              </div>
             </div>
             <div class="row">
-                <div class="col text-center">
-                <!i class="icon ion-play icon-large"></i>
-                <a class="button button-icon icon icon-large" ng-class="item.checked ? 'ion-pause' : 'ion-play'" ng-click="toggleIcon($event, 'ion-play')"> </a>
-                </div>
-            </div>
-
-            <div class="music-controls">
-                <i class="icon play-btn" ng-click="channelDetailCtrl.play()" ng-show="playing!==true"></i>
-                <i class="icon pause-btn" ng-click="channelDetailCtrl.pause()" ng-show="playing!==false"></i>
+              <div class="col">
+                <i class="icon ion-play icon-large" ng-click="channelDetailCtrl.play()" ng-show="playing!==true"></i>
+                <i class="icon ion-pause icon-large" ng-click="channelDetailCtrl.pause()" ng-show="playing!==false"></i>
+              </div>
             </div>
         </div>
     </ion-content>

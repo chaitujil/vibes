@@ -14,7 +14,7 @@
     font-size: 48px;
 }
 .icon-large {
-    font-size: x-large;
+    font-size: xx-large;
     color: #71c0b3;
 }
 .play:before {
@@ -27,8 +27,9 @@
     font-weight: bold;
     font-size: 14pt;
     font-style: normal;
-    font-family: monospace, sans-serif;
-    color: yellow;
+    #font-family: monospace, sans-serif;
+    #color: yellow;
+    color: #ffffff;
     line-height: 1.2;
     margin-top: 10px;
     #font-family: sans-serif;
@@ -44,11 +45,10 @@
     margin-top: 10px;
 }
 .song-cover {
-    width: 50%;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     position: relative;
-    #border-radius: 10px;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 .bar.bar-stable {
     #background-color: rgba(255,255,255,.3) !important;
@@ -57,8 +57,8 @@
 }
 .tabs {
     #background-color: rgba(255,255,255,.3) !important;
-    #background-color: #71c0b3;
-    background-color: #f2c500;
+    background-color: #71c0b3;
+    #background-color: #f2c500;
 }
 .scroll-content {
     overflow: visible !important;
@@ -70,7 +70,8 @@
     background-color: #ffffff;
 }
 .item-complex .item-content, .item-radio .item-content {
-    background-color: #ffffff;
+    background-color: #B36C6C;
+    #background-color: #ffffff;
 }
 .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
     padding-left: 125px;
@@ -115,11 +116,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 /* Music Controls */
 .music-controls .icon{
     display: inline-block;
-    height: 300px;
+    #height: 300px;
     position: relative;
     z-index: 10;
     width: 100%;
-    zoom: 20%;
+    #zoom: 20%;
 }
 
 .music-controls .play-btn {
@@ -148,5 +149,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding: 0;
 }
 .normal-channels-page {
-    background-color: lightgreen;
+    #background-color: lightgreen;
+    background-color: #566870;
 }
