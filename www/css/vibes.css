@@ -2,6 +2,7 @@
     height: 200px;
     width: 100%;
 }
+
 @font-face {
     font-family: "Ionicons";
     src: url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1");
@@ -9,31 +10,19 @@
     font-weight: normal;
     font-style: normal;
 }
+
 .button {
     font-family: "Ionicons", serif;
     font-size: 48px;
-}
-.icon-large {
-    font-size: xx-large;
-    color: #71c0b3;
-}
-.play:before {
-    content: '\f488'
-}
-.pause:before {
-    content: '\f478'
 }
 .normal-song-info {
     font-weight: bold;
     font-size: 14pt;
     font-style: normal;
-    #font-family: monospace, sans-serif;
-    #color: yellow;
-    color: #ffffff;
+    font-family: monospace, sans-serif;
+    color: yellow;
     line-height: 1.2;
     margin-top: 10px;
-    #font-family: sans-serif;
-    #color: #71c0b3;
 }
 .blue-song-info {
     font-weight: bold;
@@ -45,20 +34,16 @@
     margin-top: 10px;
 }
 .song-cover {
-    width: 320px;
-    height: 320px;
+    width: 100%;
+    height: 400px;
     position: relative;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .bar.bar-stable {
-    #background-color: rgba(255,255,255,.3) !important;
-    background-color: #71c0b3;
-    #background-color: #ffd000;
+    background-color: rgba(255,255,255,.3) !important;
 }
 .tabs {
-    #background-color: rgba(255,255,255,.3) !important;
-    background-color: #71c0b3;
-    #background-color: #f2c500;
+    background-color: rgba(255,255,255,.3) !important;
 }
 .scroll-content {
     overflow: visible !important;
@@ -66,12 +51,8 @@
 .padding {
     margin: 25px !important;
 }
-.pane {
-    background-color: #ffffff;
-}
 .item-complex .item-content, .item-radio .item-content {
     background-color: #B36C6C;
-    #background-color: #ffffff;
 }
 .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
     padding-left: 125px;
@@ -89,19 +70,16 @@
     border-radius: 10px;
 }
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
-    #color: darkblue;
-    color: #ffffff;
+    color: darkblue;
 }
 .bar.bar-stable .title {
-    #color: darkblue;
-    color: #ffffff;
+    color: darkblue;
 }
 .bar-stable .button.button-clear {
     border-color: transparent;
     background: none;
     box-shadow: none;
-    #color: darkblue;
-    color: #ffffff;
+    color: darkblue;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: orange;
@@ -116,11 +94,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 /* Music Controls */
 .music-controls .icon{
     display: inline-block;
-    #height: 300px;
+    height: 300px;
     position: relative;
     z-index: 10;
     width: 100%;
-    #zoom: 20%;
+    zoom: 20%;
 }
 
 .music-controls .play-btn {
@@ -149,6 +127,5 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding: 0;
 }
 .normal-channels-page {
-    #background-color: lightgreen;
-    background-color: #566870;
+    background-color: lightgreen;
 }
