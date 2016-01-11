@@ -98,22 +98,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding: 2px;
 }
 
-/* Music Controls */
-.music-controls .icon {
+.music-controls .icon-play-pause {
     display: inline-block;
-    height: 300px;
     position: relative;
-    z-index: 10;
-    width: 100%;
-    zoom: 20%;
+    font-size: 75px;
 }
 
-.music-controls .play-btn {
-    background: url('http://www.clipartbest.com/cliparts/dir/65K/dir65Kei9.png') center center no-repeat;
-}
-
-.music-controls .pause-btn {
-    background: url('http://www.clker.com/cliparts/2/r/L/G/x/e/pause-button-dark-red-md.png') center center no-repeat;
+.music-controls .icon-skip {
+    display: inline-block;
+    position: relative;
+    font-size: 50px;
+    padding: 20px;
 }
 
 .channel-wrapper {

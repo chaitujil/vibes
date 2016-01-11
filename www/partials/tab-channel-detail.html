@@ -11,8 +11,10 @@
             </div>
 
             <div class="music-controls">
-                <i class="icon play-btn" ng-click="channelDetailCtrl.play()" ng-show="playing!==true"></i>
-                <i class="icon pause-btn" ng-click="channelDetailCtrl.pause()" ng-show="playing!==false"></i>
+                <i class="icon-skip ion-skip-backward" ng-click="channelDetailCtrl.gotoPrevious(channelDetailCtrl.channel.id)"></i>
+                <i class="icon-play-pause ion-play" ng-click="channelDetailCtrl.play()" ng-show="playing!==true"></i>
+                <i class="icon-play-pause ion-pause" ng-click="channelDetailCtrl.pause()" ng-show="playing!==false"></i>
+                <i class="icon-skip ion-skip-forward" ng-click="channelDetailCtrl.gotoNext(channelDetailCtrl.channel.id)"></i>
             </div>
         </div>
     </ion-content>

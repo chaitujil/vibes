@@ -41,6 +41,7 @@
                 url: '/channels',
                 views: {
                     'tab-channels': {
+                        cache: false,
                         templateUrl: 'partials/tab-channels.html',
                         controller: 'ChannelsCtrl as channelsCtrl'
                     }

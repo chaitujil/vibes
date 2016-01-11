@@ -5,10 +5,10 @@
         .controller('ChannelDetailCtrl', channelDetailCtrl);
 
     channelDetailCtrl.$inject = ['$rootScope', '$stateParams', '$timeout', 'HttpService',
-        'ngXml2json', 'ChannelsService', '$sce', '$log'];
+        'ngXml2json', 'ChannelsService', '$sce', '$log', '$state'];
 
     function channelDetailCtrl($rootScope, $stateParams, $timeout, HttpService,
-                               ngXml2json, ChannelsService, $sce, $log) {
+                               ngXml2json, ChannelsService, $sce, $log, $state) {
         var vm = this;
         vm.play = play;
         vm.pause = pause;
@@ -18,6 +18,8 @@
         vm.songArtists = null;
         vm.songCover = null;
         vm.isDefaultTheme = isDefaultTheme;
+        vm.gotoPrevious = gotoPrevious;
+        vm.gotoNext = gotoNext;
 
         init();
 
@@ -102,6 +104,18 @@
             }, function (error) {
                 $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
             });
+        }
+
+        function gotoPrevious(curChannelId) {
+            if (curChannelId > 0) {
+                $state.go('tab.channel-detail', {channelId: (curChannelId - 1)});
+            }
+        }
+
+        function gotoNext(curChannelId) {
+            if (curChannelId < (ChannelsService.all().length - 1)) {
+                $state.go('tab.channel-detail', {channelId: (curChannelId + 1)});
+            }
         }
 
         function isDefaultTheme() {
