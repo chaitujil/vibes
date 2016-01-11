@@ -48,12 +48,6 @@
 .scroll-content {
     overflow: visible !important;
 }
-.padding {
-    margin: 25px !important;
-}
-.item-complex .item-content, .item-radio .item-content {
-    background-color: #B36C6C;
-}
 .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
     padding-left: 125px;
     min-height: 100px;
@@ -126,6 +120,21 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .row {
     padding: 0;
 }
-.normal-channels-page {
+.vibes-page {
     background-color: lightgreen;
+}
+.contact-info {
+  font-size: 12pt;
+  font-family: monospace, sans-serif;
+  color: darkblue;
+  margin: 20px;
+}
+.settings-items {
+  font-size: 12pt;
+  font-family: monospace, sans-serif;
+  color: darkblue;
+  background: transparent;
+}
+.my-custom-icon {
+  float: right;
 }

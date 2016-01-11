@@ -1,5 +1,5 @@
 // Ionic vibes App
-(function() {
+(function () {
     'use strict';
 
     angular.module('vibes', ['ionic', 'angularXml2json'])
@@ -7,7 +7,7 @@
         .config(configStateProvider)
         .config(['$httpProvider', configHttpProvider]);
 
-    function runIonic ($ionicPlatform) {
+    function runIonic($ionicPlatform) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -23,7 +23,7 @@
         });
     }
 
-    function configStateProvider ($stateProvider, $urlRouterProvider) {
+    function configStateProvider($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('login', {
                 url: '/login',
@@ -62,6 +62,15 @@
                     'tab-settings': {
                         templateUrl: 'partials/tab-settings.html',
                         controller: 'SettingsCtrl as settingsCtrl'
+                    }
+                }
+            })
+            .state('tab.contactus', {
+                url: '/settings/contactus',
+                views: {
+                    'tab-settings': {
+                        templateUrl: 'partials/tab-contactus.html',
+                        controller: 'ContactUsCtrl as contactUsCtrl'
                     }
                 }
             });

@@ -17,7 +17,7 @@
         vm.songTitle = null;
         vm.songArtists = null;
         vm.songCover = null;
-        vm.isNormal = isNormal;
+        vm.isDefaultTheme = isDefaultTheme;
 
         init();
 
@@ -104,7 +104,7 @@
             });
         }
 
-        function isNormal() {
+        function isDefaultTheme() {
             return true;
         }
     }
