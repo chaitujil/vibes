@@ -19,6 +19,7 @@
             closeModal();
             $rootScope.newChannelId = channelId;
             $ionicModal.fromTemplateUrl('js/vibes/channels/modal-channel-detail.html', {
+                scope: $rootScope,
                 animation: 'slide-in-up'
             }).then(function (modal) {
                 $rootScope.modal = modal;
