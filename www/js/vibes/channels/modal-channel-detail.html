@@ -1,12 +1,21 @@
-<ion-view cache-view="false" class="channel-detail-page" view-title="{{channelDetailCtrl.channel.name}}">
+<ion-modal-view ng-controller="ChannelDetailCtrl as channelDetailCtrl" class="channel-detail-page">
+    <ion-header-bar>
+        <div>
+            <button class="button button-clear" ng-click="channelDetailCtrl.closeModal()"><i class="ion-chevron-down"></i></button>
+        </div>
+        <h1 class="title">{{channelDetailCtrl.channel.name}}</h1>
+        <div class="buttons">
+            <button class="button button-clear"><i class="ion-more"></i></button>
+        </div>
+    </ion-header-bar>
     <ion-content class="center-content">
         <div align="center">
-            <img class="song-cover" align="right" src="{{channelDetailCtrl.songCover}}">
+            <img class="song-cover" align="center" src="{{songCover}}">
 
             <div class="row">
                 <div ng-class="{'normal-song-info': channelDetailCtrl.isDefaultTheme(),'blue-song-info': !channelDetailCtrl.isDefaultTheme()}">
-                    <p align="left">Title: {{channelDetailCtrl.songTitle}}</p>
-                    <p align="left">Artists: {{channelDetailCtrl.songArtists}}</p>
+                    <p align="left">Title: {{songTitle}}</p>
+                    <p align="left">Artists: {{songArtists}}</p>
                 </div>
             </div>
 
@@ -18,4 +27,5 @@
             </div>
         </div>
     </ion-content>
-</ion-view>
+</ion-modal-view>
+

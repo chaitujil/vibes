@@ -4,27 +4,28 @@
     angular.module('vibes')
         .controller('ChannelDetailCtrl', channelDetailCtrl);
 
-    channelDetailCtrl.$inject = ['$rootScope', '$stateParams', '$timeout', 'HttpService',
-        'ngXml2json', 'ChannelsService', '$sce', '$log', '$state'];
+    channelDetailCtrl.$inject = ['$rootScope', '$timeout', 'HttpService', 'ngXml2json', 'ChannelsService', '$sce', '$log', 'ModalService'];
 
-    function channelDetailCtrl($rootScope, $stateParams, $timeout, HttpService,
-                               ngXml2json, ChannelsService, $sce, $log, $state) {
+    function channelDetailCtrl($rootScope, $timeout, HttpService, ngXml2json, ChannelsService, $sce, $log, ModalService) {
         var vm = this;
         vm.play = play;
         vm.pause = pause;
         vm.channel = null;
         vm.channelUrl = null;
-        vm.songTitle = null;
-        vm.songArtists = null;
-        vm.songCover = null;
-        vm.isDefaultTheme = isDefaultTheme;
         vm.gotoPrevious = gotoPrevious;
         vm.gotoNext = gotoNext;
+        vm.openModal = openModal;
+        vm.closeModal = closeModal;
+
+        $rootScope.songTitle = null;
+        $rootScope.songArtists = null;
+        $rootScope.songCover = null;
+        $rootScope.isDefaultTheme = isDefaultTheme;
 
         init();
 
         function init() {
-            vm.channel = ChannelsService.get($stateParams.channelId);
+            vm.channel = ChannelsService.get($rootScope.newChannelId);
             vm.channelUrl = $sce.trustAsResourceUrl(vm.channel.url);
 
             if ($rootScope.playing !== true) {
@@ -76,14 +77,14 @@
 
         function refreshGowthamSongInfo() {
             HttpService.getGowthamCurrentSongInfo(vm.channel.name).then(function (response) {
-                vm.songTitle = response.track;
-                vm.songArtists = response.artist;
-                vm.songCover = 'http://104.131.151.101/' + vm.channel.name + '/image.jpg?' + new Date().getTime();
+                $rootScope.songTitle = response.track;
+                $rootScope.songArtists = response.artist;
+                $rootScope.songCover = 'http://104.131.151.101/' + vm.channel.name + '/image.jpg?' + new Date().getTime();
                 // Calling back refreshGowthamSongInfo every 5 sec
                 $timeout(refreshGowthamSongInfo, 5000);
             }, function (error) {
-                vm.songTitle = '--';
-                vm.songArtists = '--';
+                $rootScope.songTitle = '--';
+                $rootScope.songArtists = '--';
                 $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
             });
         }
@@ -91,12 +92,12 @@
         function refreshRadionomySongInfo() {
             HttpService.getRadionomyCurrentSongInfo(vm.channel.radioUuid, vm.channel.apiKey).then(function (response) {
                 var currentSongInfo = ngXml2json.parser(response);
-                vm.songTitle = currentSongInfo.tracks.track.title;
-                vm.songArtists = currentSongInfo.tracks.track.artists;
+                $rootScope.songTitle = currentSongInfo.tracks.track.title;
+                $rootScope.songArtists = currentSongInfo.tracks.track.artists;
                 if (typeof currentSongInfo.tracks.track.cover !== 'undefined' && currentSongInfo.tracks.track.cover !== null && currentSongInfo.tracks.track.cover.length > 1) {
-                    vm.songCover = currentSongInfo.tracks.track.cover;
+                    $rootScope.songCover = currentSongInfo.tracks.track.cover;
                 } else {
-                    vm.songCover = 'http://www.musicheavens.com/wp-content/gallery/music-photo/beautiful-guitar-guitar-music-1920x1080.jpg';
+                    $rootScope.songCover = 'http://www.musicheavens.com/wp-content/gallery/music-photo/beautiful-guitar-guitar-music-1920x1080.jpg';
                 }
 
                 // Calling back refreshRadionomySongInfo
@@ -108,18 +109,26 @@
 
         function gotoPrevious(curChannelId) {
             if (curChannelId > 0) {
-                $state.go('tab.channel-detail', {channelId: (curChannelId - 1)});
+                ModalService.setChannel(curChannelId - 1);
             }
         }
 
         function gotoNext(curChannelId) {
             if (curChannelId < (ChannelsService.all().length - 1)) {
-                $state.go('tab.channel-detail', {channelId: (curChannelId + 1)});
+                ModalService.setChannel(curChannelId + 1);
             }
         }
 
         function isDefaultTheme() {
             return true;
+        }
+
+        function openModal() {
+            ModalService.openModal();
+        }
+
+        function closeModal() {
+            ModalService.closeModal();
         }
     }
 })();

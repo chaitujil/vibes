@@ -1,8 +1,8 @@
-<ion-view view-title="Vibes" class="vibes-page">
+<ion-view view-title="Vibes" class="normal-channels-page">
     <ion-content>
         <ion-list>
             <div ng-repeat="channel in channelsCtrl.channels" ng-if="$index % 2 == 0" class="row">
-                <a class="col-50" href="#/tab/channels/{{channelsCtrl.channels[$index].id}}">
+                <a class="col-50" ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index].id)">
                     <span class="channel-wrapper">
                         <span class="channel-name">
                             {{channelsCtrl.channels[$index].name}}
@@ -10,7 +10,7 @@
                     </span>
                     <img class="channel-face" ng-src="{{channelsCtrl.channels[$index].face}}">
                 </a>
-                <a class="col-50" href="#/tab/channels/{{channelsCtrl.channels[$index + 1].id}}">
+                <a class="col-50" ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index + 1].id)">
                     <span class="channel-wrapper">
                         <span class="channel-name">
                             {{channelsCtrl.channels[$index + 1].name}}
@@ -21,4 +21,8 @@
             </div>
         </ion-list>
     </ion-content>
+    <div class="music-footer" ng-if="playing!==false" ng-click="channelsCtrl.openModal()">
+        <span class="track">{{songTitle}}</span>
+        <span class="artist">{{songArtists}}</span>
+    </div>
 </ion-view>

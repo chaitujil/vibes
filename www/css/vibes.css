@@ -157,3 +157,25 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .channel-detail-page {
     background-color: lightblue;
 }
+
+.music-footer{
+    position: fixed;
+    bottom: 47px;
+    left:0;
+    right: 0;
+    text-align: center;
+    height: 46px;
+    border-top:1px solid #b2b2b2;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+.music-footer .track, .music-footer .artist{
+    float: left;
+    width: 100%;
+    margin: 0;
+    font-size: 12px;
+}
+.music-footer .track{
+    margin-top: 3px;
+    font-weight: bold;
+}

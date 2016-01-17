@@ -25,16 +25,11 @@
 
     function configStateProvider($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('login', {
-                url: '/login',
-                templateUrl: 'partials/login.html',
-                controller: 'LoginCtrl as loginCtrl'
-            })
-            // setup an abstract state for the tabs directive
             .state('tab', {
+            // setup an abstract state for the tabs directive
                 url: '/tab',
                 abstract: true,
-                templateUrl: 'partials/tabs.html'
+                templateUrl: 'js/vibes/other/tabs.html'
             })
             // Each tab has its own nav history stack:
             .state('tab.channels', {
@@ -42,18 +37,8 @@
                 views: {
                     'tab-channels': {
                         cache: false,
-                        templateUrl: 'partials/tab-channels.html',
+                        templateUrl: 'js/vibes/channels/tab-channels.html',
                         controller: 'ChannelsCtrl as channelsCtrl'
-                    }
-                }
-            })
-            .state('tab.channel-detail', {
-                url: '/channels/:channelId',
-                views: {
-                    'tab-channels': {
-                        cache: false,
-                        templateUrl: 'partials/tab-channel-detail.html',
-                        controller: 'ChannelDetailCtrl as channelDetailCtrl'
                     }
                 }
             })
@@ -61,7 +46,7 @@
                 url: '/settings',
                 views: {
                     'tab-settings': {
-                        templateUrl: 'partials/tab-settings.html',
+                        templateUrl: 'js/vibes/settings/tab-settings.html',
                         controller: 'SettingsCtrl as settingsCtrl'
                     }
                 }
@@ -70,7 +55,7 @@
                 url: '/settings/contactus',
                 views: {
                     'tab-settings': {
-                        templateUrl: 'partials/tab-contactus.html',
+                        templateUrl: 'js/vibes/settings/tab-contactus.html',
                         controller: 'ContactUsCtrl as contactUsCtrl'
                     }
                 }
