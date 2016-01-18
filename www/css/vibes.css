@@ -16,12 +16,16 @@
     font-size: 48px;
 }
 
+.icon-large {
+    font-size: xx-large;
+    color: #71c0b3;
+}
 .normal-song-info {
     font-weight: bold;
     font-size: 12pt;
     font-style: normal;
-    font-family: monospace, sans-serif;
-    color: darkblue;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #50514F;
     line-height: 1.2;
     margin-top: 10px;
 }
@@ -30,8 +34,9 @@
     font-weight: bold;
     font-size: 14pt;
     font-style: normal;
-    font-family: monospace, sans-serif;
-    color: darkblue;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #color: darkblue;
+    color: #50514F;
     line-height: 1.2;
     margin-top: 10px;
 }
@@ -40,15 +45,22 @@
     width: 100%;
     height: 400px;
     position: relative;
-    border-radius: 10px;
+    #border-radius: 10px;
 }
 
 .bar.bar-stable {
-    background-color: rgba(255, 255, 255, .3) !important;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #background-color: rgba(255, 255, 255, .3) !important;
+    #background-color: #71c0b3;
+    background-color: #e86e6e;
+    #background-color: #ffd000;
 }
 
 .tabs {
-    background-color: rgba(255, 255, 255, .3) !important;
+    #background-color: rgba(255, 255, 255, .3) !important;
+    #background-color: #71c0b3;
+    background-color: #e86e6e;
+    #background-color: #f2c500;
 }
 
 .scroll-content {
@@ -73,24 +85,27 @@
 }
 
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
-    color: darkblue;
+    #color: darkblue;
+    color: #ffffff;
 }
 
 .bar.bar-stable .title {
-    color: darkblue;
+    #color: darkblue;
+    color: #ffffff;
 }
 
 .bar-stable .button.button-clear {
     border-color: transparent;
     background: none;
     box-shadow: none;
-    color: darkblue;
+    #color: darkblue;
+    color: #ffffff;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: darkblue;
     font-weight: bold;
-    font-family: monospace, sans-serif;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     line-height: 1.2;
 }
 
@@ -101,14 +116,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .music-controls .icon-play-pause {
     display: inline-block;
     position: relative;
-    font-size: 75px;
+    font-size: 50px;
+    color: #50514F;
 }
 
 .music-controls .icon-skip {
     display: inline-block;
     position: relative;
-    font-size: 50px;
+    font-size: 40px;
     padding: 20px;
+    color: #50514f;
 }
 
 .channel-wrapper {
@@ -121,7 +138,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .channel-name {
     color: white;
-    font-family: monospace;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-weight: 500;
     font-size: 10pt;
     margin: 10px 0 0 20px;
@@ -133,7 +150,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .vibes-page {
-    background-color: lightblue;
+    #background-color: lightblue;
 }
 
 .contact-info {
@@ -155,7 +172,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .channel-detail-page {
-    background-color: lightblue;
+    #background-color: lightblue;
 }
 
 .music-footer{
