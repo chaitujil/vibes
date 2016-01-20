@@ -17,23 +17,22 @@
 }
 .normal-song-info {
     font-weight: bold;
-    font-size: 12pt;
+    font-size: 11pt;
     font-style: normal;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: #50514F;
-    line-height: 1.2;
-    margin-top: 10px;
+    line-height: 1;
+    margin: 10px;
 }
 
 .blue-song-info {
     font-weight: bold;
-    font-size: 14pt;
+    font-size: 11pt;
     font-style: normal;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    #color: darkblue;
     color: #50514F;
-    line-height: 1.2;
-    margin-top: 10px;
+    line-height: 1;
+    margin: 10px;
 }
 
 .song-cover {
@@ -106,8 +105,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding: 2px;
 }
 
-
-
 .channel-face {
     height: 200px;
     width: 100%;
@@ -160,12 +157,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     float: right;
 }
 
-
-
 .music-controls .icon-play-pause {
     display: inline-block;
     position: relative;
-    font-size: 50px;
+    font-size: 45px;
     color: #50514F;
 }
 
@@ -179,11 +174,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .music-footer{
     position: fixed;
-    bottom: 47px;
+    bottom: 49px;
     left:0;
     right: 0;
     text-align: center;
-    height: 50px;
+    height: 40px;
     border-top:1px solid #b2b2b2;
     background-color: #f8f8f8;
     cursor: pointer;
@@ -196,21 +191,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .music-footer .track{
-    margin-top: 3px;
+    margin: 0;
     font-weight: bold;
 }
 
 .music-footer .channel-face{
     float: left;
-    width: 50px;
+    height: 30px;
+    width: 30px;
+    margin: 5px;
     font-weight: bold;
 }
 
 .music-footer .play-pause{
     float: right;
-    margin: 7px;
-    margin-right: 10px;
+    margin: 5px;
+    margin-right: 15px;
     #width: 10%;
     color: #50514f;
-    font-size: 36px;
+    font-size: 30px;
 }

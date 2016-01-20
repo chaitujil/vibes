@@ -1,8 +1,8 @@
-<ion-view view-title="Vibes" class="normal-channels-page">
+<ion-view view-title="VIBES" class="normal-channels-page">
     <ion-content>
         <ion-list>
             <div ng-repeat="channel in channelsCtrl.channels" ng-if="$index % 2 == 0" class="row">
-                <a class="col" ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index].id)">
+                <a class="col-50" ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index].id)">
                     <span class="channel-wrapper">
                         <span class="channel-name">
                             {{channelsCtrl.channels[$index].name}}
@@ -10,7 +10,7 @@
                     </span>
                     <img class="channel-face" ng-src="{{channelsCtrl.channels[$index].face}}">
                 </a>
-                <a class="col" ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index + 1].id)">
+                <a class="col-50" ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index + 1].id)">
                     <span class="channel-wrapper">
                         <span class="channel-name">
                             {{channelsCtrl.channels[$index + 1].name}}
@@ -23,14 +23,15 @@
     </ion-content>
     <div class="music-footer" ng-if="modal!==undefined">
       <div class="row">
-      <div class="col-33">
+      <div class="col-10">
         <img class="channel-face" ng-src="{{channelsCtrl.channels[curChannel.id].face}}">
+
       </div>
-      <div class="col-33" ng-click="channelsCtrl.openModal()">
+      <div class="col-80" ng-click="channelsCtrl.openModal()">
         <h class="track">{{songTitle}}</h>
         <p class="artist">{{songArtists}}</p>
       </div>
-      <div class="col-33">
+      <div class="col-10">
         <i class="play-pause ion-play" ng-click="channelDetailCtrl.play()" ng-show="playing!==true"></i>
         <i class="play-pause ion-pause" ng-click="channelDetailCtrl.pause()" ng-show="playing!==false"></i>
      </div>
