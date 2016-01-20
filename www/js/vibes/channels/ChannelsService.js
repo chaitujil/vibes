@@ -8,7 +8,7 @@
         var channels = [{
             id: 0,
             name: 'station1',
-            sprovider: 'gowtham',
+            sprovider: 'vibes',
             face: 'http://studentmediahub.com/wp-content/uploads/2015/09/6908980-party-time.jpg',
             url: 'http://104.131.151.101:8000/station1',
             radioUuid: '',
@@ -16,27 +16,27 @@
         }, {
             id: 1,
             name: 'station2',
-            sprovider: 'gowtham',
+            sprovider: 'vibes',
             face: 'http://www.thecoolhunter.net/images/stories/2007pics/storiesnew2007pics/marchpics/1music.jpg',
             url: 'http://104.131.151.101:8000/station2',
             radioUuid: '',
             apiKey: ''
         }, {
             id: 2,
-            name: 'vadapav',
-            sprovider: 'radionomy',
+            name: 'station3',
+            sprovider: 'vibes',
             face: 'http://www.arrahman.com/images/background-images/arrahman_bodybg.jpg',
-            url: 'http://listen.radionomy.com/vadapav',
-            radioUuid: 'f4af4953-6985-4ec8-8cbe-e68324c5e61f',
-            apiKey: 'b9bc802d-3af8-445b-bf51-40b4e690cc0d'
+            url: 'http://104.131.151.101:8000/station3',
+            radioUuid: '',
+            apiKey: ''
         }, {
             id: 3,
-            name: 'idlichutney',
-            sprovider: 'radionomy',
+            name: 'station4',
+            sprovider: 'vibes',
             face: 'http://examinedexistence.com/wp-content/uploads/2013/03/music-notes.jpg',
-            url: 'http://listen.radionomy.com/idlichutney',
-            radioUuid: '0035c069-41a0-48cb-bca8-bcb0ada884e8',
-            apiKey: 'b9bc802d-3af8-445b-bf51-40b4e690cc0d'
+            url: 'http://104.131.151.101:8000/station4',
+            radioUuid: '',
+            apiKey: ''
         }, {
             id: 4,
             name: 'vadapav2',

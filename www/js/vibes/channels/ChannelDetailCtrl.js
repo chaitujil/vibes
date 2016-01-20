@@ -65,7 +65,7 @@
         function refreshSongInfo() {
             if (typeof vm.channel.sprovider !== 'undefined') {
                 switch (vm.channel.sprovider) {
-                    case 'gowtham':
+                    case 'vibes':
                         refreshGowthamSongInfo();
                         break;
                     case 'radionomy':
