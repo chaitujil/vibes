@@ -4,14 +4,16 @@
     angular.module('vibes')
         .controller('ChannelsCtrl', channelsCtrl);
 
-    channelsCtrl.$inject = ['ChannelsService', 'ModalService'];
+    channelsCtrl.$inject = ['ChannelsService', 'ModalService', 'AudioService'];
 
-    function channelsCtrl(ChannelsService, ModalService) {
+    function channelsCtrl(ChannelsService, ModalService, AudioService) {
         var vm = this;
         vm.channels = null;
         vm.setChannel = setChannel;
         vm.openModal = openModal;
         vm.closeModal = closeModal;
+        vm.play = play;
+        vm.pause = pause;
 
         init();
         function init() {
@@ -28,6 +30,14 @@
 
         function closeModal() {
             ModalService.closeModal();
+        }
+
+        function play() {
+            AudioService.play();
+        }
+
+        function pause() {
+            AudioService.pause();
         }
     }
 })();

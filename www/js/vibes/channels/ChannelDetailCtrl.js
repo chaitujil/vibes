@@ -4,9 +4,9 @@
     angular.module('vibes')
         .controller('ChannelDetailCtrl', channelDetailCtrl);
 
-    channelDetailCtrl.$inject = ['$rootScope', '$timeout', 'HttpService', 'ngXml2json', 'ChannelsService', '$sce', '$log', 'ModalService'];
+    channelDetailCtrl.$inject = ['$rootScope', '$timeout', 'HttpService', 'ngXml2json', 'ChannelsService', '$sce', '$log', 'ModalService', 'AudioService'];
 
-    function channelDetailCtrl($rootScope, $timeout, HttpService, ngXml2json, ChannelsService, $sce, $log, ModalService) {
+    function channelDetailCtrl($rootScope, $timeout, HttpService, ngXml2json, ChannelsService, $sce, $log, ModalService, AudioService) {
         var vm = this;
         vm.play = play;
         vm.pause = pause;
@@ -48,18 +48,33 @@
         }
 
         function play() {
-            if (typeof $rootScope.audio !== 'undefined') {
-                $rootScope.audio.src = vm.channelUrl;
-            } else {
-                $rootScope.audio = new Audio(vm.channelUrl);
-            }
-            $rootScope.audio.play();
-            $rootScope.playing = true;
+            AudioService.play();
         }
 
         function pause() {
-            $rootScope.audio.pause();
-            $rootScope.playing = false;
+            AudioService.pause();
+        }
+
+        function gotoPrevious(curChannelId) {
+            if (curChannelId > 0) {
+                $rootScope.newChannelId = (curChannelId - 1);
+                init();
+            }
+        }
+
+        function gotoNext(curChannelId) {
+            if (curChannelId < (ChannelsService.all().length - 1)) {
+                $rootScope.newChannelId = (curChannelId + 1);
+                init();
+            }
+        }
+
+        function openModal() {
+            ModalService.openModal();
+        }
+
+        function closeModal() {
+            ModalService.closeModal();
         }
 
         function refreshSongInfo() {
@@ -107,28 +122,8 @@
             });
         }
 
-        function gotoPrevious(curChannelId) {
-            if (curChannelId > 0) {
-                ModalService.setChannel(curChannelId - 1);
-            }
-        }
-
-        function gotoNext(curChannelId) {
-            if (curChannelId < (ChannelsService.all().length - 1)) {
-                ModalService.setChannel(curChannelId + 1);
-            }
-        }
-
         function isDefaultTheme() {
             return true;
-        }
-
-        function openModal() {
-            ModalService.openModal();
-        }
-
-        function closeModal() {
-            ModalService.closeModal();
         }
     }
 })();
