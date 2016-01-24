@@ -10,13 +10,16 @@
         var service = {
             setChannel: setChannel,
             openModal: openModal,
-            closeModal: closeModal
+            closeModal: closeModal,
+            removeModal: removeModal
         };
 
         return service;
 
         function setChannel(channelId) {
-            closeModal();
+            if(typeof $rootScope.modal !== 'undefined') {
+                removeModal();
+            }
             $rootScope.newChannelId = channelId;
             $ionicModal.fromTemplateUrl('js/vibes/channels/modal-channel-detail.html', {
                 scope: $rootScope,
@@ -36,6 +39,12 @@
         function closeModal() {
             if (typeof $rootScope.modal !== 'undefined') {
                 $rootScope.modal.hide();
+            }
+        }
+
+        function removeModal() {
+            if (typeof $rootScope.modal !== 'undefined') {
+                $rootScope.modal.remove();
             }
         }
     }

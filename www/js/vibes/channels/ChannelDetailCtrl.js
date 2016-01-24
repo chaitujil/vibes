@@ -92,15 +92,21 @@
 
         function refreshGowthamSongInfo() {
             HttpService.getGowthamCurrentSongInfo(vm.channel.name).then(function (response) {
-                $rootScope.songTitle = response.track;
-                $rootScope.songArtists = response.artist;
-                $rootScope.songCover = 'http://104.131.151.101/' + vm.channel.name + '/image.jpg?' + new Date().getTime();
-                // Calling back refreshGowthamSongInfo every 5 sec
-                $timeout(refreshGowthamSongInfo, 5000);
+                if ($rootScope.curChannel.id == vm.channel.id && $rootScope.playing == true) {
+                    $rootScope.songTitle = response.track;
+                    $rootScope.songArtists = response.artist;
+                    $rootScope.songCover = 'http://104.131.151.101/' + vm.channel.name + '/image.jpg?' + new Date().getTime();
+                    // Calling back refreshGowthamSongInfo every 5 sec
+                    $timeout(refreshGowthamSongInfo, 5000);
+                }
             }, function (error) {
-                $rootScope.songTitle = '--';
-                $rootScope.songArtists = '--';
-                $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
+                if ($rootScope.curChannel.id == vm.channel.id && $rootScope.playing == true) {
+                    $rootScope.songTitle = '--';
+                    $rootScope.songArtists = '--';
+                    $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
+                    console.log(vm.channel.name);
+                    $timeout(refreshGowthamSongInfo, 5000);
+                }
             });
         }
 
