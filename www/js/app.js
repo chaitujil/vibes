@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    angular.module('vibes', ['ionic', 'angularXml2json'])
+    angular.module('vibes', ['ionic', 'angularXml2json', 'ngCordova'])
         .run(runIonic)
         .config(configStateProvider)
         .config(['$httpProvider', configHttpProvider]);
@@ -55,8 +55,17 @@
                 url: '/settings/contactus',
                 views: {
                     'tab-settings': {
-                        templateUrl: 'js/vibes/settings/tab-contactus.html',
+                        templateUrl: 'js/vibes/settings/tab-contact-us.html',
                         controller: 'ContactUsCtrl as contactUsCtrl'
+                    }
+                }
+            })
+            .state('tab.sharethisapp', {
+                url: '/settings/sharethisapp',
+                views: {
+                    'tab-settings': {
+                        templateUrl: 'js/vibes/settings/tab-share-this-app.html',
+                        controller: 'ShareThisAppCtrl as shareThisAppCtrl'
                     }
                 }
             });
