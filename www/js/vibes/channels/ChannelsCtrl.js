@@ -4,9 +4,9 @@
     angular.module('vibes')
         .controller('ChannelsCtrl', channelsCtrl);
 
-    channelsCtrl.$inject = ['ChannelsService', 'ModalService', 'AudioService'];
+    channelsCtrl.$inject = ['ChannelsService', 'ModalService', 'AudioService', 'SongInfoService'];
 
-    function channelsCtrl(ChannelsService, ModalService, AudioService) {
+    function channelsCtrl(ChannelsService, ModalService, AudioService, SongInfoService) {
         var vm = this;
         vm.channels = null;
         vm.setChannel = setChannel;
@@ -34,6 +34,7 @@
 
         function play() {
             AudioService.play();
+            SongInfoService.refreshSongInfo();
         }
 
         function pause() {

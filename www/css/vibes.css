@@ -30,16 +30,19 @@
     font-size: 11pt;
     font-style: normal;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    color: #50514F;
+    #color: #50514F;
+    color: #ffffff;
     line-height: 1;
     margin: 10px;
 }
 
 .song-cover {
-    width: 100%;
+    width: 95%;
+    #max-width:400px;
     height: 400px;
     position: relative;
     #border-radius: 10px;
+    margin-top: 10px;
 }
 
 .bar.bar-stable {
@@ -47,12 +50,16 @@
     #background-color: #71c0b3;
     #background-color: #ffd000;
     background-color: #ff5959;
+    #background-color: #ffffff;
+    #background-color: #17bebb;
 }
 
 .tabs {
     #background-color: #71c0b3;
     #background-color: #f2c500;
     background-color: #ff5959;
+    #background-color: #ffffff;
+    #background-color: #17bebb;
 }
 
 .scroll-content {
@@ -79,11 +86,13 @@
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
     #color: darkblue;
     color: #ffffff;
+    #color: #ff5959;
 }
 
 .bar.bar-stable .title {
     #color: darkblue;
     color: #ffffff;
+    #color: #ff5959;
 }
 
 .bar-stable .button.button-clear {
@@ -92,30 +101,51 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     box-shadow: none;
     #color: darkblue;
     color: #ffffff;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.bar-stable .button.button-more {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    #color: darkblue;
+    color: #ffffff;
+    font-size: 25px;
+    margin-right: 5px;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: darkblue;
+    #color: darkblue;
+    font-weight: bold;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    line-height: 0.5;
+}
+
+p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
+    #color: darkblue;
     font-weight: bold;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     line-height: 1.2;
 }
-
 .center-content {
     padding: 2px;
 }
 
 .channel-face {
-    height: 200px;
+    height: 100%;
     width: 100%;
+    #margin: 5%;
+}
+
+.channel-face-name {
+    text-align: center;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 12pt;
 }
 
 .channel-wrapper {
-    background-color: grey;
-    opacity: 0.3;
-    width: 100%;
-    height: 30px;
-    position: absolute;
+    background-color: black;
 }
 
 .channel-name {
@@ -132,7 +162,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .vibes-page {
-    #background-color: lightblue;
+    #background-color: #444444;
+    #background-color: #50514F;
+    #background-color: black;
+    background-color: #f8f8f8;
 }
 
 .contact-info {
@@ -143,7 +176,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .channel-detail-page {
-    #background-color: lightblue;
+    #background-color: #444444;
+    #background-color: #50514F;
+    background-color: black;
 }
 
 .settings-items {
@@ -158,18 +193,33 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .music-controls .icon-play-pause {
+    float: center;
     display: inline-block;
     position: relative;
-    font-size: 45px;
-    color: #50514F;
+    font-size: 56px;
+    #color: #50514F;
+    #color: #ff5959;
+    color: #17bebb;
 }
 
-.music-controls .icon-skip {
+.music-controls .icon-skip-left {
+    float: right;
     display: inline-block;
     position: relative;
     font-size: 40px;
-    padding: 20px;
-    color: #50514f;
+    padding: 8px;
+    #color: #50514f;
+    color: #17bebb;
+}
+
+.music-controls .icon-skip-right {
+    float: left;
+    display: inline-block;
+    position: relative;
+    font-size: 40px;
+    padding: 8px;
+    #color: #50514f;
+    color: #17bebb;
 }
 
 .music-footer{
@@ -178,36 +228,67 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     left:0;
     right: 0;
     text-align: center;
-    height: 40px;
-    border-top:1px solid #b2b2b2;
-    background-color: #f8f8f8;
+    height: 42px;
+    #border-top:1px solid #b2b2b2;
+    #background-color: #f8f8f8;
+    background-color: #444444;
     cursor: pointer;
 }
+
+.platform-browser .music-footer{
+    position: fixed;
+    bottom: 49px;
+    left:0;
+    right: 0;
+    text-align: center;
+    height: 42px;
+    #border-top:1px solid #b2b2b2;
+    #background-color: #f8f8f8;
+    background-color: #444444;
+    cursor: pointer;
+}
+
+.platform-android .music-footer{
+    position: fixed;
+    bottom: 0 #!important;
+    left:0;
+    right: 0;
+    text-align: center;
+    height: 42px;
+    #border-top:1px solid #b2b2b2;
+    #background-color: #f8f8f8;
+    #background-color: #444444;
+    background-color: black;
+    cursor: pointer;
+}
+
 .music-footer .track, .music-footer .artist{
     float: center;
     #width: 80%;
     margin: 0;
     font-size: 12px;
+    color: #ffffff
 }
 
 .music-footer .track{
     margin: 0;
-    font-weight: bold;
+    #font-weight: bold;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 .music-footer .channel-face{
     float: left;
-    height: 30px;
-    width: 30px;
+    height: 32px;
+    width: 32px;
     margin: 5px;
-    font-weight: bold;
 }
 
 .music-footer .play-pause{
     float: right;
-    margin: 5px;
+    margin: 4px;
     margin-right: 15px;
     #width: 10%;
-    color: #50514f;
-    font-size: 30px;
+    #color: #50514f;
+    color: #17bebb;
+    font-size: 34px;
 }

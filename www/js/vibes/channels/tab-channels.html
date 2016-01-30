@@ -1,23 +1,19 @@
-<ion-view view-title="VIBES" class="normal-channels-page">
+<ion-view view-title="VIBES" class="vibes-page">
     <ion-content>
         <ion-list>
             <div ng-repeat="channel in channelsCtrl.channels" ng-if="$index % 2 == 0" class="row">
-                <a class="col-50" ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index].id)">
-                    <span class="channel-wrapper">
-                        <span class="channel-name">
-                            {{channelsCtrl.channels[$index].name}}
-                        </span>
-                    </span>
-                    <img class="channel-face" ng-src="{{channelsCtrl.channels[$index].face}}">
-                </a>
-                <a class="col-50" ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index + 1].id)">
-                    <span class="channel-wrapper">
-                        <span class="channel-name">
-                            {{channelsCtrl.channels[$index + 1].name}}
-                        </span>
-                    </span>
-                    <img class="channel-face" ng-src="{{channelsCtrl.channels[$index + 1].face}}">
-                </a>
+                <div class="col-50">
+                 <div class="list card">
+                    <img class="channel-face" ng-src="{{channelsCtrl.channels[$index].face}}" ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index].id)">
+                    <h4 class="channel-face-name"> {{channelsCtrl.channels[$index].cname}} </h4>
+                 </div>
+                </div>
+                <div class="col-50">
+                 <div class="list card">
+                    <img class="channel-face" ng-src="{{channelsCtrl.channels[$index+1].face}}" ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index+1].id)">
+                    <h4 class="channel-face-name"> {{channelsCtrl.channels[$index+1].cname}} </h4>
+                 </div>
+                </div>
             </div>
         </ion-list>
     </ion-content>
@@ -32,8 +28,8 @@
         <p class="artist">{{songArtists}}</p>
       </div>
       <div class="col-10">
-        <i class="play-pause ion-play" ng-click="channelsCtrl.play()" ng-show="playing!==true"></i>
-        <i class="play-pause ion-pause" ng-click="channelsCtrl.pause()" ng-show="playing!==false"></i>
+        <i class="play-pause ion-ios-play" ng-click="channelsCtrl.play()" ng-show="playing!==true"></i>
+        <i class="play-pause ion-ios-pause" ng-click="channelsCtrl.pause()" ng-show="playing!==false"></i>
      </div>
      </div>
     </div>

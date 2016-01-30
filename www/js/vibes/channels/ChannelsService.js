@@ -8,43 +8,57 @@
         var channels = [{
             id: 0,
             name: 'station1',
+            cname: 'Hits',
             sprovider: 'vibes',
-            face: 'http://studentmediahub.com/wp-content/uploads/2015/09/6908980-party-time.jpg',
+            face: 'img/hits.jpg',
             url: 'http://104.131.151.101:8000/station1',
             radioUuid: '',
             apiKey: ''
         }, {
             id: 1,
             name: 'station2',
+            cname: 'Love',
             sprovider: 'vibes',
-            face: 'http://www.thecoolhunter.net/images/stories/2007pics/storiesnew2007pics/marchpics/1music.jpg',
+            face: 'img/love.jpg',
             url: 'http://104.131.151.101:8000/station2',
             radioUuid: '',
             apiKey: ''
         }, {
             id: 2,
             name: 'station3',
+            cname: 'Chill',
             sprovider: 'vibes',
-            face: 'http://www.arrahman.com/images/background-images/arrahman_bodybg.jpg',
+            face: 'img/chill.jpg',
             url: 'http://104.131.151.101:8000/station3',
             radioUuid: '',
             apiKey: ''
         }, {
             id: 3,
             name: 'station4',
+            cname: 'Melodies',
             sprovider: 'vibes',
-            face: 'http://examinedexistence.com/wp-content/uploads/2013/03/music-notes.jpg',
+            face: 'img/melodies.jpg',
             url: 'http://104.131.151.101:8000/station4',
             radioUuid: '',
             apiKey: ''
         }, {
             id: 4,
-            name: 'vadapav2',
-            sprovider: 'radionomy',
-            face: 'http://www.ultrahighdefinitionwallpapers.com/wp-content/uploads/2015/07/romantic-white-and-red-hearts-uhd-wallpapers.jpg',
-            url: 'http://listen.radionomy.com/vadapav',
-            radioUuid: 'f4af4953-6985-4ec8-8cbe-e68324c5e61f',
-            apiKey: 'b9bc802d-3af8-445b-bf51-40b4e690cc0d'
+            name: 'station5',
+            cname: 'Party',
+            sprovider: 'vibes',
+            face: 'img/party.jpg',
+            url: 'http://104.131.151.101:8000/station4',
+            radioUuid: '',
+            apiKey: ''
+        }, {
+            id: 5,
+            name: 'station6',
+            cname: 'Beats',
+            sprovider: 'vibes',
+            face: 'img/beats.jpg',
+            url: 'http://104.131.151.101:8000/station4',
+            radioUuid: '',
+            apiKey: ''
         }];
 
         return {
