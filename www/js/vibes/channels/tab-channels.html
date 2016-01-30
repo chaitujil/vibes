@@ -18,19 +18,18 @@
         </ion-list>
     </ion-content>
     <div class="music-footer" ng-if="modal!==undefined">
-      <div class="row">
-      <div class="col-10">
-        <img class="channel-face" ng-src="{{channelsCtrl.channels[curChannel.id].face}}">
-
-      </div>
-      <div class="col-80" ng-click="channelsCtrl.openModal()">
-        <h class="track">{{songTitle}}</h>
-        <p class="artist">{{songArtists}}</p>
-      </div>
-      <div class="col-10">
-        <i class="play-pause ion-ios-play" ng-click="channelsCtrl.play()" ng-show="playing!==true"></i>
-        <i class="play-pause ion-ios-pause" ng-click="channelsCtrl.pause()" ng-show="playing!==false"></i>
-     </div>
-     </div>
+        <div class="row">
+            <div class="col-10">
+                <img class="channel-face" ng-src="{{channelsCtrl.channels[curChannel.id].face}}">
+            </div>
+            <div class="col-80" ng-click="channelsCtrl.openModal()">
+                <marquee><h class="track">{{songTitle}}</h></marquee>
+                <marquee><p class="artist">{{songArtists}}</p></marquee>
+            </div>
+            <div class="col-10">
+                <i class="play-pause ion-ios-play" ng-click="channelsCtrl.play()" ng-show="playing!==true"></i>
+                <i class="play-pause ion-ios-pause" ng-click="channelsCtrl.pause()" ng-show="playing!==false"></i>
+            </div>
+        </div>
     </div>
 </ion-view>
