@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     line-height: 0.5;
 }
 
-p, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
+p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     #color: darkblue;
     font-weight: bold;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -193,6 +193,7 @@ p, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 }
 
 .music-controls .icon-play-pause {
+    float: center;
     display: inline-block;
     position: relative;
     font-size: 56px;
@@ -249,7 +250,7 @@ p, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 
 .platform-android .music-footer{
     position: fixed;
-    bottom: 0 !important;
+    bottom: 0 #!important;
     left:0;
     right: 0;
     text-align: center;
@@ -262,6 +263,7 @@ p, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 }
 
 .music-footer .track, .music-footer .artist{
+    float: center;
     #width: 80%;
     margin: 0;
     font-size: 12px;
@@ -291,16 +293,24 @@ p, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     font-size: 34px;
 }
 
-.send-suggestion-textbox {
+.send-suggestion .textarea {
     width: 100%;
     margin-top: 10px;
     border-radius: 10px;
 }
 
-.send-suggestion-button {
+.send-suggestion .button {
     font-family: monospace;
     font-size: 12pt;
     margin-top: 10px;
     float: right;
+    border-radius: 5px;
+}
+
+.share-app .button {
+    font-family: monospace;
+    font-size: 12pt;
+    margin-top: 10px;
+    float: left;
     border-radius: 5px;
 }

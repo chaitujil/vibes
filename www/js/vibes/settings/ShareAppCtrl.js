@@ -8,8 +8,6 @@
 
     function ShareThisAppCtrl($cordovaSocialSharing) {
         var vm = this;
-
-        vm.email = "vibesdeveloper2@gmail.com";
         vm.shareViaTwitter = shareViaTwitter;
         vm.shareViaFacebook = shareViaFacebook;
 

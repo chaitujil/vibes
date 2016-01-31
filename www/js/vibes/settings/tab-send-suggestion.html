@@ -1,8 +1,10 @@
 <ion-view view-title="Send us a suggestion" class="vibes-page">
     <ion-content class="center-content">
-        <label class="item item-input send-suggestion-textbox">
-            <textarea rows="10" id="suggestion" ng-model="suggestion" placeholder="Suggestion..."></textarea>
-        </label>
-        <button class="button button-positive send-suggestion-button" ng-click="sendSuggestionCtrl.sendSuggestion(suggestion)">Send</button>
+        <div class="send-suggestion">
+            <label class="item item-input">
+                <textarea rows="10" id="suggestion" ng-model="suggestion" placeholder="Suggestion..."></textarea>
+            </label>
+            <button class="button button-positive" ng-click="sendSuggestionCtrl.sendSuggestion(suggestion); suggestion = null">Send</button>
+        </div>
     </ion-content>
 </ion-view>

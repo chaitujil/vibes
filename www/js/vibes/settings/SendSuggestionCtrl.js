@@ -12,7 +12,11 @@
         vm.sendSuggestion = sendSuggestion;
 
         function sendSuggestion (suggestion) {
-            $log.debug(suggestion);
+            if (typeof suggestion !== "undefined" && suggestion.length > 0) {
+                // TODO send suggestion as an email
+                $log.debug(suggestion);
+                alert("Message sent");
+            }
         }
     }
 })();
