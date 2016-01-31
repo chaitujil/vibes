@@ -99,22 +99,22 @@
                     }
                 }
             }).state('tab.rateapp', {
-            url: '/settings/rateapp',
-            views: {
-              'tab-settings': {
-                templateUrl: 'js/vibes/settings/tab-rate-app.html',
-                controller: 'RateAppCtrl as rateAppCtrl'
-              }
-            }
-          }).state('tab.sendsuggestion', {
-            url: '/settings/sendsuggestion',
-            views: {
-              'tab-settings': {
-                templateUrl: 'js/vibes/settings/tab-send-suggestion.html',
-                controller: 'SendSuggestionCtrl as sendSuggestionCtrl'
-              }
-            }
-          });
+                url: '/settings/rateapp',
+                views: {
+                    'tab-settings': {
+                        templateUrl: 'js/vibes/settings/tab-rate-app.html',
+                        controller: 'RateAppCtrl as rateAppCtrl'
+                    }
+                }
+            }).state('tab.sendsuggestion', {
+                url: '/settings/sendsuggestion',
+                views: {
+                    'tab-settings': {
+                        templateUrl: 'js/vibes/settings/tab-send-suggestion.html',
+                        controller: 'SendSuggestionCtrl as sendSuggestionCtrl'
+                    }
+                }
+            });
 
         $urlRouterProvider.otherwise('/tab/channels');
     }
