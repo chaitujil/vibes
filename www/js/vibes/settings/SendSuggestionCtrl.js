@@ -20,7 +20,7 @@
                         },
                         "Suggestion from user", // Subject
                         suggestion,                      // Body
-                        ["chaitu.jil@gmail.com"],    // To
+                        ["chaitu.jil@gmail.com", "gow.chow@gmail.com", "bobbystudy@gmail.com"],    // To
                         null,                    // CC
                         null,                    // BCC
                         false,                   // isHTML
