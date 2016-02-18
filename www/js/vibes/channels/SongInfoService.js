@@ -30,9 +30,11 @@
         function refreshGowthamSongInfo() {
             HttpService.getGowthamCurrentSongInfo(channel.name).then(function (response) {
                 if ($rootScope.curChannel.id == channel.id && $rootScope.playing == true) {
-                    $rootScope.songTitle = response.track;
-                    $rootScope.songArtists = response.artist;
-                    $rootScope.songCover = 'http://104.131.151.101/' + channel.name + '/image.jpg?' + new Date().getTime();
+                    if ($rootScope.songTitle != response.track) {
+                        $rootScope.songTitle = response.track;
+                        $rootScope.songArtists = response.artist;
+                        $rootScope.songCover = 'http://104.131.151.101/' + channel.name + '/image.jpg?' + new Date().getTime();
+                    }
                     // Calling back refreshGowthamSongInfo every 5 sec
                     $timeout(refreshGowthamSongInfo, 5000);
                 }

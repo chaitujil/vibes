@@ -57,15 +57,19 @@
         function gotoPrevious(curChannelId) {
             if (curChannelId > 0) {
                 $rootScope.newChannelId = (curChannelId - 1);
-                init();
+            } else {
+                $rootScope.newChannelId = ChannelsService.all().length - 1;
             }
+            init();
         }
 
         function gotoNext(curChannelId) {
             if (curChannelId < (ChannelsService.all().length - 1)) {
                 $rootScope.newChannelId = (curChannelId + 1);
-                init();
+            } else {
+                $rootScope.newChannelId = 0;
             }
+            init();
         }
 
         function openModal() {
