@@ -23,7 +23,9 @@
         });
     }
 
-    function configStateProvider($stateProvider, $urlRouterProvider) {
+    function configStateProvider($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+        $ionicConfigProvider.tabs.position('bottom');
+        $ionicConfigProvider.tabs.style('standard');
         $stateProvider
             .state('tab', {
             // setup an abstract state for the tabs directive
