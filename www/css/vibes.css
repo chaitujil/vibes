@@ -181,12 +181,19 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     background-color: black;
 }
 
-.settings-items {
+.settings-content {
     font-size: 12pt;
-    font-family: monospace, sans-serif;
-    color: darkblue;
-    background: transparent;
 }
+
+.settings-content .icon {
+    padding: 20px;
+    font-size: 200%;
+}
+
+.settings-content .item-content {
+    color: blueviolet;
+}
+
 
 .my-custom-icon {
     float: right;
