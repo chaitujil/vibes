@@ -300,10 +300,12 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     font-size: 34px;
 }
 
-.send-suggestion .textarea {
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 10px;
+.send-suggestion .suggestion-textarea {
+    width: 95%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid grey;
 }
 
 .send-suggestion .button {
