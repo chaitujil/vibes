@@ -49,17 +49,21 @@
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     #background-color: #71c0b3;
     #background-color: #ffd000;
-    background-color: #ff5959;
+    #background-color: #ff5959;
     #background-color: #ffffff;
     #background-color: #17bebb;
+    #background-color: #DE3645;
+    background-color: #ef3b4a;
 }
 
 .tabs {
     #background-color: #71c0b3;
     #background-color: #f2c500;
-    background-color: #ff5959;
+    #background-color: #ff5959;
     #background-color: #ffffff;
     #background-color: #17bebb;
+    #background-color: #DE3645;
+    background-color: #ef3b4a;
 }
 
 .scroll-content {
@@ -145,7 +149,8 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 }
 
 .channel-wrapper {
-    background-color: black;
+    background-color: #f8f8f8;
+    margin: 5%;
 }
 
 .channel-name {
