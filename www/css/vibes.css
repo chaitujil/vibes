@@ -1,7 +1,3 @@
-.channel-face {
-    height: 200px;
-    width: 100%;
-}
 @font-face {
     font-family: "Ionicons";
     src: url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1");
@@ -9,75 +5,119 @@
     font-weight: normal;
     font-style: normal;
 }
+
 .button {
     font-family: "Ionicons", serif;
     font-size: 48px;
 }
+
 .icon-large {
-    font-size: x-large;
+    font-size: xx-large;
     color: #71c0b3;
-}
-.play:before {
-    content: '\f488'
-}
-.pause:before {
-    content: '\f478'
 }
 .normal-song-info {
     font-weight: bold;
-    font-size: 14pt;
+    font-size: 11pt;
     font-style: normal;
-    #font-family: monospace, sans-serif;
-    #color: yellow;
-    color: #ffffff;
-    line-height: 1.2;
-    margin-top: 10px;
-    #font-family: sans-serif;
-    #color: #71c0b3;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #50514F;
+    line-height: 1;
+    margin: 10px;
 }
+
 .blue-song-info {
     font-weight: bold;
-    font-size: 14pt;
+    font-size: 11pt;
     font-style: normal;
-    font-family: monospace, sans-serif;
-    color: darkblue;
-    line-height: 1.2;
-    margin-top: 10px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #color: #50514F;
+    color: #ffffff;
+    line-height: 1;
+    margin: 10px;
 }
-.song-cover {
-    width: 320px;
-    height: 320px;
-    position: relative;
-    border-radius: 5px;
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+    .song-cover {
+        width: 95%;
+        max-width:310px;
+        height: 310px;
+        position: relative;
+        #border-radius: 10px;
+        margin-top: 10px;
+    }
 }
+
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px) {
+    .song-cover {
+        width: 95%;
+        max-width:370px;
+        height: 370px;
+        position: relative;
+        #border-radius: 10px;
+        margin-top: 10px;
+    }
+}
+
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px) {
+    .song-cover {
+        width: 95%;
+        max-width:410px;
+        height: 420px;
+        position: relative;
+        #border-radius: 10px;
+        margin-top: 10px;
+    }
+}
+
+@media only screen
+and (min-device-width : 1024px) {
+    .song-cover {
+        width: 95%;
+        #max-width:400px;
+        height: 410px;
+        position: relative;
+        #border-radius: 10px;
+        margin-top: 10px;
+    }
+}
+
 .bar.bar-stable {
-    #background-color: rgba(255,255,255,.3) !important;
-    background-color: #71c0b3;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #background-color: #71c0b3;
     #background-color: #ffd000;
+    #background-color: #ff5959;
+    #background-color: #ffffff;
+    #background-color: #17bebb;
+    #background-color: #DE3645;
+    background-color: #ef3b4a;
 }
+
 .tabs {
-    #background-color: rgba(255,255,255,.3) !important;
-    background-color: #71c0b3;
+    #background-color: #71c0b3;
     #background-color: #f2c500;
+    #background-color: #ff5959;
+    #background-color: #ffffff;
+    #background-color: #17bebb;
+    #background-color: #DE3645;
+    background-color: #ef3b4a;
 }
+
 .scroll-content {
     overflow: visible !important;
 }
-.padding {
-    margin: 25px !important;
-}
-.pane {
-    background-color: #ffffff;
-}
-.item-complex .item-content, .item-radio .item-content {
-    background-color: #B36C6C;
-    #background-color: #ffffff;
-}
+
 .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
     padding-left: 125px;
     min-height: 100px;
     font-size: 20pt;
 }
+
 .item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child, .item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image, .item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image {
     position: absolute;
     top: 10px;
@@ -88,67 +128,245 @@
     height: 100%;
     border-radius: 10px;
 }
+
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
     #color: darkblue;
     color: #ffffff;
+    #color: #ff5959;
 }
+
 .bar.bar-stable .title {
     #color: darkblue;
     color: #ffffff;
+    #color: #ff5959;
 }
+
 .bar-stable .button.button-clear {
     border-color: transparent;
     background: none;
     box-shadow: none;
     #color: darkblue;
     color: #ffffff;
+    font-size: 20px;
+    margin-left: 5px;
 }
+
+.bar-stable .button.button-more {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    #color: darkblue;
+    color: #ffffff;
+    font-size: 25px;
+    margin-right: 5px;
+}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: orange;
+    #color: darkblue;
     font-weight: bold;
-    font-family: monospace, sans-serif;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    line-height: 0.5;
+}
+
+p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
+    #color: darkblue;
+    font-weight: bold;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     line-height: 1.2;
 }
 .center-content {
-  padding: 2px;
+    padding: 2px;
 }
 
-/* Music Controls */
-.music-controls .icon{
-    display: inline-block;
-    height: 300px;
-    position: relative;
-    z-index: 10;
+.channel-face {
+    height: 100%;
     width: 100%;
-    zoom: 20%;
+    #margin: 5%;
 }
 
-.music-controls .play-btn {
-    background: url('http://www.clipartbest.com/cliparts/dir/65K/dir65Kei9.png') center center no-repeat;
+.channel-face-name {
+    text-align: center;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 12pt;
 }
 
-.music-controls .pause-btn {
-    background: url('http://www.clker.com/cliparts/2/r/L/G/x/e/pause-button-dark-red-md.png') center center no-repeat;
-}
 .channel-wrapper {
-    background-color: grey;
-    opacity: 0.3;
-    width: 100%;
-    height: 40px;
-    position: absolute;
+    background-color: #f8f8f8;
+    margin: 5%;
 }
+
 .channel-name {
     color: white;
-    font-family: monospace;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-weight: 500;
     font-size: 10pt;
     margin: 10px 0 0 20px;
-    position:fixed;
+    position: fixed;
 }
+
 .row {
     padding: 0;
 }
-.normal-channels-page {
-    #background-color: lightgreen;
-    background-color: #566870;
+
+.vibes-page {
+    #background-color: #444444;
+    #background-color: #50514F;
+    #background-color: black;
+    background-color: #f8f8f8;
+}
+
+.contact-info {
+    font-size: 12pt;
+    font-family: monospace, sans-serif;
+    color: darkblue;
+    margin: 20px;
+}
+
+.channel-detail-page {
+    #background-color: #444444;
+    #background-color: #50514F;
+    background-color: black;
+}
+
+.settings-content {
+    font-size: 12pt;
+}
+
+.settings-content .icon {
+    padding: 20px;
+    font-size: 200%;
+}
+
+.settings-content .item-content {
+    color: blueviolet;
+}
+
+
+.my-custom-icon {
+    float: right;
+}
+
+.music-controls .icon-play-pause {
+    float: center;
+    display: inline-block;
+    position: relative;
+    font-size: 56px;
+    #color: #50514F;
+    #color: #ff5959;
+    color: #17bebb;
+}
+
+.music-controls .icon-skip-left {
+    float: right;
+    display: inline-block;
+    position: relative;
+    font-size: 40px;
+    padding: 8px;
+    #color: #50514f;
+    color: #17bebb;
+}
+
+.music-controls .icon-skip-right {
+    float: left;
+    display: inline-block;
+    position: relative;
+    font-size: 40px;
+    padding: 8px;
+    #color: #50514f;
+    color: #17bebb;
+}
+
+.music-footer{
+    position: fixed;
+    bottom: 49px;
+    left:0;
+    right: 0;
+    text-align: center;
+    height: 42px;
+    #border-top:1px solid #b2b2b2;
+    #background-color: #f8f8f8;
+    background-color: #444444;
+    cursor: pointer;
+}
+
+.platform-browser .music-footer{
+    position: fixed;
+    bottom: 49px;
+    left:0;
+    right: 0;
+    text-align: center;
+    height: 42px;
+    #border-top:1px solid #b2b2b2;
+    #background-color: #f8f8f8;
+    background-color: #444444;
+    cursor: pointer;
+}
+
+.platform-android .music-footer{
+    position: fixed;
+    bottom: 0 #!important;
+    left:0;
+    right: 0;
+    text-align: center;
+    height: 42px;
+    #border-top:1px solid #b2b2b2;
+    #background-color: #f8f8f8;
+    #background-color: #444444;
+    background-color: black;
+    cursor: pointer;
+}
+
+.music-footer .track, .music-footer .artist{
+    float: center;
+    #width: 80%;
+    margin: 0;
+    font-size: 12px;
+    color: #ffffff
+}
+
+.music-footer .track{
+    margin: 0;
+    #font-weight: bold;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.music-footer .channel-face{
+    float: left;
+    height: 32px;
+    width: 32px;
+    margin: 5px;
+}
+
+.music-footer .play-pause{
+    float: right;
+    margin: 4px;
+    margin-right: 15px;
+    #width: 10%;
+    #color: #50514f;
+    color: #17bebb;
+    font-size: 34px;
+}
+
+.send-suggestion .suggestion-textarea {
+    width: 95%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid grey;
+}
+
+.send-suggestion .button {
+    font-family: monospace;
+    font-size: 12pt;
+    margin-top: 10px;
+    float: right;
+    border-radius: 5px;
+}
+
+.share-app .button {
+    font-family: monospace;
+    font-size: 12pt;
+    margin-top: 10px;
+    float: left;
+    border-radius: 5px;
 }

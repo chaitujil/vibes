@@ -4,25 +4,28 @@
     angular.module('vibes')
         .controller('ChannelDetailCtrl', channelDetailCtrl);
 
-    channelDetailCtrl.$inject = ['$rootScope', '$stateParams', '$timeout', 'HttpService',
-        'ngXml2json', 'ChannelsService', '$sce', '$log'];
+    channelDetailCtrl.$inject = ['$rootScope', '$timeout', 'HttpService', 'ngXml2json', 'ChannelsService', '$sce', '$log', 'ModalService', 'AudioService', 'SongInfoService'];
 
-    function channelDetailCtrl($rootScope, $stateParams, $timeout, HttpService,
-                               ngXml2json, ChannelsService, $sce, $log) {
+    function channelDetailCtrl($rootScope, $timeout, HttpService, ngXml2json, ChannelsService, $sce, $log, ModalService, AudioService, SongInfoService) {
         var vm = this;
         vm.play = play;
         vm.pause = pause;
         vm.channel = null;
         vm.channelUrl = null;
-        vm.songTitle = null;
-        vm.songArtists = null;
-        vm.songCover = null;
-        vm.isNormal = isNormal;
+        vm.gotoPrevious = gotoPrevious;
+        vm.gotoNext = gotoNext;
+        vm.openModal = openModal;
+        vm.closeModal = closeModal;
+
+        $rootScope.songTitle = null;
+        $rootScope.songArtists = null;
+        $rootScope.songCover = null;
+        $rootScope.isDefaultTheme = isDefaultTheme;
 
         init();
 
         function init() {
-            vm.channel = ChannelsService.get($stateParams.channelId);
+            vm.channel = ChannelsService.get($rootScope.newChannelId);
             vm.channelUrl = $sce.trustAsResourceUrl(vm.channel.url);
 
             if ($rootScope.playing !== true) {
@@ -31,8 +34,6 @@
                 ($rootScope.curChannel.id !== vm.channel.id)) {
                 refreshChannel();
             }
-
-            refreshSongInfo();
         }
 
         function refreshChannel() {
@@ -45,62 +46,45 @@
         }
 
         function play() {
-            $rootScope.audio = new Audio(vm.channelUrl);
-            $rootScope.audio.play();
-            $rootScope.playing = true;
+            AudioService.play();
+            refreshSongInfo();
         }
 
         function pause() {
-            $rootScope.audio.pause();
-            $rootScope.playing = false;
+            AudioService.pause();
+        }
+
+        function gotoPrevious(curChannelId) {
+            if (curChannelId > 0) {
+                $rootScope.newChannelId = (curChannelId - 1);
+            } else {
+                $rootScope.newChannelId = ChannelsService.all().length - 1;
+            }
+            init();
+        }
+
+        function gotoNext(curChannelId) {
+            if (curChannelId < (ChannelsService.all().length - 1)) {
+                $rootScope.newChannelId = (curChannelId + 1);
+            } else {
+                $rootScope.newChannelId = 0;
+            }
+            init();
+        }
+
+        function openModal() {
+            ModalService.openModal();
+        }
+
+        function closeModal() {
+            ModalService.closeModal();
         }
 
         function refreshSongInfo() {
-            if (typeof vm.channel.sprovider !== 'undefined') {
-                switch (vm.channel.sprovider) {
-                    case 'gowtham':
-                        refreshGowthamSongInfo();
-                        break;
-                    case 'radionomy':
-                        refreshRadionomySongInfo();
-                        break;
-                }
-            }
+            SongInfoService.refreshSongInfo()
         }
 
-        function refreshGowthamSongInfo() {
-            HttpService.getGowthamCurrentSongInfo(vm.channel.name).then(function (response) {
-                vm.songTitle = response.track;
-                vm.songArtists = response.artist;
-                vm.songCover = 'http://104.131.151.101/' + vm.channel.name + '/image.jpg?' + new Date().getTime();
-                // Calling back refreshGowthamSongInfo every 5 sec
-                $timeout(refreshGowthamSongInfo, 5000);
-            }, function (error) {
-                vm.songTitle = '--';
-                vm.songArtists = '--';
-                $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
-            });
-        }
-
-        function refreshRadionomySongInfo() {
-            HttpService.getRadionomyCurrentSongInfo(vm.channel.radioUuid, vm.channel.apiKey).then(function (response) {
-                var currentSongInfo = ngXml2json.parser(response);
-                vm.songTitle = currentSongInfo.tracks.track.title;
-                vm.songArtists = currentSongInfo.tracks.track.artists;
-                if (typeof currentSongInfo.tracks.track.cover !== 'undefined' && currentSongInfo.tracks.track.cover !== null && currentSongInfo.tracks.track.cover.length > 1) {
-                    vm.songCover = currentSongInfo.tracks.track.cover;
-                } else {
-                    vm.songCover = 'http://www.musicheavens.com/wp-content/gallery/music-photo/beautiful-guitar-guitar-music-1920x1080.jpg';
-                }
-
-                // Calling back refreshRadionomySongInfo
-                $timeout(refreshRadionomySongInfo, (currentSongInfo.tracks.track.callmeback));
-            }, function (error) {
-                $log.error("Error while retrieving song info for channel " + vm.channel.name + " Error: " + error);
-            });
-        }
-
-        function isNormal() {
+        function isDefaultTheme() {
             return true;
         }
     }

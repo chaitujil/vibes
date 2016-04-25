@@ -1,68 +1,82 @@
 (function () {
-  'use strict';
+    'use strict';
 
-  angular.module('vibes')
-    .factory('ChannelsService', channelsService);
+    angular.module('vibes')
+        .factory('ChannelsService', channelsService);
 
-  function channelsService() {
-    var channels = [{
-      id: 0,
-      name: 'station1',
-      sprovider: 'gowtham',
-      face: 'http://studentmediahub.com/wp-content/uploads/2015/09/6908980-party-time.jpg',
-      url: 'http://104.131.151.101:8000/station1',
-      radioUuid: '',
-      apiKey: ''
-    }, {
-      id: 1,
-      name: 'station2',
-      sprovider: 'gowtham',
-      face: 'http://www.thecoolhunter.net/images/stories/2007pics/storiesnew2007pics/marchpics/1music.jpg',
-      url: 'http://104.131.151.101:8000/station2',
-      radioUuid: '',
-      apiKey: ''
-    }, {
-      id: 2,
-      name: 'vadapav',
-      sprovider: 'radionomy',
-      face: 'http://www.arrahman.com/images/background-images/arrahman_bodybg.jpg',
-      url: 'http://listen.radionomy.com/vadapav',
-      radioUuid: 'f4af4953-6985-4ec8-8cbe-e68324c5e61f',
-      apiKey: 'b9bc802d-3af8-445b-bf51-40b4e690cc0d'
-    }, {
-      id: 3,
-      name: 'idlichutney',
-      sprovider: 'radionomy',
-      face: 'http://examinedexistence.com/wp-content/uploads/2013/03/music-notes.jpg',
-      url: 'http://listen.radionomy.com/idlichutney',
-      radioUuid: '0035c069-41a0-48cb-bca8-bcb0ada884e8',
-      apiKey: 'b9bc802d-3af8-445b-bf51-40b4e690cc0d'
-    }, {
-      id: 4,
-      name: 'vadapav2',
-      sprovider: 'radionomy',
-      face: 'http://www.ultrahighdefinitionwallpapers.com/wp-content/uploads/2015/07/romantic-white-and-red-hearts-uhd-wallpapers.jpg',
-      url: 'http://listen.radionomy.com/vadapav',
-      radioUuid: 'f4af4953-6985-4ec8-8cbe-e68324c5e61f',
-      apiKey: 'b9bc802d-3af8-445b-bf51-40b4e690cc0d'
-    }];
+    function channelsService() {
+        var channels = [{
+            id: 0,
+            name: 'station1',
+            cname: 'Hits',
+            sprovider: 'vibes',
+            face: 'img/hits.jpg',
+            url: 'http://104.131.151.101:8000/station1',
+            radioUuid: '',
+            apiKey: ''
+        }, {
+            id: 1,
+            name: 'station2',
+            cname: 'Love',
+            sprovider: 'vibes',
+            face: 'img/love.jpg',
+            url: 'http://104.131.151.101:8000/station2',
+            radioUuid: '',
+            apiKey: ''
+        }, {
+            id: 2,
+            name: 'station3',
+            cname: 'Chill',
+            sprovider: 'vibes',
+            face: 'img/chill.jpg',
+            url: 'http://104.131.151.101:8000/station3',
+            radioUuid: '',
+            apiKey: ''
+        }, {
+            id: 3,
+            name: 'station4',
+            cname: 'Melodies',
+            sprovider: 'vibes',
+            face: 'img/melodies.jpg',
+            url: 'http://104.131.151.101:8000/station4',
+            radioUuid: '',
+            apiKey: ''
+        }, {
+            id: 4,
+            name: 'station5',
+            cname: 'Party',
+            sprovider: 'vibes',
+            face: 'img/party.jpg',
+            url: 'http://104.131.151.101:8000/station4',
+            radioUuid: '',
+            apiKey: ''
+        }, {
+            id: 5,
+            name: 'station6',
+            cname: 'Beats',
+            sprovider: 'vibes',
+            face: 'img/beats.jpg',
+            url: 'http://104.131.151.101:8000/station4',
+            radioUuid: '',
+            apiKey: ''
+        }];
 
-    return {
-      all: all,
-      get: get
-    };
+        return {
+            all: all,
+            get: get
+        };
 
-    function all () {
-      return channels;
-    }
-
-    function get (channelId) {
-      for (var i = 0; i < channels.length; i++) {
-        if (channels[i].id === parseInt(channelId)) {
-          return channels[i];
+        function all() {
+            return channels;
         }
-      }
-      return null;
+
+        function get(channelId) {
+            for (var i = 0; i < channels.length; i++) {
+                if (channels[i].id === parseInt(channelId)) {
+                    return channels[i];
+                }
+            }
+            return null;
+        }
     }
-  }
 })();
