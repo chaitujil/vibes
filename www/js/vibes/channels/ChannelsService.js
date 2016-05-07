@@ -8,7 +8,7 @@
         var channels = [{
             id: 0,
             name: 'station1',
-            cname: 'Hits',
+            cname: 'HITS',
             sprovider: 'vibes',
             face: 'img/hits.jpg',
             url: 'http://104.131.151.101:8000/station1',
@@ -17,25 +17,25 @@
         }, {
             id: 1,
             name: 'station2',
-            cname: 'Love',
+            cname: 'LATEST',
             sprovider: 'vibes',
-            face: 'img/love.jpg',
+            face: 'img/latest.jpg',
             url: 'http://104.131.151.101:8000/station2',
             radioUuid: '',
             apiKey: ''
         }, {
             id: 2,
             name: 'station3',
-            cname: 'Chill',
+            cname: 'BEATS',
             sprovider: 'vibes',
-            face: 'img/chill.jpg',
+            face: 'img/beats.jpg',
             url: 'http://104.131.151.101:8000/station3',
             radioUuid: '',
             apiKey: ''
         }, {
             id: 3,
             name: 'station4',
-            cname: 'Melodies',
+            cname: 'MELODIES',
             sprovider: 'vibes',
             face: 'img/melodies.jpg',
             url: 'http://104.131.151.101:8000/station4',
@@ -44,7 +44,7 @@
         }, {
             id: 4,
             name: 'station5',
-            cname: 'Party',
+            cname: 'LOVE',
             sprovider: 'vibes',
             face: 'img/party.jpg',
             url: 'http://104.131.151.101:8000/station4',
@@ -53,10 +53,10 @@
         }, {
             id: 5,
             name: 'station6',
-            cname: 'Beats',
+            cname: 'COMEDY',
             sprovider: 'vibes',
             face: 'img/beats.jpg',
-            url: 'http://104.131.151.101:8000/station4',
+            url: 'http://104.131.151.101:8000/station6',
             radioUuid: '',
             apiKey: ''
         }];

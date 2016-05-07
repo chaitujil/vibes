@@ -16,8 +16,8 @@
     color: #71c0b3;
 }
 .normal-song-info {
-    font-weight: bold;
-    font-size: 11pt;
+    #font-weight: bold;
+    font-size: 11px;
     font-style: normal;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: #50514F;
@@ -26,7 +26,7 @@
 }
 
 .blue-song-info {
-    font-weight: bold;
+    #font-weight: bold;
     font-size: 11pt;
     font-style: normal;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -161,21 +161,17 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     margin-right: 5px;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    #color: darkblue;
-    font-weight: bold;
+h, h1, h2, h3, h4, h5, h6, .h, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     line-height: 0.5;
 }
 
 p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
-    #color: darkblue;
-    font-weight: bold;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     line-height: 1.2;
 }
 .center-content {
-    padding: 2px;
+    #padding: 2px;
 }
 
 .channel-face {
@@ -238,7 +234,7 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 }
 
 .settings-content .item-content {
-    color: blueviolet;
+    color: #444444;
 }
 
 
@@ -319,15 +315,9 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 .music-footer .track, .music-footer .artist{
     float: center;
     #width: 80%;
-    margin: 0;
     font-size: 12px;
-    color: #ffffff
-}
-
-.music-footer .track{
-    margin: 0;
-    #font-weight: bold;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #ffffff;
 }
 
 .music-footer .channel-face{
