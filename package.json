@@ -1,7 +1,7 @@
 {
-  "name": "example",
+  "name": "vibes",
   "version": "1.0.0",
-  "description": "example: An Ionic project",
+  "description": "A Telugu radio app",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -22,7 +22,7 @@
     "com.ionic.keyboard"
   ],
   "cordovaPlatforms": [
-    "android",
-    "ios"
+    "ios",
+    "android"
   ]
 }

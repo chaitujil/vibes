@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.example146317" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cordova.apache.org/ns/1.0 ">
-  <name>example</name>
+<widget id="com.ionicframework.example146317" version="0.0.19" android-versionCode="19" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cordova.apache.org/ns/1.0 ">
+  <name>vibes</name>
   <description>&#xD;
-    An Ionic Framework and Cordova project.&#xD;
+    A Telugu radio app.&#xD;
   </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">&#xD;
-    Ionic Framework Team&#xD;
+  <author email="developervibes@gmail.com" href="">&#xD;
+    vibes developer team&#xD;
   </author>
   <content src="index.html"/>
+  <allow-navigation href="*" />
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
