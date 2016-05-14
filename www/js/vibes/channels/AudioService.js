@@ -16,7 +16,7 @@
 
         function showSpinner() {
             $ionicLoading.show({
-                template: '<p>Connecting...</p><ion-spinner icon="spiral" class="spinner-energized"></ion-spinner>'
+                template: '<ion-spinner icon="spiral" class="spinner-energized"></ion-spinner>'
             });
         }
 
@@ -70,8 +70,8 @@
         }
 
         function errorEventHandler() {
-            hideSpinner();
-            alert('Connection encountered an error');
+            //hideSpinner();
+            //alert('Connection encountered an error');
         }
 
         function playingEventHandler() {
@@ -83,11 +83,11 @@
         }
 
         function stalledEventhandler() {
-            showSpinner();
+            //showSpinner();
         }
 
         function suspendEventHandler() {
-            hideSpinner();
+            //hideSpinner();
         }
     }
 })();

@@ -1,5 +1,6 @@
 @font-face {
-    font-family: "Ionicons";
+    #font-family: "Ionicons";
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     src: url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1");
     src: url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1#iefix") format("embedded-opentype"), url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.ttf?v=2.0.1") format("truetype"), url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.woff?v=2.0.1") format("woff"), url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.svg?v=2.0.1#Ionicons") format("svg");
     font-weight: normal;
@@ -7,7 +8,8 @@
 }
 
 .button {
-    font-family: "Ionicons", serif;
+    #font-family: "Ionicons", serif;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-size: 48px;
 }
 
@@ -130,13 +132,11 @@ and (min-device-width : 1024px) {
 }
 
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
-    #color: darkblue;
     color: #ffffff;
     #color: #ff5959;
 }
 
 .bar.bar-stable .title {
-    #color: darkblue;
     color: #ffffff;
     #color: #ff5959;
 }
@@ -145,7 +145,6 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     border-color: transparent;
     background: none;
     box-shadow: none;
-    #color: darkblue;
     color: #ffffff;
     font-size: 20px;
     margin-left: 5px;
@@ -213,8 +212,7 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 
 .contact-info {
     font-size: 12pt;
-    font-family: monospace, sans-serif;
-    color: darkblue;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     margin: 20px;
 }
 
@@ -341,22 +339,31 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     width: 95%;
     margin: 10px;
     padding: 10px;
-    border-radius: 5px;
+    #border-radius: 5px;
     border: solid grey;
 }
 
 .send-suggestion .button {
-    font-family: monospace;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-size: 12pt;
     margin-top: 10px;
-    float: right;
-    border-radius: 5px;
+    #float: center;
+    #border-radius: 5px;
+    background-color: #17bebb;
+    border-color: #17bebb;
 }
 
 .share-app .button {
-    font-family: monospace;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-size: 12pt;
     margin-top: 10px;
     float: left;
-    border-radius: 5px;
+    #border-radius: 5px;
+}
+
+.spinner svg {
+  width: 28px;
+  height: 28px;
+  stroke: #17bebb;
+  fill: #17bebb;
 }

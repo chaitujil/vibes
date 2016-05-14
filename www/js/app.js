@@ -26,6 +26,8 @@
     function configStateProvider($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         $ionicConfigProvider.tabs.position('bottom');
         $ionicConfigProvider.tabs.style('standard');
+        $ionicConfigProvider.backButton.previousTitleText(false);
+        $ionicConfigProvider.backButton.text("");
         $stateProvider
             .state('tab', {
             // setup an abstract state for the tabs directive
