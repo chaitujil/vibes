@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    angular.module('vibes', ['ionic', 'angularXml2json', 'ngCordova'])
+    angular.module('vibes', ['ionic', 'ngCordova'])
         .run(runIonic)
         .config(configStateProvider)
         .config(['$httpProvider', configHttpProvider]);

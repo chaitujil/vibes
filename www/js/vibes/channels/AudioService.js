@@ -4,9 +4,9 @@
     angular.module('vibes')
         .factory('AudioService', AudioService);
 
-    AudioService.$inject = ['$rootScope', '$log'];
+    AudioService.$inject = ['$rootScope', '$log', '$ionicLoading'];
 
-    function AudioService($rootScope, $log) {
+    function AudioService($rootScope, $log, $ionicLoading) {
         var service = {
             play: play,
             pause: pause
@@ -14,51 +14,32 @@
 
         return service;
 
+        function showSpinner() {
+            $ionicLoading.show({
+                template: '<p>Connecting...</p><ion-spinner icon="spiral" class="spinner-energized"></ion-spinner>'
+            });
+        }
+
+        function hideSpinner() {
+            $ionicLoading.hide();
+        }
+
         function playchannel() {
             $rootScope.playing = true;
+            showSpinner();
             if (typeof $rootScope.audio !== 'undefined') {
                 $rootScope.audio.src = $rootScope.curChannel.url;
             } else {
                 $rootScope.audio = new Audio($rootScope.curChannel.url);
 
-            	//
-            	// Create event listeners for Html audio events.
-            	//
-            	$rootScope.audio.addEventListener("pause", function() {
-                    //$rootScope.audio.removeEventListener("pause", null, true);
-            	    //$log.error("stream is paused");
-            	    $rootScope.playing = false;
-            	    $rootScope.audio.src = "";
-            	    $rootScope.audio.load();
-            	}, true);
-
-                $rootScope.audio.addEventListener("play", function() {
-                    //$rootScope.audio.removeEventListener("play", null, true);
-            	    //$log.error("stream ready to play");
-                    if ($rootScope.playing == false) {
-            	        playchannel();
-                    }
-                }, true);
-
-            	//$rootScope.audio.addEventListener("error", function() {
-            	//    alert('stream encountered error');
-            	//}, false);
-
-           	//$rootScope.audio.addEventListener("playing", function() {
-            	//    alert('stream is playing');
-            	//}, false);
-
-            	//$rootScope.audio.addEventListener("waiting", function() {
-            	//    alert('stream is waiting');
-            	//}, false);
-
-            	//$rootScope.audio.addEventListener("stalled", function() {
-            	//    alert('stream is stalled');
-            	//}, false);
-
-            	//$rootScope.audio.addEventListener("suspend", function() {
-            	//    alert('stream is suspended');
-            	//}, false);
+                // Add event handlers to show/hide spinner
+                $rootScope.audio.addEventListener("pause", pauseEventHandler, true);
+                $rootScope.audio.addEventListener("play", playEventHandler, true);
+                $rootScope.audio.addEventListener("error", errorEventHandler, false);
+                $rootScope.audio.addEventListener("playing", playingEventHandler, false);
+                $rootScope.audio.addEventListener("waiting", waitingEventHandler, false);
+                $rootScope.audio.addEventListener("stalled", stalledEventhandler, false);
+                $rootScope.audio.addEventListener("suspend", suspendEventHandler, false);
             }
             $rootScope.audio.play();
         }
@@ -70,6 +51,43 @@
         function pause() {
             $rootScope.audio.pause();
             $rootScope.playing = false;
-        } 
+        }
+
+        function pauseEventHandler() {
+            //$rootScope.audio.removeEventListener("pause", null, true);
+            //$log.error("stream is paused");
+            $rootScope.playing = false;
+            $rootScope.audio.src = "";
+            $rootScope.audio.load();
+        }
+
+        function playEventHandler() {
+            //$rootScope.audio.removeEventListener("play", null, true);
+            //$log.error("stream ready to play");
+            if ($rootScope.playing == false) {
+                playchannel();
+            }
+        }
+
+        function errorEventHandler() {
+            hideSpinner();
+            alert('Connection encountered an error');
+        }
+
+        function playingEventHandler() {
+            hideSpinner();
+        }
+
+        function waitingEventHandler() {
+            showSpinner();
+        }
+
+        function stalledEventhandler() {
+            showSpinner();
+        }
+
+        function suspendEventHandler() {
+            hideSpinner();
+        }
     }
 })();

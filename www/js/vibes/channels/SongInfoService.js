@@ -8,7 +8,7 @@
 
     function SongInfoService($rootScope, $log, $timeout, HttpService) {
         var service = {
-            refreshSongInfo: refreshSongInfo,
+            refreshSongInfo: refreshSongInfo
         };
         var channel = this;
         return service;

@@ -7,6 +7,6 @@
     function contactUsCtrl() {
         var vm = this;
 
-        vm.email = "vibesdeveloper@gmail.com";
+        vm.email = "developervibes@gmail.com";
     }
 })();
