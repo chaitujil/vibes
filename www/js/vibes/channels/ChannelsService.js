@@ -8,7 +8,7 @@
         var channels = [{
             id: 0,
             name: 'station1',
-            cname: 'HITS',
+            cname: 'Hits',
             sprovider: 'vibes',
             face: 'img/hits.jpg',
             url: 'http://104.131.151.101:8000/station1',
@@ -17,7 +17,7 @@
         }, {
             id: 1,
             name: 'station2',
-            cname: 'LATEST',
+            cname: 'Latest',
             sprovider: 'vibes',
             face: 'img/latest.jpg',
             url: 'http://104.131.151.101:8000/station2',
@@ -26,7 +26,7 @@
         }, {
             id: 2,
             name: 'station3',
-            cname: 'BEATS',
+            cname: 'Beats',
             sprovider: 'vibes',
             face: 'img/beats.jpg',
             url: 'http://104.131.151.101:8000/station3',
@@ -35,7 +35,7 @@
         }, {
             id: 3,
             name: 'station4',
-            cname: 'MELODIES',
+            cname: 'Melodies',
             sprovider: 'vibes',
             face: 'img/melodies.jpg',
             url: 'http://104.131.151.101:8000/station4',
@@ -44,7 +44,7 @@
         }, {
             id: 4,
             name: 'station5',
-            cname: 'LOVE',
+            cname: 'Love',
             sprovider: 'vibes',
             face: 'img/party.jpg',
             url: 'http://104.131.151.101:8000/station4',
@@ -53,7 +53,7 @@
         }, {
             id: 5,
             name: 'station6',
-            cname: 'COMEDY',
+            cname: 'Comedy',
             sprovider: 'vibes',
             face: 'img/beats.jpg',
             url: 'http://104.131.151.101:8000/station6',
