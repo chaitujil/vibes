@@ -19,3 +19,13 @@ cd to the unsigned apk location
 C:\Users\cheddi\AppData\Local\Android\sdk\build-tools\23.0.3\zipalign.exe -v 4 vibes.apk vibes-aligned.apk
 
 # Upload the aligned apk to google play store.
+
+# How to set song metadata
+
+1. Download movie songs into a movie folder.
+2. Run filename_convert script at both folder level and songs level.
+3. Download mp3tag software.
+4. File -> Change directory -> Select movie directory.
+5. View -> extended tags -> remove unnecessary tags.
+6. Modify title string to appropriate.
+7. Remove cover with water mark , download cover to the same folder, select all songs right click and add cover.
