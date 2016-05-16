@@ -25,7 +25,7 @@
         init();
 
         function init() {
-            vm.channel = ChannelsService.getDialoguesChannel($rootScope.newChannelId);
+            vm.channel = ChannelsService.getChannel($rootScope.newChannelId);
             vm.channelUrl = $sce.trustAsResourceUrl(vm.channel.url);
 
             if ($rootScope.playing !== true) {
@@ -58,13 +58,13 @@
             if (curChannelId > 0) {
                 $rootScope.newChannelId = (curChannelId - 1);
             } else {
-                $rootScope.newChannelId = ChannelsService.allDialogueChannels().length - 1;
+                $rootScope.newChannelId = ChannelsService.allChannels().length - 1;
             }
             init();
         }
 
         function gotoNext(curChannelId) {
-            if (curChannelId < (ChannelsService.allDialogueChannels().length - 1)) {
+            if (curChannelId < (ChannelsService.allChannels().length - 1)) {
                 $rootScope.newChannelId = (curChannelId + 1);
             } else {
                 $rootScope.newChannelId = 0;

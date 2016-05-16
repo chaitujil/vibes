@@ -25,7 +25,7 @@
         init();
 
         function init() {
-            vm.channel = ChannelsService.getSongsChannel($rootScope.newChannelId);
+            vm.channel = ChannelsService.getChannel($rootScope.newChannelId);
             vm.channelUrl = $sce.trustAsResourceUrl(vm.channel.url);
 
             if ($rootScope.playing !== true) {
@@ -58,13 +58,13 @@
             if (curChannelId > 0) {
                 $rootScope.newChannelId = (curChannelId - 1);
             } else {
-                $rootScope.newChannelId = ChannelsService.allSongChannels().length - 1;
+                $rootScope.newChannelId = ChannelsService.allChannels().length - 1;
             }
             init();
         }
 
         function gotoNext(curChannelId) {
-            if (curChannelId < (ChannelsService.allSongChannels().length - 1)) {
+            if (curChannelId < (ChannelsService.allChannels().length - 1)) {
                 $rootScope.newChannelId = (curChannelId + 1);
             } else {
                 $rootScope.newChannelId = 0;
