@@ -1,26 +1,38 @@
-cd # vibes
-Vibes radio app
+# Vibes radio app
 
 Telugu radio app similar to pandora
 
-# How to create a signed apk
+## How to create a signed apk
 Don't change id in config.xml once uploaded to google play store.
-Change version in config.xml from x.x.version to x.x.version+1
+Change version in config.xml from YY to YY+1
 
-# cd to the project folder and build an unsigned apk. In my case
+```
+version="0.0.YY"
+android-versionCode="YY"
+```
+
+## cd to the project folder and build an unsigned apk. In my case
+
+```
 cd C:\vibes
 ionic build --release android
+```
 
-# Use jarsigner to sign the apk
+## Use jarsigner to sign the apk
+
+```
 cd to the unsigned apk location
 "C:\Program Files\Java\jdk1.8.0_71\bin\jarsigner.exe" -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ../../../../../vibes-release-key.keystore android-release-unsigned.apk vibes
+```
 
-# Use zipalign to optimize the apk
+## Use zipalign to optimize the apk
+```
 C:\Users\cheddi\AppData\Local\Android\sdk\build-tools\23.0.3\zipalign.exe -v 4 vibes.apk vibes-aligned.apk
+```
 
-# Upload the aligned apk to google play store.
+## Upload the aligned apk to google play store.
 
-# How to set song metadata
+## How to set song metadata
 
 1. Download movie songs into a movie folder.
 2. Run filename_convert script at both folder level and songs level.
