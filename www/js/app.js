@@ -36,13 +36,23 @@
                 templateUrl: 'js/vibes/other/tabs.html'
             })
             // Each tab has its own nav history stack:
-            .state('tab.channels', {
-                url: '/channels',
+            .state('tab.songs', {
+                url: '/songs',
                 views: {
-                    'tab-channels': {
+                    'tab-songs': {
                         cache: false,
-                        templateUrl: 'js/vibes/channels/tab-channels.html',
-                        controller: 'ChannelsCtrl as channelsCtrl'
+                        templateUrl: 'js/vibes/songs/tab-songs.html',
+                        controller: 'SongsCtrl as songsCtrl'
+                    }
+                }
+            })
+            .state('tab.dialogues', {
+                url: '/dialogues',
+                views: {
+                    'tab-dialogues': {
+                        cache: false,
+                        templateUrl: 'js/vibes/dialogues/tab-dialogues.html',
+                        controller: 'DialoguesCtrl as dialoguesCtrl'
                     }
                 }
             })
@@ -90,7 +100,7 @@
                 }
             });
 
-        $urlRouterProvider.otherwise('/tab/channels');
+        $urlRouterProvider.otherwise('/tab/songs');
     }
 
     function configHttpProvider($httpProvider) {

@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('vibes')
-        .controller('ChannelsCtrl', channelsCtrl);
+        .controller('SongsCtrl', SongsCtrl);
 
-    channelsCtrl.$inject = ['ChannelsService', 'ModalService', 'AudioService', 'SongInfoService'];
+    SongsCtrl.$inject = ['ChannelsService', 'ModalService', 'AudioService', 'ChannelMetadataService'];
 
-    function channelsCtrl(ChannelsService, ModalService, AudioService, SongInfoService) {
+    function SongsCtrl(ChannelsService, ModalService, AudioService, ChannelMetadataService) {
         var vm = this;
         vm.channels = null;
         vm.setChannel = setChannel;
@@ -17,7 +17,7 @@
 
         init();
         function init() {
-            vm.channels = ChannelsService.all();
+            vm.channels = ChannelsService.allSongChannels();
         }
 
         function setChannel(channelId) {
@@ -34,7 +34,7 @@
 
         function play() {
             AudioService.play();
-            SongInfoService.refreshSongInfo();
+            ChannelMetadataService.refreshChannelMetadata();
         }
 
         function pause() {

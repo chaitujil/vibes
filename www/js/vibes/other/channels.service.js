@@ -2,14 +2,14 @@
     'use strict';
 
     angular.module('vibes')
-        .factory('ChannelsService', channelsService);
+        .factory('ChannelsService', ChannelsService);
 
-    function channelsService() {
+    function ChannelsService() {
         var channels = [{
             id: 0,
             name: 'station1',
             cname: 'Hits',
-            sprovider: 'vibes',
+            type: 'songsChannel',
             face: 'img/hits.jpg',
             url: 'http://104.131.151.101:8000/station1',
             radioUuid: '',
@@ -18,7 +18,7 @@
             id: 1,
             name: 'station2',
             cname: 'Latest',
-            sprovider: 'vibes',
+            type: 'songsChannel',
             face: 'img/latest.jpg',
             url: 'http://104.131.151.101:8000/station2',
             radioUuid: '',
@@ -27,7 +27,7 @@
             id: 2,
             name: 'station3',
             cname: 'Beats',
-            sprovider: 'vibes',
+            type: 'songsChannel',
             face: 'img/beats.jpg',
             url: 'http://104.131.151.101:8000/station3',
             radioUuid: '',
@@ -36,25 +36,25 @@
             id: 3,
             name: 'station4',
             cname: 'Melodies',
-            sprovider: 'vibes',
+            type: 'songsChannel',
             face: 'img/melodies.jpg',
             url: 'http://104.131.151.101:8000/station4',
             radioUuid: '',
             apiKey: ''
         }, {
             id: 4,
-            name: 'station5',
+            name: 'station6',
             cname: 'Love',
-            sprovider: 'vibes',
+            type: 'dialoguesChannel',
             face: 'img/party.jpg',
-            url: 'http://104.131.151.101:8000/station4',
+            url: 'http://104.131.151.101:8000/station6',
             radioUuid: '',
             apiKey: ''
         }, {
             id: 5,
             name: 'station6',
             cname: 'Comedy',
-            sprovider: 'vibes',
+            type: 'dialoguesChannel',
             face: 'img/beats.jpg',
             url: 'http://104.131.151.101:8000/station6',
             radioUuid: '',
@@ -62,12 +62,28 @@
         }];
 
         return {
-            all: all,
+            allSongChannels: allSongChannels,
+            allDialogueChannels: allDialogueChannels,
             get: get
         };
 
-        function all() {
-            return channels;
+        function allSongChannels() {
+            return getChannelsByType('songsChannel');
+        }
+
+        function allDialogueChannels() {
+            return getChannelsByType('dialoguesChannel');
+        }
+
+        function getChannelsByType(channelType) {
+            var channelsByType = [];
+            for (var i = 0; i < channels.length; i++) {
+                if (channels[i].type === channelType) {
+                    channelsByType.push(channels[i]);
+                }
+            }
+
+            return channelsByType;
         }
 
         function get(channelId) {

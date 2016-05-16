@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('vibes')
-        .controller('ChannelDetailCtrl', channelDetailCtrl);
+        .controller('ChannelDetailCtrl', ChannelDetailCtrl);
 
-    channelDetailCtrl.$inject = ['$rootScope', 'ChannelsService', '$sce', '$log', 'ModalService', 'AudioService', 'SongInfoService'];
+    ChannelDetailCtrl.$inject = ['$rootScope', 'ChannelsService', '$sce', '$log', 'ModalService', 'AudioService', 'ChannelMetadataService'];
 
-    function channelDetailCtrl($rootScope, ChannelsService, $sce, $log, ModalService, AudioService, SongInfoService) {
+    function ChannelDetailCtrl($rootScope, ChannelsService, $sce, $log, ModalService, AudioService, ChannelMetadataService) {
         var vm = this;
         vm.play = play;
         vm.pause = pause;
@@ -47,7 +47,7 @@
 
         function play() {
             AudioService.play();
-            refreshSongInfo();
+            refreshChannelMetadata();
         }
 
         function pause() {
@@ -58,13 +58,13 @@
             if (curChannelId > 0) {
                 $rootScope.newChannelId = (curChannelId - 1);
             } else {
-                $rootScope.newChannelId = ChannelsService.all().length - 1;
+                $rootScope.newChannelId = ChannelsService.allSongChannels().length - 1;
             }
             init();
         }
 
         function gotoNext(curChannelId) {
-            if (curChannelId < (ChannelsService.all().length - 1)) {
+            if (curChannelId < (ChannelsService.allSongChannels().length - 1)) {
                 $rootScope.newChannelId = (curChannelId + 1);
             } else {
                 $rootScope.newChannelId = 0;
@@ -80,8 +80,8 @@
             ModalService.closeModal();
         }
 
-        function refreshSongInfo() {
-            SongInfoService.refreshSongInfo()
+        function refreshChannelMetadata() {
+            ChannelMetadataService.refreshChannelMetadata()
         }
 
         function isDefaultTheme() {

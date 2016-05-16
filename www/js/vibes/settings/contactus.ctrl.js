@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('vibes')
-        .controller('ContactUsCtrl', contactUsCtrl);
+        .controller('ContactUsCtrl', ContactUsCtrl);
 
-    function contactUsCtrl() {
+    function ContactUsCtrl() {
         var vm = this;
 
         vm.email = "developervibes@gmail.com";

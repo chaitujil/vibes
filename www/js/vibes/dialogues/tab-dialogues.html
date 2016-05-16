@@ -1,20 +1,20 @@
 <ion-view view-title="Vibes" class="vibes-page">
     <ion-content>
         <ion-list>
-            <div ng-repeat="channel in channelsCtrl.channels" ng-if="$index % 2 == 0" class="row">
+            <div ng-repeat="channel in dialoguesCtrl.channels" ng-if="$index % 2 == 0" class="row">
                 <div class="col-50">
                     <div class="channel-wrapper">
                         <div class="list card">
-                            <img class="channel-face" ng-src="{{channelsCtrl.channels[$index].face}}"
-                                 ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index].id)">
+                            <img class="channel-face" ng-src="{{dialoguesCtrl.channels[$index].face}}"
+                                 ng-click="dialoguesCtrl.setChannel(dialoguesCtrl.channels[$index].id)">
                         </div>
                     </div>
                 </div>
                 <div class="col-50">
                     <div class="channel-wrapper">
                         <div class="list card">
-                            <img class="channel-face" ng-src="{{channelsCtrl.channels[$index+1].face}}"
-                                 ng-click="channelsCtrl.setChannel(channelsCtrl.channels[$index+1].id)">
+                            <img class="channel-face" ng-src="{{dialoguesCtrl.channels[$index+1].face}}"
+                                 ng-click="dialoguesCtrl.setChannel(dialoguesCtrl.channels[$index+1].id)">
                         </div>
                     </div>
                 </div>
@@ -24,17 +24,17 @@
     <div class="music-footer" ng-if="modal!==undefined">
         <div class="row">
             <div class="col-10">
-                <img class="channel-face" ng-src="{{channelsCtrl.channels[curChannel.id].face}}">
+                <img class="channel-face" ng-src="{{dialoguesCtrl.channels[curChannel.id].face}}">
             </div>
-            <div class="col-80" ng-click="channelsCtrl.openModal()">
+            <div class="col-80" ng-click="dialoguesCtrl.openModal()">
                 <marquee>
                     <h class="track">{{songTitle}}</h>
                     <p class="artist">{{songArtists}}</p>
                 </marquee>
             </div>
             <div class="col-10">
-                <i class="play-pause ion-ios-play" ng-click="channelsCtrl.play()" ng-show="playing!==true"></i>
-                <i class="play-pause ion-ios-pause" ng-click="channelsCtrl.pause()" ng-show="playing!==false"></i>
+                <i class="play-pause ion-ios-play" ng-click="dialoguesCtrl.play()" ng-show="playing!==true"></i>
+                <i class="play-pause ion-ios-pause" ng-click="dialoguesCtrl.pause()" ng-show="playing!==false"></i>
             </div>
         </div>
     </div>

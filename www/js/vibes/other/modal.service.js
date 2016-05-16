@@ -21,7 +21,7 @@
                 removeModal();
             }
             $rootScope.newChannelId = channelId;
-            $ionicModal.fromTemplateUrl('js/vibes/channels/modal-channel-detail.html', {
+            $ionicModal.fromTemplateUrl('js/vibes/songs/modal-songs-detail.html', {
                 scope: $rootScope,
                 animation: 'slide-in-up'
             }).then(function (modal) {

@@ -1,0 +1,36 @@
+<ion-modal-view ng-controller="DialogueDetailCtrl as dialogueDetailCtrl" class="dialogue-detail-page">
+    <ion-header-bar class="bar-stable">
+        <div>
+            <i class="button button-clear" ng-click="dialogueDetailCtrl.closeModal()"><i class="ion-chevron-down"></i></i>
+        </div>
+        <h1 class="title">{{dialogueDetailCtrl.dialogue.cname}}</h1>
+    </ion-header-bar>
+    <ion-content class="center-content">
+        <div align="center">
+            <img class="song-cover" align="center" src="{{songCover}}">
+
+            <div class="dialogue-face-name">
+                <div ng-class="{'normal-song-info': dialogueDetailCtrl.isDefaultTheme(),'blue-song-info': !dialogueDetailCtrl.isDefaultTheme()}">
+                    <p>{{songTitle}}</p>
+                    <p>{{songArtists}}</p>
+                </div>
+            </div>
+
+            <div class="music-controls">
+                <div class="row">
+                    <div class="col-33">
+                        <i class="icon-skip-left ion-ios-skipbackward-outline" ng-click="dialogueDetailCtrl.gotoPrevious(dialogueDetailCtrl.dialogue.id)"></i>
+                    </div>
+                    <div class="col-33">
+                        <i class="icon-play-pause ion-ios-play-outline" ng-click="dialogueDetailCtrl.play()" ng-show="playing!==true"></i>
+                        <i class="icon-play-pause ion-ios-pause-outline" ng-click="dialogueDetailCtrl.pause()" ng-show="playing!==false"></i>
+                    </div>
+                    <div class="col-33">
+                        <i class="icon-skip-right ion-ios-skipforward-outline" ng-click="dialogueDetailCtrl.gotoNext(dialogueDetailCtrl.dialogue.id)"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>
+
