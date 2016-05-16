@@ -21,7 +21,7 @@
         }
 
         function setChannel(channelId) {
-            ModalService.setChannel(channelId);
+            ModalService.setSongsChannel(channelId);
         }
 
         function openModal() {

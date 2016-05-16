@@ -25,7 +25,7 @@
         init();
 
         function init() {
-            vm.channel = ChannelsService.get($rootScope.newChannelId);
+            vm.channel = ChannelsService.getDialoguesChannel($rootScope.newChannelId);
             vm.channelUrl = $sce.trustAsResourceUrl(vm.channel.url);
 
             if ($rootScope.playing !== true) {

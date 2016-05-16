@@ -5,11 +5,10 @@
         .factory('ChannelsService', ChannelsService);
 
     function ChannelsService() {
-        var channels = [{
+        var songsChannels = [{
             id: 0,
             name: 'station1',
             cname: 'Hits',
-            type: 'songsChannel',
             face: 'img/hits.jpg',
             url: 'http://104.131.151.101:8000/station1',
             radioUuid: '',
@@ -18,7 +17,6 @@
             id: 1,
             name: 'station2',
             cname: 'Latest',
-            type: 'songsChannel',
             face: 'img/latest.jpg',
             url: 'http://104.131.151.101:8000/station2',
             radioUuid: '',
@@ -27,7 +25,6 @@
             id: 2,
             name: 'station3',
             cname: 'Beats',
-            type: 'songsChannel',
             face: 'img/beats.jpg',
             url: 'http://104.131.151.101:8000/station3',
             radioUuid: '',
@@ -36,25 +33,24 @@
             id: 3,
             name: 'station4',
             cname: 'Melodies',
-            type: 'songsChannel',
             face: 'img/melodies.jpg',
             url: 'http://104.131.151.101:8000/station4',
             radioUuid: '',
             apiKey: ''
-        }, {
-            id: 4,
+        }];
+
+        var dialoguesChannels = [{
+            id: 0,
             name: 'station6',
-            cname: 'Love',
-            type: 'dialoguesChannel',
+            cname: 'Comedy 1',
             face: 'img/party.jpg',
             url: 'http://104.131.151.101:8000/station6',
             radioUuid: '',
             apiKey: ''
         }, {
-            id: 5,
+            id: 1,
             name: 'station6',
-            cname: 'Comedy',
-            type: 'dialoguesChannel',
+            cname: 'Comedy 2',
             face: 'img/beats.jpg',
             url: 'http://104.131.151.101:8000/station6',
             radioUuid: '',
@@ -64,32 +60,31 @@
         return {
             allSongChannels: allSongChannels,
             allDialogueChannels: allDialogueChannels,
-            get: get
+            getSongsChannel: getSongsChannel,
+            getDialoguesChannel: getDialoguesChannel
         };
 
         function allSongChannels() {
-            return getChannelsByType('songsChannel');
+            return songsChannels;
         }
 
         function allDialogueChannels() {
-            return getChannelsByType('dialoguesChannel');
+            return dialoguesChannels;
         }
 
-        function getChannelsByType(channelType) {
-            var channelsByType = [];
-            for (var i = 0; i < channels.length; i++) {
-                if (channels[i].type === channelType) {
-                    channelsByType.push(channels[i]);
+        function getSongsChannel(channelId) {
+            for (var i = 0; i < songsChannels.length; i++) {
+                if (songsChannels[i].id === parseInt(channelId)) {
+                    return songsChannels[i];
                 }
             }
-
-            return channelsByType;
+            return null;
         }
 
-        function get(channelId) {
-            for (var i = 0; i < channels.length; i++) {
-                if (channels[i].id === parseInt(channelId)) {
-                    return channels[i];
+        function getDialoguesChannel(channelId) {
+            for (var i = 0; i < dialoguesChannels.length; i++) {
+                if (dialoguesChannels[i].id === parseInt(channelId)) {
+                    return dialoguesChannels[i];
                 }
             }
             return null;
