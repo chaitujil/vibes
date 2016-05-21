@@ -1,8 +1,15 @@
 <ion-view view-title="Share this app" class="vibes-page">
     <ion-content class="center-content">
         <div class="share-app">
-            <button class="button button-positive " ng-click="shareThisAppCtrl.shareViaFacebook()">Share on Facebook</button>
-            <button class="button button-calm" ng-click="shareThisAppCtrl.shareViaTwitter()">Share on Twitter</button>
+            <ion-item>
+                <i class="icon-social-fb ion-social-facebook" ng-click="shareThisAppCtrl.shareViaFacebook"></i>
+            </ion-item>
+            <ion-item>
+                <i class="icon-social-twitter ion-social-twitter" ng-click="shareThisAppCtrl.shareViaTwitter()"></i>
+            </ion-item>
+            <ion-item>
+                <i class="icon-social-whatsapp ion-social-whatsapp" ng-click="shareThisAppCtrl.shareViaWhatsApp()"></i>
+            </ion-item>
         </div>
     </ion-content>
 </ion-view>

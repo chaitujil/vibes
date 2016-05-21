@@ -23,6 +23,10 @@
     {
       "locator": "https://github.com/jcjee/email-composer.git",
       "id": "com.jcjee.plugins.emailcomposer"
+    },
+    {
+      "locator": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
+      "id": "cordova-plugin-x-socialsharing"
     }
   ],
   "cordovaPlatforms": [

@@ -13,6 +13,30 @@
     font-size: 48px;
 }
 
+.icon-social-fb {
+    float: left;
+    display: inline-block;
+    position: relative;
+    font-size: 56px;
+    color: #3b5998;
+}
+
+.icon-social-twitter {
+    float: left;
+    display: inline-block;
+    position: relative;
+    font-size: 56px;
+    color: #55acee;
+}
+
+.icon-social-whatsapp {
+    float: left;
+    display: inline-block;
+    position: relative;
+    font-size: 56px;
+    color: #43d854;
+}
+
 .icon-large {
     font-size: xx-large;
     color: #71c0b3;
