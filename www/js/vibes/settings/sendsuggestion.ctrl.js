@@ -14,7 +14,6 @@
         function sendSuggestion(suggestion) {
             if (typeof suggestion !== "undefined" && suggestion.length > 0) {
                 if (window.plugins && window.plugins.emailComposer) {
-                    alert("window plugins not null");
                     window.plugins.emailComposer.showEmailComposerWithCallback(function (result) {
                             alert("Email successfully sent " + result);
                         },
@@ -27,7 +26,6 @@
                         null,                    // Attachments
                         null);                   // Attachment Data
                 }
-                alert("Suggestion successfully sent");
             }
         }
     }
