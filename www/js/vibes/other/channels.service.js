@@ -45,11 +45,11 @@
             // songs and dialogues channels have to be consecutive
         {
             id: 4,
-            name: 'station6',
+            name: 'station5',
             cname: 'Comedy 1',
             type: 'dialoguesChannel',
-            face: 'img/party.jpg',
-            url: 'http://104.131.151.101:8000/station6',
+            face: 'img/comedy.jpg',
+            url: 'http://104.131.151.101:8000/station5',
             radioUuid: '',
             apiKey: ''
         }, {
@@ -57,7 +57,7 @@
             name: 'station6',
             cname: 'Comedy 2',
             type: 'dialoguesChannel',
-            face: 'img/beats.jpg',
+            face: 'img/humor.jpg',
             url: 'http://104.131.151.101:8000/station6',
             radioUuid: '',
             apiKey: ''

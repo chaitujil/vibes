@@ -16,7 +16,8 @@
 
         function showSpinner() {
             $ionicLoading.show({
-                template: '<ion-spinner icon="spiral" class="spinner-energized"></ion-spinner>'
+                template: '<ion-spinner icon="spiral" class="spinner-energized"></ion-spinner>',
+                duration: 3000,
             });
         }
 
@@ -83,11 +84,11 @@
         }
 
         function stalledEventhandler() {
-            //showSpinner();
+            hideSpinner();
         }
 
         function suspendEventHandler() {
-            //hideSpinner();
+            hideSpinner();
         }
     }
 })();
