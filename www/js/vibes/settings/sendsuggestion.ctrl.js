@@ -20,15 +20,14 @@
                         },
                         "Suggestion from user", // Subject
                         suggestion,                      // Body
-                        ["chaitu.jil@gmail.com", "gow.chow@gmail.com", "bobbystudy@gmail.com"],    // To
+                        ["developervibes@gmail.com"],    // To
                         null,                    // CC
                         null,                    // BCC
                         false,                   // isHTML
                         null,                    // Attachments
                         null);                   // Attachment Data
                 }
-                $log.debug(suggestion);
-                alert("Message sent");
+                alert("Suggestion successfully sent");
             }
         }
     }
