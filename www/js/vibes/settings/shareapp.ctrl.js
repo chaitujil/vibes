@@ -13,25 +13,25 @@
         vm.shareViaWhatsApp = shareViaWhatsApp;
 
         function shareViaTwitter() {
-            window.plugins.socialsharing.shareViaTwitter (
+            window.plugins.socialsharing.shareViaTwitter(
+                '',
                 null,
-                null /* img */,
                 'https://play.google.com/store/apps/details?id=com.ionicframework.example146317' /* url */
             );
         }
 
         function shareViaFacebook() {
             window.plugins.socialsharing.shareViaFacebook(
+                '',
                 null,
-                null /* img */,
                 'https://play.google.com/store/apps/details?id=com.ionicframework.example146317' /* url */
             );
         }
 
         function shareViaWhatsApp() {
             window.plugins.socialsharing.shareViaWhatsApp(
-                'Message via WhatsApp',
-                null /* img */,
+                '',
+                null,
                 'https://play.google.com/store/apps/details?id=com.ionicframework.example146317' /* url */
             );
         }
