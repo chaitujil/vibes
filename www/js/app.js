@@ -2,12 +2,12 @@
 (function () {
     'use strict';
 
-    angular.module('vibes', ['ionic', 'ngCordova'])
+    angular.module('vibes', ['ionic', 'ngCordova', 'ngSpecialOffer', 'ngStorage'])
         .run(runIonic)
         .config(configStateProvider)
         .config(['$httpProvider', configHttpProvider]);
 
-    function runIonic($ionicPlatform) {
+    function runIonic($ionicPlatform, $specialOffer) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -20,6 +20,30 @@
                 // org.apache.cordova.statusbar required
                 StatusBar.styleLightContent();
             }
+
+            var appVersion = '1.0.21';
+            var androidPackageName = 'com.ionicframework.example146317';
+
+            $specialOffer.init({
+                id           : 'com.ionicframework.example146317' + appVersion,
+                showOnCount  : 5,
+                title        : 'vibes',
+                text         : 'If you enjoy this app please take a moment to rate it',
+                agreeLabel   : 'Rate App',
+                remindLabel  : 'Remind Me Later',
+                declineLabel : 'Not interested',
+                onAgree      : function () {
+                    if (window.device.platform === 'Android') {
+                        window.open($specialOffer.googlePlayUrl(androidPackageName));
+                    }
+                },
+                onDecline   : function () {
+                    // declined
+                },
+                onRemindMeLater : function () {
+                    // will be reminded in 5 more uses
+                }
+            });
         });
     }
 
