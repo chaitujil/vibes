@@ -1,4 +1,4 @@
-<ion-view view-title="Vibes" class="vibes-page">
+<ion-view view-title="Bindas" class="vibes-page">
     <ion-content>
         <ion-list>
             <div ng-repeat="channel in dialoguesCtrl.channels" ng-if="$index % 2 == 0" class="row">
@@ -24,7 +24,7 @@
     <div class="music-footer" ng-if="modal!==undefined">
         <div class="row">
             <div class="col-10">
-                <img class="channel-face" ng-src="{{dialoguesCtrl.channels[curChannel.id].face}}">
+                <img class="channel-face" ng-src="{{dialoguesCtrl.curChannel().face}}">
             </div>
             <div class="col-80" ng-click="dialoguesCtrl.openModal()">
                 <marquee>

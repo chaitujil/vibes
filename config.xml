@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.example146317" version="1.0.21" android-versionCode="21" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cordova.apache.org/ns/1.0 ">
-  <name>vibes</name>
+<widget id="com.mady.vibes" version="1.0.0" android-versionCode="21" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cordova.apache.org/ns/1.0 ">
+  <name>Bindas</name>
   <description>&#xD;
-    A Telugu radio app.&#xD;
+    A telugu entertainment app.&#xD;
   </description>
   <author email="developervibes@gmail.com" href="">&#xD;
     vibes developer team&#xD;
@@ -16,7 +16,7 @@
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
-  <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="SplashScreenDelay" value="2000"/>
   <preference name="orientation" value="portrait" />
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
