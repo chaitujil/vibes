@@ -2,6 +2,15 @@
 
 Telugu radio app similar to pandora
 
+## How to build
+
+```
+npm install -g ionic
+ionic serve
+```
+
+Those above steps should open a browser that runs bindas app
+
 ## How to create a signed apk
 Don't change id in config.xml once uploaded to google play store.
 Change version in config.xml from YY to YY+1
