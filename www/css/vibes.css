@@ -1,6 +1,8 @@
 @font-face {
     #font-family: "Ionicons";
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
     src: url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1");
     src: url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1#iefix") format("embedded-opentype"), url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.ttf?v=2.0.1") format("truetype"), url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.woff?v=2.0.1") format("woff"), url("http://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.svg?v=2.0.1#Ionicons") format("svg");
     font-weight: normal;
@@ -9,31 +11,32 @@
 
 .button {
     #font-family: "Ionicons", serif;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-size: 48px;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+}
+
+.button-text {
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 12pt;
+    text-align: center;
 }
 
 .icon-social-fb {
-    float: left;
-    display: inline-block;
-    position: relative;
-    font-size: 56px;
+    font-size: 50px;
     color: #3b5998;
 }
 
 .icon-social-twitter {
-    float: left;
-    display: inline-block;
-    position: relative;
-    font-size: 56px;
+    font-size: 50px;
     color: #55acee;
 }
 
 .icon-social-whatsapp {
-    float: left;
-    display: inline-block;
-    position: relative;
-    font-size: 56px;
+    font-size: 50px;
     color: #43d854;
 }
 
@@ -45,7 +48,10 @@
     #font-weight: bold;
     font-size: 11px;
     font-style: normal;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     color: #50514F;
     line-height: 1;
     margin: 10px;
@@ -55,7 +61,10 @@
     #font-weight: bold;
     font-size: 11pt;
     font-style: normal;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     #color: #50514F;
     color: #ffffff;
     line-height: 1;
@@ -115,6 +124,9 @@ and (min-device-width : 1024px) {
 
 .bar.bar-stable {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     #background-color: #71c0b3;
     #background-color: #ffd000;
     #background-color: #ff5959;
@@ -157,12 +169,14 @@ and (min-device-width : 1024px) {
 
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
     color: #ffffff;
-    #color: #ff5959;
+    #color: #ef3b4a;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 .bar.bar-stable .title {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: #ffffff;
-    #color: #ff5959;
+    #color: #ef3b4a;
 }
 
 .bar-stable .button.button-clear {
@@ -170,8 +184,10 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     background: none;
     box-shadow: none;
     color: #ffffff;
+    #color: #ef3b4a;
     font-size: 20px;
     margin-left: 5px;
+    margin-top: 2px;
 }
 
 .bar-stable .button.button-more {
@@ -185,12 +201,18 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 }
 
 h, h1, h2, h3, h4, h5, h6, .h, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     line-height: 0.5;
 }
 
 p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     line-height: 1.2;
 }
 .center-content {
@@ -205,18 +227,24 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 
 .channel-face-name {
     text-align: center;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 12pt;
 }
 
 .channel-wrapper {
-    background-color: #f8f8f8;
+    #background-color: #f8f8f8;
     margin: 5%;
 }
 
 .channel-name {
     color: white;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-weight: 500;
     font-size: 10pt;
     margin: 10px 0 0 20px;
@@ -232,11 +260,15 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     #background-color: #50514F;
     #background-color: black;
     background-color: #f8f8f8;
+    #background-image: url("/img/texture-wood-white.png");
 }
 
 .contact-info {
     font-size: 12pt;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     margin: 20px;
 }
 
@@ -247,7 +279,10 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 }
 
 .settings-content {
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-size: 12pt;
+    padding: 3%;
+    #background-image: url("/img/texture-wood-white.png");
 }
 
 .settings-content .icon {
@@ -264,13 +299,26 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     float: right;
 }
 
+.music-controls-fixed{
+    position: fixed;
+    bottom: 15%;
+    left:0;
+    right: 0;
+    text-align: center;
+    height: 50px;
+    #border-top:1px solid #b2b2b2;
+    #background-color: #f8f8f8;
+    #background-color: #444444;
+    #background-color: white;
+    cursor: pointer;
+}
 .music-controls .icon-play-pause {
     float: center;
     display: inline-block;
     position: relative;
     font-size: 56px;
     #color: #50514F;
-    #color: #ff5959;
+    #color: #ef3b4a;
     color: #17bebb;
 }
 
@@ -303,7 +351,8 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     height: 42px;
     #border-top:1px solid #b2b2b2;
     #background-color: #f8f8f8;
-    background-color: #444444;
+    #background-color: #444444;
+    background-color: white;
     cursor: pointer;
 }
 
@@ -316,7 +365,8 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     height: 42px;
     #border-top:1px solid #b2b2b2;
     #background-color: #f8f8f8;
-    background-color: #444444;
+    #background-color: #444444;
+    background-color: white;
     cursor: pointer;
 }
 
@@ -327,10 +377,10 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     right: 0;
     text-align: center;
     height: 42px;
-    #border-top:1px solid #b2b2b2;
+    border-top:1px solid #b2b2b2;
     #background-color: #f8f8f8;
     #background-color: #444444;
-    background-color: black;
+    background-color: white;
     cursor: pointer;
 }
 
@@ -338,8 +388,12 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     float: center;
     #width: 80%;
     font-size: 12px;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     color: #ffffff;
+    color: black;
 }
 
 .music-footer .channel-face{
@@ -354,8 +408,10 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     margin: 4px;
     margin-right: 15px;
     #width: 10%;
-    #color: #50514f;
-    color: #17bebb;
+    color: #50514f;
+    #color: #17bebb;
+    color: #ef3b4a;
+    #color: #55DDE0;
     font-size: 34px;
 }
 
@@ -368,7 +424,10 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 }
 
 .send-suggestion .button {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 12pt;
     margin-top: 10px;
     #float: center;
@@ -378,7 +437,10 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 }
 
 .share-app .button {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 12pt;
     margin-top: 10px;
     float: left;
@@ -390,4 +452,20 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
   height: 28px;
   stroke: #17bebb;
   fill: #17bebb;
+}
+
+.popup-body
+{
+  text-align: center;
+}
+
+.popup-buttons .button
+{
+  background-color: #17bebb;
+  border-color: #17bebb;
+}
+
+.popup-buttons .button.activated
+{
+  background-color: #17bebb;
 }

@@ -15,7 +15,7 @@
             if (typeof suggestion !== "undefined" && suggestion.length > 0) {
                 if (window.plugins && window.plugins.emailComposer) {
                     window.plugins.emailComposer.showEmailComposerWithCallback(function (result) {
-                            alert("Email successfully sent " + result);
+                            //alert("Email successfully sent " + result);
                         },
                         "Suggestion from user", // Subject
                         suggestion,                      // Body

@@ -1,15 +1,17 @@
-<ion-view view-title="Share this app" class="vibes-page">
-    <ion-content class="center-content">
-        <div class="share-app">
-            <ion-item>
-                <i class="icon-social-fb ion-social-facebook" ng-click="shareThisAppCtrl.shareViaFacebook()"></i>
-            </ion-item>
-            <ion-item>
-                <i class="icon-social-twitter ion-social-twitter" ng-click="shareThisAppCtrl.shareViaTwitter()"></i>
-            </ion-item>
-            <ion-item>
-                <i class="icon-social-whatsapp ion-social-whatsapp" ng-click="shareThisAppCtrl.shareViaWhatsApp()"></i>
-            </ion-item>
-        </div>
+<ion-view view-title="Share app" class="vibes-page">
+    <ion-content class="settings-content">
+            <button class="button button-block button-light" type="button" ng-click="shareThisAppCtrl.shareViaFacebook()">
+                
+                <i class="icon-social-fb ion-social-facebook"></i>
+                <p class="button-text">Share in facebook<p>
+            </button>
+            <button class="button button-block button-light" type="button" ng-click="shareThisAppCtrl.shareViaTwitter()">
+                <i class="icon-social-twitter ion-social-twitter"></i>
+                <p class="button-text">Share in twitter</p>
+            </button>
+            <button class="button button-block button-light" type="button" ng-click="shareThisAppCtrl.shareViaWhatsApp()">
+                <i class="icon-social-whatsapp ion-social-whatsapp"></i>
+                <p class="button-text">Share in whatsapp</p>
+            </button>
     </ion-content>
 </ion-view>

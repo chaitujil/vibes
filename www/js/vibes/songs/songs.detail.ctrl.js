@@ -47,7 +47,7 @@
 
         function play() {
             AudioService.play();
-            refreshChannelMetadata();
+            //refreshChannelMetadata();
         }
 
         function pause() {

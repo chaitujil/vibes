@@ -22,12 +22,13 @@
             }
 
             var appVersion = '1.0.21';
+            var iosId = '1120991525';
             var androidPackageName = 'com.ionicframework.example146317';
 
             $specialOffer.init({
                 id           : 'com.ionicframework.example146317' + appVersion,
-                showOnCount  : 5,
-                title        : 'vibes',
+                showOnCount  : 10,
+                title        : 'Bindas',
                 text         : 'If you enjoy this app please take a moment to rate it',
                 agreeLabel   : 'Rate App',
                 remindLabel  : 'Remind Me Later',
@@ -35,6 +36,8 @@
                 onAgree      : function () {
                     if (window.device.platform === 'Android') {
                         window.open($specialOffer.googlePlayUrl(androidPackageName));
+                    } else if (window.device.platform === 'iOS') {
+                        window.open($specialOffer.appStoreUrl(iosId));
                     }
                 },
                 onDecline   : function () {

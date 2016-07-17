@@ -46,7 +46,7 @@
         {
             id: 4,
             name: 'station5',
-            cname: 'Comedy 1',
+            cname: 'Comedy',
             type: 'dialoguesChannel',
             face: 'img/comedy.jpg',
             url: 'http://104.131.151.101:8000/station5',
@@ -55,7 +55,7 @@
         }, {
             id: 5,
             name: 'station6',
-            cname: 'Comedy 2',
+            cname: 'Humor',
             type: 'dialoguesChannel',
             face: 'img/humor.jpg',
             url: 'http://104.131.151.101:8000/station6',

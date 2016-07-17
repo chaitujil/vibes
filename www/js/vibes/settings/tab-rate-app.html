@@ -1,5 +1,13 @@
-<ion-view view-title="Rate this app" class="vibes-page">
-    <ion-content class="center-content">
-        Rate this app
+<ion-view view-title="Rate app" class="vibes-page">
+    <ion-content class="settings-content">
+                <button class="button button-block button-light" type="button" ng-click="rateAppCtrl.rateIOS()"> 
+                    <i class="icon-social-twitter ion-social-apple"></i>
+                    <p class="button-text">Rate in app store</p>
+                </button>
+
+                <button class="button button-block button-light" type="button" ng-click="rateAppCtrl.rateAndroid()">
+                    <i class="icon-social icon-social-whatsapp ion-social-android"></i>
+                    <p class="button-text">Rate in play store</p>
+                </button>
     </ion-content>
 </ion-view>
