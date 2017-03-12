@@ -12,6 +12,10 @@
             pause: pause
         };
 
+        //
+        // Comment below section to work in web browser.
+        // For mobile this code section detects headphone jack connection.
+        //
         $ionicPlatform.ready(function() {
             window.HeadsetDetection.registerRemoteEvents(function(status) {
                 switch (status) {
@@ -21,7 +25,7 @@
                         pause();
                         break;
                 };
-            });
+           });
         }, false);
 
         return service;
@@ -55,7 +59,7 @@
                 $rootScope.audio.addEventListener("playing", playingEventHandler, false);
                 $rootScope.audio.addEventListener("waiting", waitingEventHandler, false);
                 // Stalled event doesnot work properly on ios devices.
-                $rootScope.audio.addEventListener("stalled", stalledEventhandler, false);
+                $rootScope.audio.addEventListener("stalled", stalledEventHandler, false);
                 $rootScope.audio.addEventListener("error", errorEventHandler, false);
             }
             $rootScope.audio.play();
@@ -103,14 +107,14 @@
             // These is set here because the html5 audio stream resets the lock screen nowplaying info.
             // They need to be reset after stream starts playing. The song cover is set here. Song info
             // is set during metadata refresh cycle.
-            //ChannelMetadataService.setIOSNowPlayingCover();
+            ChannelMetadataService.setIOSNowPlayingCover();
         }
 
         function waitingEventHandler() {
             UtilService.showSpinner();
         }
 
-        function stalledEventhandler() {
+        function stalledEventHandler() {
             UtilService.showSpinner();
         }
 
@@ -155,8 +159,9 @@
             // If connection resumes the playing event is triggered which initiates the
             // refresh metadata cycle and sets 'playing' to true.
             if (current_time && audio_current_time <= current_time) {
-                $rootScope.playing = false;
-                ChannelMetadataService.cancelRefreshChannelMetadata();
+                //$rootScope.playing = false;
+                //ChannelMetadataService.cancelRefreshChannelMetadata();
+                play();
                 return;
             } 
             // Calling back monitorAudioPlaying.

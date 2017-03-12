@@ -7,6 +7,17 @@
                         <div class="list card">
                             <img class="channel-face" ng-src="{{dialoguesCtrl.channels[$index].face}}"
                                  ng-click="dialoguesCtrl.setChannel(dialoguesCtrl.channels[$index].id)">
+        <div class="row">
+            <div class="col-80" align="center">
+                <p1>{{dialoguesCtrl.channels[$index].cname}}</p1>
+            </div>
+            <div class="col-20" align="center">
+                <i class="play-pause ion-ios-play" ng-click="dialoguesCtrl.play()"
+                   ng-show="dialoguesCtrl.isplaying()!==true || dialoguesCtrl.curChannel().id!==dialoguesCtrl.channels[$index].id"></i>
+                <i class="play-pause ion-ios-pause" ng-click="dialoguesCtrl.pause()"
+                   ng-show="dialoguesCtrl.isplaying()!==false && dialoguesCtrl.curChannel().id==dialoguesCtrl.channels[$index].id"></i>
+            </div>
+        </div>
                         </div>
                     </div>
                 </div>
@@ -15,6 +26,17 @@
                         <div class="list card">
                             <img class="channel-face" ng-src="{{dialoguesCtrl.channels[$index+1].face}}"
                                  ng-click="dialoguesCtrl.setChannel(dialoguesCtrl.channels[$index+1].id)">
+        <div class="row">
+            <div class="col-80" align="center">
+                <p1>{{dialoguesCtrl.channels[$index+1].cname}}</p1>
+            </div>
+            <div class="col-20" align="center">
+                <i class="play-pause ion-ios-play" ng-click="dialoguesCtrl.play()"
+                   ng-show="dialoguesCtrl.isplaying()!==true || dialoguesCtrl.curChannel().id!==dialoguesCtrl.channels[$index+1].id"></i>
+                <i class="play-pause ion-ios-pause" ng-click="dialoguesCtrl.pause()"
+                   ng-show="dialoguesCtrl.isplaying()!==false && dialoguesCtrl.curChannel().id==dialoguesCtrl.channels[$index+1].id"></i>
+            </div>
+        </div>
                         </div>
                     </div>
                 </div>

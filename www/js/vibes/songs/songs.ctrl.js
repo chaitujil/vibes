@@ -15,11 +15,13 @@
         vm.closeModal = closeModal;
         vm.play = play;
         vm.pause = pause;
+        vm.isplaying = isplaying;
 
         init();
 
         function init() {
             vm.channels = ChannelsService.allSongChannels();
+            $rootScope.playing = false;
         }
 
         function setChannel(channelId) {
@@ -46,5 +48,9 @@
         function pause() {
             AudioService.pause();
         }
+
+        function isplaying() {
+            return $rootScope.playing;
+        } 
     }
 })();

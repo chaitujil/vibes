@@ -10,13 +10,11 @@
 }
 
 .button {
-    background-color: #303030;
 }
 
 .button-text {
     font-size: 12pt;
     text-align: center;
-    color: white;
 }
 
 .icon-social-fb {
@@ -135,18 +133,14 @@ and (min-device-width : 1024px) {
 .bar.bar-dark {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     #background-color: white;
-    #background-color: #ef3b4a;
-    #background-color: black;
-    #background-color: #303030;
-    background-color: #272727;
+    background-color: #ef3b4a;
 
 }
 .tabs-dark > .tabs,
 .tabs-dark {
     #background-color: #ef3b4a;
-    #background-color: #303030;
-    background-color: #272727;
-
+    background-color: #e6e6ea;
+    background-color: #f4f4f8;
 }
 
 .scroll-content {
@@ -157,7 +151,6 @@ and (min-device-width : 1024px) {
     padding-left: 125px;
     min-height: 100px;
     font-size: 20pt;
-    color: #272727;
 }
 
 .item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child, .item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image, .item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image {
@@ -172,11 +165,9 @@ and (min-device-width : 1024px) {
 }
 
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
-    #color: #ef3b4a;
     color: white;
-}
 
-ion-tabs.tabs {
+    #color: #ef3b4a;
     color: black;
 }
 
@@ -221,7 +212,6 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     #font-family: Verdana, Geneva, sans-serif;
     #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     line-height: 1.2;
-    color: white;
 }
 .center-content {
     padding: 2px;
@@ -265,9 +255,7 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 }
 
 .vibes-page {
-    #background-color: #303030;
-    #background-color: #272727;
-    background-color: black;
+    background-color: #f4f4f8;
     #background-image: url("/img/background.jpg");
 }
 
@@ -281,10 +269,8 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 }
 
 .channel-detail-page {
-    #background-color: #f4f4f8;
-    #background-color: #303030;
-    #background-color: #272727;
-    background-color: black;
+    background-color: #f4f4f8;
+    #background-color: white;
 }
 
 .settings-content {
@@ -292,27 +278,17 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     font-size: 12pt;
     padding: 3%;
     #background-image: url("/img/texture-wood-white.png");
-
-    #background-color: #303030;
-    #background-color: #272727;
 }
 
 .settings-content .icon {
     padding: 20px;
     font-size: 200%;
-    color: #272727;
-    color: white;
 }
 
 .settings-content .item-content {
-    color: white;
-    #background-color: #303030;
-    background-color: #272727;
+    color: #444444;
 }
 
-.settings-content .button {
-    background-color: #272727;
-}
 
 .my-custom-icon {
     float: right;
@@ -331,7 +307,6 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     #background-color: white;
     cursor: pointer;
 }
-
 .music-controls .icon-circle {
 position: relative;
   display: inline-block;
@@ -346,14 +321,14 @@ position: relative;
   -moz-border-radius:50%;
   -webkit-border-radius:50%;
   border-radius: 50%; 
-  border: 2px solid white;
+  border: 2px solid black;
  
   #background: grey;
   #color: #fff;
   
   text-align:center;
   #vertical-align: middle;
-    color: white;
+    color: black;
 }
 .music-controls .icon-play {
     float: center;
@@ -368,7 +343,7 @@ position: relative;
     #color: #17bebb;
     #color: #e6e6ea;
     #color: #f4f4f8;
-    color: white;
+    color: black;
 }
 
 .music-controls .icon-pause {
@@ -384,7 +359,7 @@ position: relative;
     #color: #17bebb;
     #color: #e6e6ea;
     #color: #f4f4f8;
-    color: white;
+    color: black;
 }
 
 .music-controls .icon-skip-left {
@@ -394,9 +369,8 @@ position: relative;
     font-size: 35px;
     padding-top: 16px;
     #color: #50514f;
-    #color: #ef3b4a;
-    #color: #17bebb;
-    color: white;
+    color: #17bebb;
+    color: black;
 }
 
 .music-controls .icon-skip-right {
@@ -406,9 +380,8 @@ position: relative;
     font-size: 35px;
     padding-top: 16px;
     #color: #50514f;
-    #color: #ef3b4a;
-    #color: #17bebb;
-    color: white;
+    color: #17bebb;
+    color: black;
 }
 
 .music-footer{
@@ -419,9 +392,8 @@ position: relative;
     text-align: center;
     height: 42px;
     #border-top:1px solid #b2b2b2;
+    background-color: #e6e6ea;
     background-color: #f4f4f8;
-    background-color: #303030;
-    #background-color: #272727;
     cursor: pointer;
 }
 
@@ -436,9 +408,8 @@ position: relative;
     #background-color: #f8f8f8;
     #background-color: #444444;
     #background-color: white;
+    background-color: #e6e6ea;
     background-color: #f4f4f8;
-    background-color: #303030;
-    #background-color: #272727;
     cursor: pointer;
 }
 
@@ -453,10 +424,8 @@ position: relative;
     #background-color: #f8f8f8;
     #background-color: #444444;
     #background-color: white;
+    background-color: #e6e6ea;
     background-color: #f4f4f8;
-    background-color: #303030;
-    #background-color: #272727;
-    #background-color: black;
     cursor: pointer;
 }
 
@@ -466,7 +435,6 @@ position: relative;
     font-size: 12px;
     color: #ffffff;
     color: black;
-    color: #e6e6ea;
 }
 
 .music-footer .channel-face{
@@ -482,9 +450,8 @@ position: relative;
     margin: 7px;
     margin-right: 15px;
     #width: 10%;
-    #color: #ef3b4a;
-    #color: black;
-    color: white;
+    color: #ef3b4a;
+    color: black;
     font-size: 30px;
 }
 
@@ -506,8 +473,6 @@ position: relative;
     #float: center;
     #border-radius: 5px;
     background-color: #17bebb;
-    #background-color: #303030;
-    border-color: white;
     border-color: #17bebb;
 }
 
@@ -553,13 +518,12 @@ position: relative;
   left: 0;
   right: 0;
   background: url() center center;
-  opacity: .35;
+  opacity: 0.3;
   width: 100%;
   height: 100%;
   zoom: 300%;
   -webkit-filter: blur(10px);
 }
-
 .vibes-bg {
   position: absolute;
   z-index: -1;
@@ -568,9 +532,9 @@ position: relative;
   left: 0;
   right: 0;
   background: url() center center;
-  opacity: .15;
+  opacity: 0;
   width: 100%;
   height: 100%;
-  zoom: 150%;
+  zoom: 200%;
   -webkit-filter: blur(10px);
 }

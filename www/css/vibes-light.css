@@ -10,13 +10,19 @@
 }
 
 .button {
-    background-color: #303030;
+    #font-family: "Ionicons", serif;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
 }
 
 .button-text {
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 12pt;
     text-align: center;
-    color: white;
 }
 
 .icon-social-fb {
@@ -134,19 +140,31 @@ and (min-device-width : 1024px) {
 
 .bar.bar-dark {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    #background-color: white;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    #background-color: #71c0b3;
+    #background-color: #ffd000;
+    #background-color: #ff5959;
+    #background-color: #ffffff;
+    #background-color: #17bebb;
+    #background-color: #DE3645;
     #background-color: #ef3b4a;
-    #background-color: black;
-    #background-color: #303030;
-    background-color: #272727;
-
+    #background-color: white;
+    background-color: #e6e6ea;
+    background-color: #f4f4f8;
 }
 .tabs-dark > .tabs,
 .tabs-dark {
+    #background-color: #71c0b3;
+    #background-color: #f2c500;
+    #background-color: #ff5959;
+    #background-color: #ffffff;
+    #background-color: #17bebb;
+    #background-color: #DE3645;
     #background-color: #ef3b4a;
-    #background-color: #303030;
-    background-color: #272727;
-
+    background-color: #e6e6ea;
+    background-color: #f4f4f8;
 }
 
 .scroll-content {
@@ -157,7 +175,6 @@ and (min-device-width : 1024px) {
     padding-left: 125px;
     min-height: 100px;
     font-size: 20pt;
-    color: #272727;
 }
 
 .item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child, .item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image, .item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image {
@@ -172,26 +189,26 @@ and (min-device-width : 1024px) {
 }
 
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
-    #color: #ef3b4a;
-    color: white;
-}
-
-ion-tabs.tabs {
+    color: #ffffff;
     color: black;
+    #color: #ef3b4a;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 .bar.bar-dark .title {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #ffffff;
     #color: #ef3b4a;
-    color: white;
+    color: black;
 }
 
 .bar-dark .button.button-clear {
     border-color: transparent;
     background: none;
     box-shadow: none;
+    color: #ffffff;
+    color: black;
     #color: #ef3b4a;
-    color: white;
     font-size: 20px;
     margin-left: 5px;
     margin-top: 2px;
@@ -221,17 +238,16 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     #font-family: Verdana, Geneva, sans-serif;
     #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     line-height: 1.2;
-    color: white;
 }
 .center-content {
-    padding: 2px;
+    #padding: 2px;
 }
 
 .channel-face {
     height: 100%;
     width: 100%;
     #margin: 5%;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 .channel-face-name {
@@ -265,10 +281,14 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 }
 
 .vibes-page {
-    #background-color: #303030;
-    #background-color: #272727;
-    background-color: black;
-    #background-image: url("/img/background.jpg");
+    #background-color: #444444;
+    #background-color: #50514F;
+    #background-color: black;
+    #background-color: #f8f8f8;
+    #background-color: #e6e6ea;
+    background-color: #f4f4f8;
+    background-color: white;
+    #background-image: url("/img/texture-wood-white.png");
 }
 
 .contact-info {
@@ -281,10 +301,13 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
 }
 
 .channel-detail-page {
+    #background-color: #444444;
+    #background-color: #50514F;
+    #background-color: black;
+    #background-color: #f8f8f8;
+    #background-color: #e6e6ea;
     #background-color: #f4f4f8;
-    #background-color: #303030;
-    #background-color: #272727;
-    background-color: black;
+    background-color: white;
 }
 
 .settings-content {
@@ -292,27 +315,17 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     font-size: 12pt;
     padding: 3%;
     #background-image: url("/img/texture-wood-white.png");
-
-    #background-color: #303030;
-    #background-color: #272727;
 }
 
 .settings-content .icon {
     padding: 20px;
     font-size: 200%;
-    color: #272727;
-    color: white;
 }
 
 .settings-content .item-content {
-    color: white;
-    #background-color: #303030;
-    background-color: #272727;
+    color: #444444;
 }
 
-.settings-content .button {
-    background-color: #272727;
-}
 
 .my-custom-icon {
     float: right;
@@ -331,7 +344,6 @@ p, p1, p2, p3, p4, p5, p6, .p, .p1, .p2, .p3, .p4, .p5, .p6 {
     #background-color: white;
     cursor: pointer;
 }
-
 .music-controls .icon-circle {
 position: relative;
   display: inline-block;
@@ -346,14 +358,14 @@ position: relative;
   -moz-border-radius:50%;
   -webkit-border-radius:50%;
   border-radius: 50%; 
-  border: 2px solid white;
+  border: 1px solid black;
  
   #background: grey;
   #color: #fff;
   
   text-align:center;
   #vertical-align: middle;
-    color: white;
+    color: black;
 }
 .music-controls .icon-play {
     float: center;
@@ -368,7 +380,7 @@ position: relative;
     #color: #17bebb;
     #color: #e6e6ea;
     #color: #f4f4f8;
-    color: white;
+    color: black;
 }
 
 .music-controls .icon-pause {
@@ -384,7 +396,7 @@ position: relative;
     #color: #17bebb;
     #color: #e6e6ea;
     #color: #f4f4f8;
-    color: white;
+    color: black;
 }
 
 .music-controls .icon-skip-left {
@@ -394,9 +406,8 @@ position: relative;
     font-size: 35px;
     padding-top: 16px;
     #color: #50514f;
-    #color: #ef3b4a;
-    #color: #17bebb;
-    color: white;
+    color: #17bebb;
+    color: black;
 }
 
 .music-controls .icon-skip-right {
@@ -406,9 +417,8 @@ position: relative;
     font-size: 35px;
     padding-top: 16px;
     #color: #50514f;
-    #color: #ef3b4a;
-    #color: #17bebb;
-    color: white;
+    color: #17bebb;
+    color: black;
 }
 
 .music-footer{
@@ -419,9 +429,11 @@ position: relative;
     text-align: center;
     height: 42px;
     #border-top:1px solid #b2b2b2;
+    #background-color: #f8f8f8;
+    #background-color: #444444;
+    #background-color: white;
+    background-color: #e6e6ea;
     background-color: #f4f4f8;
-    background-color: #303030;
-    #background-color: #272727;
     cursor: pointer;
 }
 
@@ -436,9 +448,8 @@ position: relative;
     #background-color: #f8f8f8;
     #background-color: #444444;
     #background-color: white;
+    background-color: #e6e6ea;
     background-color: #f4f4f8;
-    background-color: #303030;
-    #background-color: #272727;
     cursor: pointer;
 }
 
@@ -453,10 +464,8 @@ position: relative;
     #background-color: #f8f8f8;
     #background-color: #444444;
     #background-color: white;
+    background-color: #e6e6ea;
     background-color: #f4f4f8;
-    background-color: #303030;
-    #background-color: #272727;
-    #background-color: black;
     cursor: pointer;
 }
 
@@ -464,9 +473,12 @@ position: relative;
     float: center;
     #width: 80%;
     font-size: 12px;
+    #font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    #font-family: Arial, Helvetica, sans-serif;
+    #font-family: Verdana, Geneva, sans-serif;
+    #font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     color: #ffffff;
     color: black;
-    color: #e6e6ea;
 }
 
 .music-footer .channel-face{
@@ -482,9 +494,11 @@ position: relative;
     margin: 7px;
     margin-right: 15px;
     #width: 10%;
-    #color: #ef3b4a;
-    #color: black;
-    color: white;
+    color: #50514f;
+    #color: #17bebb;
+    color: #ef3b4a;
+    color: black;
+    #color: #55DDE0;
     font-size: 30px;
 }
 
@@ -506,8 +520,6 @@ position: relative;
     #float: center;
     #border-radius: 5px;
     background-color: #17bebb;
-    #background-color: #303030;
-    border-color: white;
     border-color: #17bebb;
 }
 
@@ -553,13 +565,12 @@ position: relative;
   left: 0;
   right: 0;
   background: url() center center;
-  opacity: .35;
+  opacity: .4;
   width: 100%;
   height: 100%;
   zoom: 300%;
   -webkit-filter: blur(10px);
 }
-
 .vibes-bg {
   position: absolute;
   z-index: -1;
@@ -568,9 +579,9 @@ position: relative;
   left: 0;
   right: 0;
   background: url() center center;
-  opacity: .15;
+  opacity: 0;
   width: 100%;
   height: 100%;
-  zoom: 150%;
+  zoom: 200%;
   -webkit-filter: blur(10px);
 }

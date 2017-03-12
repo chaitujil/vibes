@@ -6,7 +6,7 @@
         .run(runIonic)
         .config(configStateProvider)
         .config(['$httpProvider', configHttpProvider]);
-
+            
     function runIonic($ionicPlatform, $specialOffer) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -47,7 +47,8 @@
                     // will be reminded in 5 more uses
                 }
             });
-        });
+
+         });
     }
 
     function configStateProvider($stateProvider, $urlRouterProvider, $ionicConfigProvider) {

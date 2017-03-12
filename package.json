@@ -29,7 +29,8 @@
       "id": "cordova-plugin-x-socialsharing"
     },
     "org.apache.cordova.dialogs",
-    "org.apache.cordova.inappbrowser"
+    "org.apache.cordova.inappbrowser",
+    "cordova-plugin-media"
   ],
   "cordovaPlatforms": [
     "android",
