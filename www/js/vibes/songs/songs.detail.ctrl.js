@@ -4,9 +4,9 @@
     angular.module('vibes')
         .controller('ChannelDetailCtrl', ChannelDetailCtrl);
 
-    ChannelDetailCtrl.$inject = ['$rootScope', 'ChannelsService', '$sce', '$log', 'ModalService', 'AudioService', 'MediaService', 'ChannelMetadataService'];
+    ChannelDetailCtrl.$inject = ['$rootScope', 'ChannelsService', '$sce', '$log', 'ModalService', 'AudioService', 'ChannelMetadataService'];
 
-    function ChannelDetailCtrl($rootScope, ChannelsService, $sce, $log, ModalService, AudioService, MediaService, ChannelMetadataService) {
+    function ChannelDetailCtrl($rootScope, ChannelsService, $sce, $log, ModalService, AudioService, ChannelMetadataService) {
         var vm = this;
         vm.play = play;
         vm.pause = pause;
