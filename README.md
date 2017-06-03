@@ -24,7 +24,7 @@ android-versionCode="YY"
 
 ```
 cd C:\vibes
-ionic build --release android
+ionic build android --release
 ```
 
 ## Use jarsigner to sign the apk

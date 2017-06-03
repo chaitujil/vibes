@@ -21,7 +21,7 @@
                 StatusBar.styleLightContent();
             }
 
-            var appVersion = '1.0.21';
+            var appVersion = '1.0.26';
             var iosId = '1120991525';
             var androidPackageName = 'com.ionicframework.example146317';
 
