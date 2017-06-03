@@ -24,7 +24,7 @@
                     case 'headsetRemoved':
                         pause();
                         break;
-                };
+                }
            });
         }, false);
 
