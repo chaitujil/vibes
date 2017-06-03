@@ -1,5 +1,5 @@
 <ion-modal-view ng-controller="ChannelDetailCtrl as channelDetailCtrl" class="channel-detail-page">
-          <div class="bg" style="background: url({{songCover}})"></div>
+    <div class="bg"></div>
     <ion-header-bar class="bar-dark">
         <div>
             <i class="button button-clear" ng-click="channelDetailCtrl.closeModal()"><i class="ion-ios-arrow-down"></i></i>
@@ -17,23 +17,25 @@
             </div>
         </div>
     </ion-content>
-
-            <div class="music-controls-fixed">
-            <div class="music-controls">
-                <div class="row">
-                    <div class="col-33">
-                        <i class="icon-skip-left ion-ios-skipbackward" ng-click="channelDetailCtrl.gotoPrevious(channelDetailCtrl.channel.id)"></i>
-                    </div>
-                    <div class="col-33">
-                        <i class="icon-circle"></i>
-                        <i class="icon-play ion-ios-play" ng-click="channelDetailCtrl.play()" ng-show="playing!==true"></i>
-                        <i class="icon-pause ion-ios-pause" ng-click="channelDetailCtrl.pause()" ng-show="playing!==false"></i>
-                    </div>
-                    <div class="col-33">
-                        <i class="icon-skip-right ion-ios-skipforward" ng-click="channelDetailCtrl.gotoNext(channelDetailCtrl.channel.id)"></i>
-                    </div>
+    <div class="music-controls-fixed">
+        <div class="music-controls">
+            <div class="row">
+                <div class="col-33">
+                    <i class="icon-skip-left ion-ios-skipbackward"
+                       ng-click="channelDetailCtrl.gotoPrevious(channelDetailCtrl.channel.id)"></i>
+                </div>
+                <div class="col-33">
+                    <i class="icon-circle"></i>
+                    <i class="icon-play ion-ios-play" ng-click="channelDetailCtrl.play()" ng-show="playing!==true"></i>
+                    <i class="icon-pause ion-ios-pause" ng-click="channelDetailCtrl.pause()"
+                       ng-show="playing!==false"></i>
+                </div>
+                <div class="col-33">
+                    <i class="icon-skip-right ion-ios-skipforward"
+                       ng-click="channelDetailCtrl.gotoNext(channelDetailCtrl.channel.id)"></i>
                 </div>
             </div>
-            </div>
+        </div>
+    </div>
 </ion-modal-view>
 

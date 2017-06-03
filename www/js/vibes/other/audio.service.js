@@ -24,7 +24,7 @@
                     case 'headsetRemoved':
                         pause();
                         break;
-                };
+                }
            });
         }, false);
 
@@ -79,7 +79,7 @@
         // playEvent is triggered as a result of audio.play() call. To prevent a infinite loop
         // of play and playEventhandler here, we check if the 'playing' is false. 
         function playEventHandler() {
-            if ($rootScope.playing == false) {
+            if ($rootScope.playing === false) {
                 play(); 
             }
         }
@@ -121,7 +121,7 @@
         function errorEventHandler() {
             // Error event is called when there is connection error or when the src
             // is undefined.
-            if ($rootScope.playing == true) {
+            if ($rootScope.playing === true) {
                 // Show connection error.
                 pause();
                 UtilService.showConnectionAlert();

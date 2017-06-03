@@ -20,7 +20,7 @@
         init();
 
         function init() {
-            vm.channels = ChannelsService.allSongChannels();
+            vm.channels = ChannelsService.allChannels();
             $rootScope.playing = false;
         }
 

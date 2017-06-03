@@ -65,32 +65,11 @@
 
         return {
             allChannels: allChannels,
-            allSongChannels: allSongChannels,
-            allDialogueChannels: allDialogueChannels,
             getChannel: getChannel
         };
 
         function allChannels() {
             return channels;
-        }
-
-        function allSongChannels() {
-            return allChannelsByType('songsChannel');
-        }
-
-        function allDialogueChannels() {
-            return allChannelsByType('dialoguesChannel');
-        }
-
-        function allChannelsByType(channelType) {
-            var channelsByType = [];
-            for (var i = 0; i < channels.length; i++) {
-                if (channels[i].type === channelType) {
-                    channelsByType.push(channels[i]);
-                }
-            }
-
-            return channelsByType;
         }
 
         function getChannel(channelId) {

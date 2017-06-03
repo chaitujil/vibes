@@ -74,16 +74,6 @@
                     }
                 }
             })
-            .state('tab.dialogues', {
-                url: '/dialogues',
-                views: {
-                    'tab-dialogues': {
-                        cache: false,
-                        templateUrl: 'js/vibes/dialogues/tab-dialogues.html',
-                        controller: 'DialoguesCtrl as dialoguesCtrl'
-                    }
-                }
-            })
             .state('tab.settings', {
                 url: '/settings',
                 views: {
