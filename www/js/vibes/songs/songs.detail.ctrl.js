@@ -16,6 +16,7 @@
         vm.gotoNext = gotoNext;
         vm.openModal = openModal;
         vm.closeModal = closeModal;
+        vm.love = love;
 
         $rootScope.songTitle = null;
         $rootScope.songArtists = null;
@@ -86,6 +87,10 @@
 
         function isDefaultTheme() {
             return true;
+        }
+
+        function love() {
+            $log.info("Loving " + $rootScope.songTitle);
         }
     }
 })();

@@ -18,7 +18,7 @@
         
         function setIOSNowPlayingInfo() {
           $ionicPlatform.ready(function() {
-            if (window.device.platform === 'iOS') {
+            if (ionic.Platform.isIOS()) {
               NowPlaying.set({
                   artist: $rootScope.songArtists,
                   title: $rootScope.songTitle
@@ -29,7 +29,7 @@
 
         function setIOSNowPlayingCover() {
           $ionicPlatform.ready(function() {
-            if (window.device.platform === 'iOS') {
+            if (ionic.Platform.isIOS()) {
               NowPlaying.set({
                   artwork: $rootScope.songCover
               });
@@ -65,12 +65,12 @@
             // If rootScope.Channel changes the refresh cycle for this channel terminates.
             // Upon succesful http response get song cover only if the song has changed.
             // Upon error retry in 1 sec. 
-	    if ($rootScope.curChannel.id == channel.id) {
+	    if ($rootScope.curChannel.id === channel.id) {
                 var delay_msec = 5000;
                 // Fetch song info if a stream is playing.
                 HttpService.getCurrentChannelMetadata(channel.name).then(function (response) {
                     // If the track has changed, fetch song cover and update info.
-                    if (initialize || $rootScope.songTitle != response.track) {
+                    if (initialize || $rootScope.songTitle !== response.track) {
                         $rootScope.songTitle = response.track;
                         $rootScope.songArtists = response.artist;
                         $rootScope.songCover = 'http://104.131.151.101/' + channel.name + '/image.jpg?' + new Date().getTime();

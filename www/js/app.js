@@ -34,9 +34,9 @@
                 remindLabel  : 'Remind Me Later',
                 declineLabel : 'Not interested',
                 onAgree      : function () {
-                    if (window.device.platform === 'Android') {
+                    if (ionic.Platform.isAndroid()) {
                         window.open($specialOffer.googlePlayUrl(androidPackageName));
-                    } else if (window.device.platform === 'iOS') {
+                    } else if (ionic.Platform.isIOS()) {
                         window.open($specialOffer.appStoreUrl(iosId));
                     }
                 },
