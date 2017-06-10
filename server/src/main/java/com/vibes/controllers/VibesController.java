@@ -27,7 +27,7 @@ public class VibesController {
 
     @RequestMapping(value = "/image", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
     public byte [] getSongImage(@RequestParam("channelName") String channelName) throws IOException {
-        URL url = new URL("http://104.131.151.101/" + channelName + "/image.jpg?" + Calendar.getInstance().getTime().getTime());
+        URL url = new URL("http://bindas.life/" + channelName + "/image.jpg?" + Calendar.getInstance().getTime().getTime());
         BufferedImage image = ImageIO.read(url);
 
         ByteArrayOutputStream baos=new ByteArrayOutputStream();
@@ -38,7 +38,7 @@ public class VibesController {
 
     @RequestMapping(value = "/songinfo", method = RequestMethod.GET)
     public SongInfo getSongInfo(@RequestParam("channelName") String channelName) throws Exception {
-        String url = "http://104.131.151.101/" + channelName + "/songinfo.txt?" + Calendar.getInstance().getTime().getTime();
+        String url = "http://bindas.life/" + channelName + "/songinfo.txt?" + Calendar.getInstance().getTime().getTime();
         Gson gson = new Gson();
 
         return gson.fromJson(UrlUtil.readUrl(url), SongInfo.class);
