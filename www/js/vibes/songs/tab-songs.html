@@ -2,45 +2,27 @@
     <ion-content>
         <ion-list>
             <div ng-repeat="channel in songsCtrl.channels" ng-if="$index % 2 == 0" class="row">
-                <!div class="vibes-bg" style="background: url(../../img/party.jpg)"><!/div>
+                <div class="vibes-bg" style="background: url(../../img/party.jpg)"></div>
                 <div class="col-50">
                     <div class="channel-wrapper">
-                        <!div class="list card"-->
-                            <img class="channel-face" ng-src="{{songsCtrl.channels[$index].face}}"
-                                 ng-click="songsCtrl.setChannel(songsCtrl.channels[$index].id)">
-        <div class="row">
-            <div class="col" align="center">
-                <p1>{{songsCtrl.channels[$index].cname}}</p1>
-            </div>
-            <!div class="col-20" align="center">
-                <!i class="play-pause ion-ios-play" ng-click="songsCtrl.play()"
-                   ng-show="songsCtrl.isplaying()!==true || songsCtrl.curChannel().id!==songsCtrl.channels[$index].id"></i>
-                <!i class="play-pause ion-ios-pause" ng-click="songsCtrl.pause()"
-                   ng-show="songsCtrl.isplaying()!==false && songsCtrl.curChannel().id==songsCtrl.channels[$index].id"></i>
-            <!/div>
-        </div>
-
-                        <!/div-->
+                        <img class="channel-face" ng-src="{{songsCtrl.channels[$index].face}}"
+                             ng-click="songsCtrl.setChannel(songsCtrl.channels[$index].id)">
+                        <div class="row">
+                            <div class="col" align="center">
+                                <p1>{{songsCtrl.channels[$index].cname}}</p1>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-50">
                     <div class="channel-wrapper">
-                        <!div class="list card"-->
-                            <img class="channel-face" ng-src="{{songsCtrl.channels[$index+1].face}}"
-                                 ng-click="songsCtrl.setChannel(songsCtrl.channels[$index+1].id)">
-        <div class="row">
-            <div class="col" align="center">
-                <p1>{{songsCtrl.channels[$index+1].cname}}</p1>
-            </div>
-            <!div class="col-20" align="center">
-                <!i class="play-pause ion-ios-play" ng-click="songsCtrl.play()"
-                   ng-show="songsCtrl.isplaying()!==true || songsCtrl.curChannel().id!==songsCtrl.channels[$index+1].id"></i>
-                <!i class="play-pause ion-ios-pause" ng-click="songsCtrl.pause()"
-                   ng-show="songsCtrl.isplaying()!==false && songsCtrl.curChannel().id==songsCtrl.channels[$index+1].id"></i>
-            <!/div>
-        </div>
-
-                        <!/div-->
+                        <img class="channel-face" ng-src="{{songsCtrl.channels[$index+1].face}}"
+                             ng-click="songsCtrl.setChannel(songsCtrl.channels[$index+1].id)">
+                        <div class="row">
+                            <div class="col" align="center">
+                                <p1>{{songsCtrl.channels[$index+1].cname}}</p1>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -52,10 +34,10 @@
                 <img class="channel-face" ng-src="{{songsCtrl.curChannel().face}}">
             </div>
             <div class="col-80" ng-click="songsCtrl.openModal()">
-                <!marquee direction="up">
+                <marquee direction="right">
                     <h class="track">{{songTitle}}</h>
                     <p class="artist">{{songArtists}}</p>
-                <!/marquee>
+                </marquee>
             </div>
             <div class="col-10">
                 <i class="play-pause ion-ios-play" ng-click="songsCtrl.play()" ng-show="playing!==true"></i>
